@@ -8,6 +8,7 @@ TagManager:
   - CameraMovementOffset
   - Caja
   - Coin
+  - Bitter
   layers:
   - Default
   - TransparentFX

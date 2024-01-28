@@ -12,6 +12,8 @@ public class IsoCharacter : MonoBehaviour
     private Rigidbody2D rb;
     private int orientation; // 0 left, 1 right
 
+    public Animator playerAnimator;
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,23 +22,28 @@ public class IsoCharacter : MonoBehaviour
 
     void Update()
     {
-        
+        float movimientoHorizontal;
+        Vector2 velocidad;
 
-        // Movimiento en un juego 2D isométrico
-        float movimientoHorizontal = Input.GetAxis("Horizontal");
-        float movimientoVertical = Input.GetAxis("Vertical");
+        Walk(out movimientoHorizontal, out velocidad);
 
-        
-        Vector2 velocidad = new Vector2(movimientoHorizontal * velocidadMovimiento, movimientoVertical * velocidadMovimiento);
-
-        
-        
-        // Aplicar la velocidad al Rigidbody
-        rb.velocity = new Vector2(velocidad.x, velocidad.y);
-        
         UpdateOrientation(movimientoHorizontal, velocidad);
 
-        
+
+    }
+
+    private void Walk(out float movimientoHorizontal, out Vector2 velocidad)
+    {
+        // Movimiento en un juego 2D isométrico
+        movimientoHorizontal = Input.GetAxis("Horizontal");
+        float movimientoVertical = Input.GetAxis("Vertical");
+
+        velocidad = new Vector2(movimientoHorizontal * velocidadMovimiento, movimientoVertical * velocidadMovimiento);
+
+        // Aplicar la velocidad al Rigidbody
+        rb.velocity = new Vector2(velocidad.x, velocidad.y);
+
+        playerAnimator.Play("WalkAnim");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -64,6 +71,10 @@ public class IsoCharacter : MonoBehaviour
                 orientation = 1;
             else if (movimientoHorizontal < 0f)
                 orientation = 0;
+        }
+        else
+        {
+            playerAnimator.StopPlayback();
         }
 
         switch (orientation)
