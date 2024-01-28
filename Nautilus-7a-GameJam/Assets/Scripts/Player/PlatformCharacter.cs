@@ -8,7 +8,7 @@ public class PlatfromCharacter : MonoBehaviour
     [Header("Character")]
     public int characterScale = 5;
     public float velocidadMovimiento = 5f;
-    public float fuerzaSalto = 10f;
+    public float fuerzaSalto = 5f;
 
 
     private Rigidbody2D rb;
@@ -25,7 +25,7 @@ public class PlatfromCharacter : MonoBehaviour
     void Update()
     {
         // Verificar si el jugador está en el suelo
-        enElSuelo = Physics2D.OverlapCircle(transform.position, 1f, sueloLayer);
+        enElSuelo = Physics2D.OverlapCircle(transform.position, 0.5f, sueloLayer);
         Debug.Log("En el suelo: " + enElSuelo);
 
         // Movimiento horizontal
@@ -41,7 +41,22 @@ public class PlatfromCharacter : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enredadera")
+        {
+            velocidadMovimiento = 1f;
+            fuerzaSalto = 1f;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Enredadera")
+        {
+            velocidadMovimiento = 5f;
+            fuerzaSalto = 5f;
+        }
+    }
     void UpdateOrientation(float movimientoHorizontal, Vector2 velocidad)
     {
         // Actualizar la orientación solo si hay un movimiento
