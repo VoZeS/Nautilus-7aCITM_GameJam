@@ -144,6 +144,7 @@ MonoBehaviour:
   tileOffset: 1.6
   smooth: 2
   velocidadMovimiento: 3
+  playerAnimator: {fileID: 31274205}
 --- !u!114 &31274204
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3697,7 +3698,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.1509434, g: 0.1509434, b: 0.1509434, a: 1}
+  m_Color: {r: 0.18867922, g: 0.18867922, b: 0.18867922, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -11343,6 +11344,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 865902077140964022, guid: 0158b05a18d018c428eb4bbc2a255585, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 3506202329011747492, guid: 0158b05a18d018c428eb4bbc2a255585, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11391,6 +11396,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7958971193378866193, guid: 0158b05a18d018c428eb4bbc2a255585, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 31274205}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

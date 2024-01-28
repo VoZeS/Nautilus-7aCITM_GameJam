@@ -42,8 +42,6 @@ public class IsoCharacter : MonoBehaviour
 
         // Aplicar la velocidad al Rigidbody
         rb.velocity = new Vector2(velocidad.x, velocidad.y);
-
-        playerAnimator.Play("WalkAnim");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -71,10 +69,6 @@ public class IsoCharacter : MonoBehaviour
                 orientation = 1;
             else if (movimientoHorizontal < 0f)
                 orientation = 0;
-        }
-        else
-        {
-            playerAnimator.StopPlayback();
         }
 
         switch (orientation)
