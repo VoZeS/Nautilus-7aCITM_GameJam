@@ -16,6 +16,8 @@ public class Doppelganger : MonoBehaviour
 
     private bool isColliding = false;
 
+    private bool hitted;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,13 @@ public class Doppelganger : MonoBehaviour
     private void Update()
     {
         UpdateOrientation();
+
+        if(hitted)
+        {
+            Debug.Log("HAS DERROTADO A TU DOPPELGANGER");
+
+            // TODO: WIN GAME
+        }
     }
     public void UpdateOrientation()
     {
@@ -51,5 +60,13 @@ public class Doppelganger : MonoBehaviour
     private void OnCollisionExit2D(Collision2D collision)
     {
         isColliding = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.tag == "Bitter")
+        {
+            hitted = true;
+        }
     }
 }
