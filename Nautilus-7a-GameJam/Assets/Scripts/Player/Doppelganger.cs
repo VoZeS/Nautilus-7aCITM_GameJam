@@ -6,10 +6,15 @@ public class Doppelganger : MonoBehaviour
 {
     [Header("Character")]
     public int characterScale = 5;
-    public float velocidadMovimiento = 5f;
+
+    [Header("Movement")]
+    public GameObject player;
+    public Vector3 offset;
 
     private Rigidbody2D rb;
     private int orientation; // 0 left, 1 right
+
+    private bool isColliding = false;
 
     // Start is called before the first frame update
     void Start()
@@ -21,19 +26,7 @@ public class Doppelganger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // Movimiento en un juego 2D isométrico
-        float movimientoHorizontal = Input.GetAxis("Horizontal");
-        float movimientoVertical = Input.GetAxis("Vertical");
-
-        Vector2 velocidad = new Vector2(movimientoHorizontal * velocidadMovimiento, movimientoVertical * velocidadMovimiento);
-
-        // Aplicar la velocidad al Rigidbody
-        rb.velocity = new Vector2(velocidad.x, velocidad.y);
-
-        UpdateOrientation(movimientoHorizontal, velocidad);
-
-        UpdateOrientation(movimientoHorizontal, velocidad);
+        //transform.position = player.transform.position + offset;
 
     }
 
@@ -61,5 +54,15 @@ public class Doppelganger : MonoBehaviour
                 transform.localScale = new Vector3(characterScale, characterScale, characterScale);
                 break;
         }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        isColliding = true;
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        isColliding = false;
     }
 }
