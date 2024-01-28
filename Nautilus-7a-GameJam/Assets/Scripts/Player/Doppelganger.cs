@@ -12,7 +12,7 @@ public class Doppelganger : MonoBehaviour
     public Vector3 offset;
 
     private Rigidbody2D rb;
-    private int orientation; // 0 left, 1 right
+    static public int orientation; // 0 left, 1 right
 
     private bool isColliding = false;
 
@@ -22,26 +22,13 @@ public class Doppelganger : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         orientation = 1;
     }
-
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        //transform.position = player.transform.position + offset;
-
+        UpdateOrientation();
     }
-
-    public void UpdateOrientation(float movimientoHorizontal, Vector2 direccion)
+    public void UpdateOrientation()
     {
-        // Actualizar la orientación solo si hay un movimiento
-        if (direccion != Vector2.zero)
-        {
-            //Girar el sprite
-            if (movimientoHorizontal >= 0f)
-                orientation = 1;
-            else if (movimientoHorizontal < 0f)
-                orientation = 0;
-        }
-
+       
         switch (orientation)
         {
             case 0:

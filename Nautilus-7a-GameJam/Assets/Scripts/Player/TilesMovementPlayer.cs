@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TilesMovementPlayer : MonoBehaviour
 {
+    public int characterScale = 5;
     public float tileOffset;
     public float smooth = 0.125f;
     public float velocidadMovimiento;
@@ -13,15 +14,20 @@ public class TilesMovementPlayer : MonoBehaviour
 
     static public bool hasCollided;
 
+    private int orientation; //0 left, 1 right
+
     private void Start()
     {
         targetPosition = transform.position;
         hasCollided = false;
+        orientation = 1;
     }
 
     // Update is called once per frame
     void Update()
     {
+        UpdateOrientation();
+
         if ((Vector2)transform.position != targetPosition)
         {
             if(!hasCollided)
@@ -50,12 +56,14 @@ public class TilesMovementPlayer : MonoBehaviour
 
         if (movimientoHorizontal > 0f)
         {
+            orientation = 1;
             lastPosition = transform.position;
             targetPosition = new Vector2(transform.position.x + tileOffset, transform.position.y);
 
         }
         if (movimientoHorizontal < 0f)
         {
+            orientation = 0;
             lastPosition = transform.position;
             targetPosition = new Vector2(transform.position.x - tileOffset, transform.position.y);
 
@@ -78,5 +86,22 @@ public class TilesMovementPlayer : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         hasCollided = true;
+    }
+
+    public void UpdateOrientation()
+    {
+
+        switch (orientation)
+        {
+            case 0:
+                transform.localScale = new Vector3(-characterScale, characterScale, characterScale);
+                break;
+            case 1:
+                transform.localScale = new Vector3(characterScale, characterScale, characterScale);
+                break;
+            default:
+                transform.localScale = new Vector3(characterScale, characterScale, characterScale);
+                break;
+        }
     }
 }

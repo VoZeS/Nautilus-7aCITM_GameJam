@@ -140,6 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cdb9d5f1f2615c46b8738f142b4a8c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  characterScale: 5
   tileOffset: 1.6
   smooth: 2
   velocidadMovimiento: 3
@@ -3579,7 +3580,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.754717, g: 0.754717, b: 0.754717, a: 1}
+  m_Color: {r: 0.37597898, g: 0.6698113, b: 0.41417056, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

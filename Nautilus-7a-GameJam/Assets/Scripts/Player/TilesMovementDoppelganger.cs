@@ -50,12 +50,14 @@ public class TilesMovementDoppelganger : MonoBehaviour
 
         if (movimientoHorizontal > 0f)
         {
+            Doppelganger.orientation = 1;
             lastPosition = transform.position;
             targetPosition = new Vector2(transform.position.x + tileOffset, transform.position.y);
 
         }
         if (movimientoHorizontal < 0f)
         {
+            Doppelganger.orientation = 0;
             lastPosition = transform.position;
             targetPosition = new Vector2(transform.position.x - tileOffset, transform.position.y);
 
