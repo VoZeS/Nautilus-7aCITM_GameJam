@@ -12,7 +12,7 @@ public class PlatfromCharacter : MonoBehaviour
 
 
     private Rigidbody2D rb;
-    private bool enElSuelo;
+    public bool enElSuelo;
 
     private int orientation; // 0 left, 1 right
 
