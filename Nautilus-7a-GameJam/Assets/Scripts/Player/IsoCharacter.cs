@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class IsoCharacter : MonoBehaviour
 {
-
+    public float coinCount = 0;
     [Header("Character")]
     public int characterScale = 5;
     public float velocidadMovimiento = 5f;
@@ -20,17 +20,38 @@ public class IsoCharacter : MonoBehaviour
 
     void Update()
     {
+        
+
         // Movimiento en un juego 2D isométrico
         float movimientoHorizontal = Input.GetAxis("Horizontal");
         float movimientoVertical = Input.GetAxis("Vertical");
 
+        
         Vector2 velocidad = new Vector2(movimientoHorizontal * velocidadMovimiento, movimientoVertical * velocidadMovimiento);
 
+        
+        
         // Aplicar la velocidad al Rigidbody
         rb.velocity = new Vector2(velocidad.x, velocidad.y);
         
         UpdateOrientation(movimientoHorizontal, velocidad);
+
         
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        
+        if (collision.gameObject.tag == "Coin")
+        {
+
+            if (coinCount > 0)
+            {
+                velocidadMovimiento = velocidadMovimiento - (coinCount * 0.10f);
+            }
+            coinCount= coinCount+0.5f;
+            Debug.Log("+1 Coin, you are slower!");
+        }
     }
 
     void UpdateOrientation(float movimientoHorizontal, Vector2 direccion)
@@ -58,4 +79,6 @@ public class IsoCharacter : MonoBehaviour
                 break;
         }
     }
+
+    
 }

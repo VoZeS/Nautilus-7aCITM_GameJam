@@ -6,16 +6,18 @@ TagManager:
   tags:
   - Floor
   - CameraMovementOffset
+  - Caja
+  - Coin
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Player
   - Water
   - UI
   - Suelo
-  - 
-  - 
+  - Caja
+  - Monedas
   - 
   - 
   - 
