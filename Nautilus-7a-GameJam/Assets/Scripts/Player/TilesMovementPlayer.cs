@@ -16,6 +16,8 @@ public class TilesMovementPlayer : MonoBehaviour
 
     private int orientation; //0 left, 1 right
 
+    public Animator playerAnimator;
+
     private void Start()
     {
         targetPosition = transform.position;
@@ -30,8 +32,13 @@ public class TilesMovementPlayer : MonoBehaviour
 
         if ((Vector2)transform.position != targetPosition)
         {
-            if(!hasCollided)
+            playerAnimator.SetBool("Walking", true);
+
+            if (!hasCollided)
+            {
                 transform.position = Vector2.MoveTowards(transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+
+            }
             else
             {
                 targetPosition = lastPosition;
@@ -43,6 +50,8 @@ public class TilesMovementPlayer : MonoBehaviour
         else
         {
             MoverPorTiles();
+            playerAnimator.SetBool("Walking", false);
+
         }
     }
 

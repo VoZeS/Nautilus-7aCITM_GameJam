@@ -14,8 +14,6 @@ public class Doppelganger : MonoBehaviour
     private Rigidbody2D rb;
     static public int orientation; // 0 left, 1 right
 
-    private bool isColliding = false;
-
     private bool hitted;
 
     // Start is called before the first frame update
@@ -50,16 +48,6 @@ public class Doppelganger : MonoBehaviour
                 transform.localScale = new Vector3(characterScale, characterScale, characterScale);
                 break;
         }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        isColliding = true;
-    }
-
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        isColliding = false;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
