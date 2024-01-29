@@ -53,7 +53,7 @@ public class ClickEMultipleTimes : MonoBehaviour
                 else
                     pressCharge = 0;
             }
-            Debug.Log(pressCharge);
+            //Debug.Log(pressCharge);
         }
         else
         {
@@ -68,7 +68,6 @@ public class ClickEMultipleTimes : MonoBehaviour
         {
             Followers.followers++;
 
-            pressCharge = 1;
             sliderPress.gameObject.SetActive(false);
             sliderPress.gameObject.SetActive(false);
 
@@ -80,6 +79,9 @@ public class ClickEMultipleTimes : MonoBehaviour
 
             followScript.enabled = true;
             triggerCol.enabled = false;
+
+            pressCharge = 0;
+
         }
     }
 

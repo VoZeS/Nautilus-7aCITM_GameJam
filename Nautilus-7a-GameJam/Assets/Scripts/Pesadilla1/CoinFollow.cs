@@ -5,31 +5,51 @@ using UnityEngine;
 public class CoinFollow : MonoBehaviour
 {
     
-    public Transform objetoAseguir;  // Objeto que seguirá
+    Transform objetoAseguir;  // Objeto que seguirï¿½
     public LayerMask capaSeguible;  // Capa de objetos seguibles
     bool enCaja = false;
 
-    public GameObject player;
+    GameObject player;
     [SerializeField] public float speed = 5f;
 
     public float distance2player;
     [SerializeField] public float range = 10f;
     [SerializeField] public float nearRange = 1.2f;
     bool alreadyFollowing = false;
-    IsoCharacter playerScript;
+    GameObject collision;
+    IsoCharacter playerScript = null;
+    Dragon dragonScript = null;
+    Collider2D collider;
 
-   
+    private void Start()
+    {
+        collider = GetComponent<Collider2D>();
+        collider.enabled = true;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
         
-        // Verifica si el objeto que activó el trigger está en la capa seguible
+        collision = other.gameObject;
+        // Verifica si el objeto que activï¿½ el trigger estï¿½ en la capa seguible
         if (capaSeguible == (capaSeguible | (1 << other.gameObject.layer)) && !alreadyFollowing )
         {
-            playerScript = other.GetComponent<IsoCharacter>();
-            
-            
+           
+            if(other.gameObject.tag == "Player")
+            {
+                playerScript = other.GetComponent<IsoCharacter>();
+                
 
-            // Establece el objeto a seguir como el objeto que activó el trigger
+            }else if (other.gameObject.tag == "Dragon")
+            {
+                dragonScript = other.GetComponent<Dragon>();
+                
+            }
+
+
+
+
+            // Establece el objeto a seguir como el objeto que activï¿½ el trigger
             if (other.gameObject.tag=="Player" && playerScript.monedasRecogidas.Count < 5)
             {
                 if (playerScript.monedasRecogidas.Count == 0 )
@@ -53,8 +73,9 @@ public class CoinFollow : MonoBehaviour
                 Debug.Log("+1 Coin, you are slower!");
                 playerScript.velocidadMovimiento = playerScript.velocidadMovimiento - (playerScript.monedasRecogidas.Count * 0.10f);
             }
-            else if(other.gameObject.tag == "Dragon")
+            else if(other.gameObject.tag == "Dragon" && dragonScript.monedasDragonRecogidas.Count < 1)
             {
+                dragonScript.monedasDragonRecogidas.Add(transform);
                 objetoAseguir = other.transform;
             }
             else
@@ -62,18 +83,17 @@ public class CoinFollow : MonoBehaviour
                 objetoAseguir = null;
             }
 
-            Collider collider = GetComponent<Collider>();
+            
 
             collider.enabled = false;
 
-        }
-        
+        } 
     }
 
     void Update()
     {
         // Si hay un objeto a seguir, realiza el seguimiento
-        if (objetoAseguir != null && !enCaja &&playerScript.gameObject.tag=="Player")
+        if (objetoAseguir != null && !enCaja && collision.tag=="Player")
         {
             distance2player = Vector2.Distance(transform.position, objetoAseguir.position);
             Vector2 direction = objetoAseguir.position - transform.position;
@@ -83,16 +103,22 @@ public class CoinFollow : MonoBehaviour
             {
                 transform.position = Vector2.MoveTowards(transform.position, objetoAseguir.position, speed * Time.deltaTime);
             }
-        }else if(playerScript.gameObject.tag == "Dragon")
+            
+
+        }else if(objetoAseguir != null && collision.tag == "Dragon")
         {
-            // Calcula la dirección hacia el objeto a seguir
+            // Calcula la direcciï¿½n hacia el objeto a seguir
             Vector3 direccion = objetoAseguir.position - transform.position;
 
-            // Normaliza la dirección para mantener una velocidad constante
+            // Normaliza la direcciï¿½n para mantener una velocidad constante
             direccion.Normalize();
 
             // Mueve el objeto hacia el objeto a seguir
             transform.Translate(direccion * speed * Time.deltaTime);
+        }
+        else if(objetoAseguir == null)
+        {
+            Debug.Log("F");
         }
     }
 }

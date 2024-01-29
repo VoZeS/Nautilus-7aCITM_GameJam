@@ -1,10 +1,12 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Dragon : MonoBehaviour
 {
+    public List<Transform> monedasDragonRecogidas = new List<Transform>();
     public float velocidadMovimiento = 5f;
     public Transform objetivo; // Asigna el GameObject hacia el cual se dirigirá después de recoger la moneda
-    private GameObject monedaActual;
+    public GameObject monedaActual;
     bool hasMoneda = false;
 
     void Start()
@@ -16,13 +18,17 @@ public class Dragon : MonoBehaviour
     void Update()
     {
                
+        if (!hasMoneda )
+        {
+            BuscarMonedaCercana();
+        }
         // Si hay una moneda a la que seguir, mueve al enemigo hacia ella
-        if (monedaActual != null&& !hasMoneda)
+        if (monedaActual != null && !hasMoneda)
         {
             MoverHaciaObjetivo(monedaActual.transform.position);
         }
         // Si no hay una moneda, mueve al enemigo hacia el objetivo general
-        else if (objetivo != null&&hasMoneda)
+        else if (objetivo != null && hasMoneda)
         {
             MoverHaciaObjetivo(objetivo.position);
         }
@@ -59,18 +65,25 @@ public class Dragon : MonoBehaviour
         }
     }
 
-    // Puedes llamar a este método desde algún evento, por ejemplo, cuando el enemigo recoge la moneda
-    public void CambiarObjetivoGeneral()
-    {
-        // Cambia el objetivo a otro GameObject si es necesario
-        // Por ejemplo: objetivo = GameObject.Find("NombreDelObjetivo").transform;
-    }
+    
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag=="Coin")
         {
             hasMoneda = true;
+        }
+        else if (collision.gameObject.tag == "Caja")
+        {
+            hasMoneda = false;
+            for (int i = 0; i < monedasDragonRecogidas.Count; i++)
+            {
+                monedasDragonRecogidas[i].gameObject.SetActive(false);
+
+                Debug.Log("Monedas puestas");
+            }
+            monedasDragonRecogidas.Clear();
+            Debug.Log("Lista Limpia");
         }
     }
 }

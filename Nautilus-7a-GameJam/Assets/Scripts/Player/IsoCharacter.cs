@@ -18,6 +18,9 @@ public class IsoCharacter : MonoBehaviour
 
     private Animator playerAnimator;
 
+
+    public float movimientoHorizontal;
+    public Vector2 velocidad;
     void Start()
     {
         rb = parent.GetComponent<Rigidbody2D>();
@@ -28,9 +31,6 @@ public class IsoCharacter : MonoBehaviour
 
     void Update()
     {
-        float movimientoHorizontal;
-        Vector2 velocidad;
-
         Walk(out movimientoHorizontal, out velocidad);
 
         UpdateOrientation(movimientoHorizontal, velocidad);
@@ -52,16 +52,6 @@ public class IsoCharacter : MonoBehaviour
         rb.velocity = new Vector2(velocidad.x, velocidad.y);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        if (collision.gameObject.tag == "Caja")
-        {
- 
-            velocidadMovimiento = 5;
-
-        }
-    }
 
     void UpdateOrientation(float movimientoHorizontal, Vector2 direccion)
     {

@@ -11,6 +11,7 @@ TagManager:
   - Enredadera
   - Ball
   - Dragon
+  - Bitter
   layers:
   - Default
   - TransparentFX
