@@ -26,7 +26,7 @@ public class PlatfromCharacter : MonoBehaviour
     {
         // Verificar si el jugador está en el suelo
         enElSuelo = Physics2D.OverlapCircle(transform.position, 0.5f, sueloLayer);
-        Debug.Log("En el suelo: " + enElSuelo);
+        //Debug.Log("En el suelo: " + enElSuelo);
 
         // Movimiento horizontal
         float movimientoHorizontal = Input.GetAxis("Horizontal");
