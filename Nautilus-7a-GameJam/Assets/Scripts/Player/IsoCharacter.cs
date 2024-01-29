@@ -18,6 +18,9 @@ public class IsoCharacter : MonoBehaviour
 
     private Animator playerAnimator;
 
+
+    public float movimientoHorizontal;
+    public Vector2 velocidad;
     void Start()
     {
         rb = parent.GetComponent<Rigidbody2D>();
@@ -28,9 +31,6 @@ public class IsoCharacter : MonoBehaviour
 
     void Update()
     {
-        float movimientoHorizontal;
-        Vector2 velocidad;
-
         Walk(out movimientoHorizontal, out velocidad);
 
         UpdateOrientation(movimientoHorizontal, velocidad);
