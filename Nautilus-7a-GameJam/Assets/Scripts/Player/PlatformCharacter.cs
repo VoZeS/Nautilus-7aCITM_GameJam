@@ -11,15 +11,19 @@ public class PlatfromCharacter : MonoBehaviour
     public float fuerzaSalto = 5f;
 
 
+    [Header("Movement")]
+    public GameObject parent;
     private Rigidbody2D rb;
     public bool enElSuelo;
 
     private int orientation; // 0 left, 1 right
 
+    private Animator playerAnimator;
 
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = parent.GetComponent<Rigidbody2D>();
+        playerAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -39,6 +43,7 @@ public class PlatfromCharacter : MonoBehaviour
         if (enElSuelo && Input.GetKey(KeyCode.Space))
         {
             rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
+            playerAnimator.SetBool("Walking", false);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -62,11 +67,19 @@ public class PlatfromCharacter : MonoBehaviour
         // Actualizar la orientación solo si hay un movimiento
         if (velocidad != Vector2.zero)
         {
+            if(enElSuelo)
+                playerAnimator.SetBool("Walking", true);
+
             //Girar el sprite
             if (movimientoHorizontal >= 0f)
                 orientation = 1;
             else if (movimientoHorizontal < 0f)
                 orientation = 0;
+        }
+        else
+        {
+            playerAnimator.SetBool("Walking", false);
+
         }
 
         switch (orientation)
