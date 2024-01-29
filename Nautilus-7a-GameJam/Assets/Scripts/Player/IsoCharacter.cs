@@ -46,22 +46,12 @@ public class IsoCharacter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         
-        if (collision.gameObject.tag == "Coin")
-        {
-
-            if (coinCount > 0)
-            {
-                velocidadMovimiento = velocidadMovimiento - (coinCount * 0.10f);
-            }
-            coinCount= coinCount+0.5f;
-            Debug.Log("+1 Coin, you are slower!");
-        }
+        
         if (collision.gameObject.tag == "Caja")
         {
-            coinCount = 0;
-            Debug.Log("Coins droped!");
-            Debug.Log("+1 Coin, you are slower!");
+ 
             velocidadMovimiento = 5;
+
         }
     }
 
