@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class IsoCharacter : MonoBehaviour
 {
+    public List<Transform> monedasRecogidas = new List<Transform>();
     public float coinCount = 0;
     [Header("Character")]
     public int characterScale = 5;
