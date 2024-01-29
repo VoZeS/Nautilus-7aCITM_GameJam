@@ -654,7 +654,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 125b3302ccdeb8140961a35bc6630715, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jugador: {fileID: 0}
+  jugador: {fileID: 1346986349}
   distanciaUmbral: 3
   velocidadAlejamiento: 5
 --- !u!50 &444937006
@@ -1002,7 +1002,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597e5a2ef89eb3643baef1fab11e2375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1346986348}
   speed: 4
   distance2cube: 0
   range: 10
@@ -1242,7 +1242,7 @@ PrefabInstance:
     - target: {fileID: 4088556632547732728, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: jugador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1346986349}
     - target: {fileID: 5510793566263497379, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.37
@@ -1340,6 +1340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2515441922962826901, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
+      propertyPath: m_Constraints
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 7084050962727696708, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
       propertyPath: m_Name
       value: CharacterIso
@@ -1396,7 +1400,7 @@ PrefabInstance:
     - target: {fileID: 4088556632547732728, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: jugador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1346986349}
     - target: {fileID: 5131370654151631357, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -1461,7 +1465,7 @@ PrefabInstance:
     - target: {fileID: 4088556632547732728, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: jugador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1346986349}
     - target: {fileID: 5510793566263497379, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.3
@@ -1511,6 +1515,16 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
+--- !u!1 &1346986348 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5319201462319162923, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
+  m_PrefabInstance: {fileID: 1134438473}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1346986349 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 135441421738286312, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
+  m_PrefabInstance: {fileID: 1134438473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1362436999
 GameObject:
   m_ObjectHideFlags: 0
@@ -1610,7 +1624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597e5a2ef89eb3643baef1fab11e2375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1346986348}
   speed: 5
   distance2cube: 0
   range: 2
@@ -2101,7 +2115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 597e5a2ef89eb3643baef1fab11e2375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1346986348}
   speed: 3
   distance2cube: 0
   range: 10
@@ -2155,7 +2169,7 @@ PrefabInstance:
     - target: {fileID: 4088556632547732728, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: jugador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1346986349}
     - target: {fileID: 5131370654151631357, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -2437,7 +2451,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 423c9ab7d805d034b82f42fa0196ae03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1752130088}
   smoothSpeed: 1
 --- !u!1 &1722789772
 GameObject:
@@ -2610,6 +2624,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.28117, y: 29.594538}
   m_EdgeRadius: 0
+--- !u!4 &1752130088 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2401061516508272805, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
+  m_PrefabInstance: {fileID: 1134438473}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1945854674
 GameObject:
   m_ObjectHideFlags: 0
@@ -2907,7 +2926,7 @@ PrefabInstance:
     - target: {fileID: 4088556632547732728, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: jugador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1346986349}
     - target: {fileID: 5131370654151631357, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: m_FlipX
       value: 1
@@ -3049,7 +3068,7 @@ PrefabInstance:
     - target: {fileID: 4088556632547732728, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: jugador
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1346986349}
     - target: {fileID: 5510793566263497379, guid: 6f20b334c796af94eadd24a281050d2d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -1.02
