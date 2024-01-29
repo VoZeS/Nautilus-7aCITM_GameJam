@@ -12,7 +12,6 @@ TagManager:
   - Ball
   - Dragon
   - Bitter
-  - Caja2
   layers:
   - Default
   - TransparentFX
