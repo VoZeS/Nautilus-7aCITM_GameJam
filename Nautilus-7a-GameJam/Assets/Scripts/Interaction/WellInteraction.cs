@@ -13,9 +13,15 @@ public class WellInteraction : MonoBehaviour
     private bool interacting = false;
 
     private float interactTimer = 0;
+    GameObject player;
+    IsoCharacter scriptLista;
+
 
     private void Start()
     {
+        player = GameObject.Find("PlayerIso");
+        scriptLista = player.GetComponent<IsoCharacter>();
+
         interactSprite.gameObject.SetActive(false);
         interactSlider.gameObject.SetActive(false);
         interactTimer = 0;
@@ -25,12 +31,16 @@ public class WellInteraction : MonoBehaviour
     {
         if (readyToInteract)
         {
-            interactSprite.gameObject.SetActive(true);
+            
+            //interactSprite.gameObject.SetActive(true);
 
-            if (Input.GetKey("e"))
+            if (Input.GetKeyDown(KeyCode.E))
             {
+                DropCoins();
+                Debug.Log("E");
                 if (!interacting)
                 {
+
                     Interact();
                     interacting = true;
                 }
@@ -66,6 +76,7 @@ public class WellInteraction : MonoBehaviour
 
     void InteractHold()
     {
+        
         interactTimer += Time.deltaTime;
 
         interactSlider.value = interactTimer * 0.5f;
@@ -73,13 +84,26 @@ public class WellInteraction : MonoBehaviour
         // TODO: Only interact if the player has coins to deposit
         if (interactTimer >= 2f)
         {
-            Debug.Log("Moneda puesta");
-            interactTimer = 0;
+            //scriptLista.monedasRecogidas.Clear();
+            //Debug.Log("Monedas puestas");
+            //interactTimer = 0;
         }
+    }
+    void DropCoins()
+    {
+        for (int i = 0; i < scriptLista.monedasRecogidas.Count; i++)
+        {
+            scriptLista.monedasRecogidas[i].gameObject.SetActive(false);
+            
+            Debug.Log("Monedas puestas");
+        }
+        scriptLista.monedasRecogidas.Clear();
+        Debug.Log("Lista Limpia");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.gameObject.tag == "Player")
         {
             readyToInteract = true;
