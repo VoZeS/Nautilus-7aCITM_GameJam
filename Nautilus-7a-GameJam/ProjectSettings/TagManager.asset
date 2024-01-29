@@ -9,6 +9,7 @@ TagManager:
   - Caja
   - Coin
   - Enredadera
+  - Ball
   layers:
   - Default
   - TransparentFX

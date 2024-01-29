@@ -2,6 +2,7 @@
 
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Follow : MonoBehaviour
 {
@@ -12,10 +13,13 @@ public class Follow : MonoBehaviour
     [SerializeField] public float range = 10f;
     [SerializeField] public float nearRange = 1.2f;
 
+    private int orientation; // 0 left, 1 right
+
+    private IsoCharacter playerScript;
 
     private void Start()
     {
-        
+        playerScript = player.GetComponent<IsoCharacter>();
     }
 
     private void Update()
@@ -24,9 +28,30 @@ public class Follow : MonoBehaviour
         Vector2 direction = player.transform.position - transform.position;
         direction.Normalize();
 
-        if(distance2cube < range && distance2cube > nearRange)
+        if (distance2cube < range && distance2cube > nearRange)
         {
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed*Time.deltaTime);
+            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+        }
+
+        orientation = playerScript.orientation;
+        
+        UpdateOrientation(orientation);
+
+    }
+
+    void UpdateOrientation(int orient)
+    {
+
+        switch (orient)
+        {
+            case 0:
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                break;
+            case 1:
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                break;
+            default:
+                break;
         }
     }
 }
