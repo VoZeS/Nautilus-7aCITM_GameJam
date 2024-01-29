@@ -52,16 +52,6 @@ public class IsoCharacter : MonoBehaviour
         rb.velocity = new Vector2(velocidad.x, velocidad.y);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        
-        if (collision.gameObject.tag == "Caja")
-        {
- 
-            velocidadMovimiento = 5;
-
-        }
-    }
 
     void UpdateOrientation(float movimientoHorizontal, Vector2 direccion)
     {
