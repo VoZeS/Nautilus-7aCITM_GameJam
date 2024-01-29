@@ -28,7 +28,7 @@ public class ElevatorScript : MonoBehaviour
     {
 
         isInTrigger = true;
-        Debug.Log("In trigger");
+        
 
     }
 
@@ -36,7 +36,7 @@ public class ElevatorScript : MonoBehaviour
     {
 
         isInTrigger = false;
-        Debug.Log("Out trigger");
+        
 
     }
 
@@ -44,7 +44,7 @@ public class ElevatorScript : MonoBehaviour
     {
         isMoving = true;
 
-        Debug.Log("Received");
+        
 
         // Mueve la caja hacia arriba
         float elapsedTime = 0f;
