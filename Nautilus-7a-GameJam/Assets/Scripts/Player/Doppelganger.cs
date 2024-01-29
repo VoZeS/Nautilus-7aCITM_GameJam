@@ -11,7 +11,6 @@ public class Doppelganger : MonoBehaviour
     public GameObject player;
     public Vector3 offset;
 
-    private Rigidbody2D rb;
     static public int orientation; // 0 left, 1 right
 
     private bool hitted;
@@ -19,7 +18,6 @@ public class Doppelganger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
         orientation = 1;
     }
     private void Update()

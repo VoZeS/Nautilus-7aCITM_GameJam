@@ -16,11 +16,16 @@ public class TilesMovementPlayer : MonoBehaviour
 
     private int orientation; //0 left, 1 right
 
+    private Animator playerAnimator;
+    public GameObject parent;
+
     private void Start()
     {
         targetPosition = transform.position;
         hasCollided = false;
         orientation = 1;
+
+        playerAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -28,21 +33,17 @@ public class TilesMovementPlayer : MonoBehaviour
     {
         UpdateOrientation();
 
-        if ((Vector2)transform.position != targetPosition)
+        if ((Vector2)parent.transform.position != targetPosition)
         {
-            
-
             if (!hasCollided)
             {
-                transform.position = Vector2.MoveTowards(transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+                parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
             }
             else
             {
                 targetPosition = lastPosition;
-                transform.position = Vector2.MoveTowards(transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
-
+                parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
             }
-
         }
         else
         {
@@ -62,31 +63,39 @@ public class TilesMovementPlayer : MonoBehaviour
 
         if (movimientoHorizontal > 0f)
         {
+            playerAnimator.SetBool("Walking", true);
             orientation = 1;
-            lastPosition = transform.position;
-            targetPosition = new Vector2(transform.position.x + tileOffset, transform.position.y);
+            lastPosition = parent.transform.position;
+            targetPosition = new Vector2(parent.transform.position.x + tileOffset, parent.transform.position.y);
 
         }
-        if (movimientoHorizontal < 0f)
+        else if(movimientoHorizontal < 0f)
         {
+            playerAnimator.SetBool("Walking", true);
             orientation = 0;
-            lastPosition = transform.position;
-            targetPosition = new Vector2(transform.position.x - tileOffset, transform.position.y);
+            lastPosition = parent.transform.position;
+            targetPosition = new Vector2(parent.transform.position.x - tileOffset, parent.transform.position.y);
 
         }
-        if (movimientoVertical > 0f)
+        else if(movimientoVertical > 0f)
         {
-            lastPosition = transform.position;
-            targetPosition = new Vector2(transform.position.x, transform.position.y + tileOffset);
+            playerAnimator.SetBool("Walking", true);
+            lastPosition = parent.transform.position;
+            targetPosition = new Vector2(parent.transform.position.x, parent.transform.position.y + tileOffset);
 
         }
-        if (movimientoVertical < 0f)
+        else if(movimientoVertical < 0f)
         {
-            lastPosition = transform.position;
-            targetPosition = new Vector2(transform.position.x, transform.position.y - tileOffset);
+            playerAnimator.SetBool("Walking", true);
+            lastPosition = parent.transform.position;
+            targetPosition = new Vector2(parent.transform.position.x, parent.transform.position.y - tileOffset);
 
         }
+        else
+        {
+            playerAnimator.SetBool("Walking", false);
 
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

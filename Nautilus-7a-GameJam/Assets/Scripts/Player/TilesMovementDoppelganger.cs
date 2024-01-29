@@ -13,23 +13,28 @@ public class TilesMovementDoppelganger : MonoBehaviour
 
     private bool hasCollided;
 
+    public GameObject parent;
+    private Animator doppelAnimator;
+
     private void Start()
     {
         targetPosition = transform.position;
         hasCollided = false;
+
+        doppelAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if ((Vector2)transform.position != targetPosition)
+        if ((Vector2)parent.transform.position != targetPosition)
         {
             if(!hasCollided && !TilesMovementPlayer.hasCollided)
-                transform.position = Vector2.MoveTowards(transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+                parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
             else
             {
                 targetPosition = lastPosition;
-                transform.position = Vector2.MoveTowards(transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+                parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
 
             }
 
@@ -50,28 +55,37 @@ public class TilesMovementDoppelganger : MonoBehaviour
 
         if (movimientoHorizontal > 0f)
         {
+            doppelAnimator.SetBool("Walking", true);
             Doppelganger.orientation = 1;
-            lastPosition = transform.position;
-            targetPosition = new Vector2(transform.position.x + tileOffset, transform.position.y);
+            lastPosition = parent.transform.position;
+            targetPosition = new Vector2(parent.transform.position.x + tileOffset, parent.transform.position.y);
 
         }
-        if (movimientoHorizontal < 0f)
+        else if(movimientoHorizontal < 0f)
         {
+            doppelAnimator.SetBool("Walking", true);
             Doppelganger.orientation = 0;
-            lastPosition = transform.position;
-            targetPosition = new Vector2(transform.position.x - tileOffset, transform.position.y);
+            lastPosition = parent.transform.position;
+            targetPosition = new Vector2(parent.transform.position.x - tileOffset, parent.transform.position.y);
 
         }
-        if (movimientoVertical > 0f)
+        else if(movimientoVertical > 0f)
         {
-            lastPosition = transform.position;
-            targetPosition = new Vector2(transform.position.x, transform.position.y + tileOffset);
+            doppelAnimator.SetBool("Walking", true);
+            lastPosition = parent.transform.position;
+            targetPosition = new Vector2(parent.transform.position.x, parent.transform.position.y + tileOffset);
 
         }
-        if (movimientoVertical < 0f)
+        else if(movimientoVertical < 0f)
         {
-            lastPosition = transform.position;
-            targetPosition = new Vector2(transform.position.x, transform.position.y - tileOffset);
+            doppelAnimator.SetBool("Walking", true);
+            lastPosition = parent.transform.position;
+            targetPosition = new Vector2(parent.transform.position.x, parent.transform.position.y - tileOffset);
+
+        }
+        else
+        {
+            doppelAnimator.SetBool("Walking", false);
 
         }
 
