@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &45298096 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7084050962727696708, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
+  m_PrefabInstance: {fileID: 126172184}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &126172184
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1505,6 +1510,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DragonCoinHand
       objectReference: {fileID: 0}
+    - target: {fileID: 1166124167717104505, guid: 56868a354bbb5464489482a07a15607f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6651103419084994678, guid: 56868a354bbb5464489482a07a15607f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 4.16
@@ -1678,7 +1687,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &5489464299949686425
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1696,7 +1705,7 @@ MonoBehaviour:
   distance2cube: 0
   range: 10
   nearRange: 1.2
-  parent: {fileID: 0}
+  parent: {fileID: 45298096}
 --- !u!4 &6414553903750847563
 Transform:
   m_ObjectHideFlags: 0
