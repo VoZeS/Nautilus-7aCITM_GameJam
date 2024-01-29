@@ -35,6 +35,7 @@ public class Followers : MonoBehaviour
             case 3:
                 fleeOldManScript.distanciaUmbral = 0f;
                 fleeOldManScript.velocidadAlejamiento = 0f;
+                GetKey.canGetKey = true;
                 break;
             default:
                 fleeOldManScript.distanciaUmbral = 5f;
