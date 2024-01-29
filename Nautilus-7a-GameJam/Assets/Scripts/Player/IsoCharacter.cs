@@ -11,9 +11,7 @@ public class IsoCharacter : MonoBehaviour
     public float velocidadMovimiento = 5f;
 
     private Rigidbody2D rb;
-    private int orientation; // 0 left, 1 right
-
-    public Animator playerAnimator;
+    public int orientation; // 0 left, 1 right
 
     void Start()
     {
