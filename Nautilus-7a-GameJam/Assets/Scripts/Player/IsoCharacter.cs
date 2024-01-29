@@ -6,17 +6,24 @@ public class IsoCharacter : MonoBehaviour
 {
     public List<Transform> monedasRecogidas = new List<Transform>();
     public float coinCount = 0;
+
     [Header("Character")]
     public int characterScale = 5;
     public float velocidadMovimiento = 5f;
 
+    [Header("Movement")]
+    public GameObject parent;
     private Rigidbody2D rb;
     public int orientation; // 0 left, 1 right
 
+    private Animator playerAnimator;
+
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = parent.GetComponent<Rigidbody2D>();
         orientation = 1;
+
+        playerAnimator = GetComponent<Animator>();
     }
 
     void Update()
@@ -33,6 +40,8 @@ public class IsoCharacter : MonoBehaviour
 
     private void Walk(out float movimientoHorizontal, out Vector2 velocidad)
     {
+        playerAnimator.SetBool("Walking", true);
+
         // Movimiento en un juego 2D isométrico
         movimientoHorizontal = Input.GetAxis("Horizontal");
         float movimientoVertical = Input.GetAxis("Vertical");
@@ -45,7 +54,6 @@ public class IsoCharacter : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
         
         if (collision.gameObject.tag == "Caja")
         {
@@ -65,6 +73,11 @@ public class IsoCharacter : MonoBehaviour
                 orientation = 1;
             else if (movimientoHorizontal < 0f)
                 orientation = 0;
+        }
+        else
+        {
+            playerAnimator.SetBool("Walking", false);
+
         }
 
         switch (orientation)
