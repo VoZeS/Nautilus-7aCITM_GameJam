@@ -91,6 +91,7 @@ public class WellInteraction : MonoBehaviour
     }
     void DropCoins()
     {
+        scriptLista.velocidadMovimiento = 5;
         for (int i = 0; i < scriptLista.monedasRecogidas.Count; i++)
         {
             scriptLista.monedasRecogidas[i].gameObject.SetActive(false);

@@ -107,6 +107,8 @@ MonoBehaviour:
   velocidadMovimiento: 3
   parent: {fileID: 7084050962727696708}
   orientation: 0
+  movimientoHorizontal: 0
+  velocidad: {x: 0, y: 0}
 --- !u!61 &2590681493774976571
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -204,11 +206,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5319201462319162923}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 4baa950ef510a984283c9507ebfa4d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fleeOldManScript: {fileID: 0}
 --- !u!95 &2276284055297433906
 Animator:
   serializedVersion: 5
