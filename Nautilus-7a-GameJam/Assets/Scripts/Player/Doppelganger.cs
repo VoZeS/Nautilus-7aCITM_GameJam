@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Doppelganger : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class Doppelganger : MonoBehaviour
         {
             Debug.Log("HAS DERROTADO A TU DOPPELGANGER");
 
-            // TODO: WIN GAME
+            SceneManager.LoadScene("FinalCutscene");
         }
     }
     public void UpdateOrientation()

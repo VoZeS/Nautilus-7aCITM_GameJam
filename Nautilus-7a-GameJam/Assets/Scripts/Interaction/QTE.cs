@@ -11,6 +11,8 @@ public class QTE : MonoBehaviour
     public Image pressR;
     public Image pressX;
     public Slider sliderTime;
+    public Image[] heart;
+    public GameObject cloud;
 
     [Header("Logic")]
     public Follow followScript;
@@ -34,9 +36,22 @@ public class QTE : MonoBehaviour
         pressQ.gameObject.SetActive(false);
         pressR.gameObject.SetActive(false);
         pressX.gameObject.SetActive(false);
+
         sliderTime.gameObject.SetActive(false);
 
+        heart[0].gameObject.SetActive(false);
+        heart[1].gameObject.SetActive(false);
+        heart[2].gameObject.SetActive(false);
+        heart[3].gameObject.SetActive(false);
+        heart[4].gameObject.SetActive(false);
+        heart[5].gameObject.SetActive(false);
+
         followScript.enabled = false;
+
+        for(int i = 0; i < heart.Length; i++)
+        {
+            heart[i].gameObject.SetActive(false);
+        }
     }
 
     private void Update()
@@ -61,6 +76,13 @@ public class QTE : MonoBehaviour
 
                     sliderTime.gameObject.SetActive(true);
 
+                    heart[0].gameObject.SetActive(false);
+                    heart[1].gameObject.SetActive(false);
+                    heart[2].gameObject.SetActive(false);
+                    heart[3].gameObject.SetActive(false);
+                    heart[4].gameObject.SetActive(false);
+                    heart[5].gameObject.SetActive(false);
+
                     break;
                 case 1:
                     pressQ.gameObject.SetActive(true);
@@ -81,6 +103,14 @@ public class QTE : MonoBehaviour
                     {
                         youLost = true;
                     }
+
+                    heart[0].gameObject.SetActive(true);
+                    heart[1].gameObject.SetActive(false);
+                    heart[2].gameObject.SetActive(false);
+                    heart[3].gameObject.SetActive(false);
+                    heart[4].gameObject.SetActive(false);
+                    heart[5].gameObject.SetActive(false);
+
                     break;
                 case 2:
                     pressX.gameObject.SetActive(true);
@@ -101,6 +131,14 @@ public class QTE : MonoBehaviour
                     {
                         youLost = true;
                     }
+
+                    heart[0].gameObject.SetActive(false);
+                    heart[1].gameObject.SetActive(true);
+                    heart[2].gameObject.SetActive(false);
+                    heart[3].gameObject.SetActive(false);
+                    heart[4].gameObject.SetActive(false);
+                    heart[5].gameObject.SetActive(false);
+
                     break;
                 case 3:
                     pressR.gameObject.SetActive(true);
@@ -121,6 +159,14 @@ public class QTE : MonoBehaviour
                     {
                         youLost = true;
                     }
+
+                    heart[0].gameObject.SetActive(false);
+                    heart[1].gameObject.SetActive(false);
+                    heart[2].gameObject.SetActive(true);
+                    heart[3].gameObject.SetActive(false);
+                    heart[4].gameObject.SetActive(false);
+                    heart[5].gameObject.SetActive(false);
+
                     break;
                 case 4:
                     pressQ.gameObject.SetActive(true);
@@ -141,6 +187,14 @@ public class QTE : MonoBehaviour
                     {
                         youLost = true;
                     }
+
+                    heart[0].gameObject.SetActive(false);
+                    heart[1].gameObject.SetActive(false);
+                    heart[2].gameObject.SetActive(false);
+                    heart[3].gameObject.SetActive(true);
+                    heart[4].gameObject.SetActive(false);
+                    heart[5].gameObject.SetActive(false);
+
                     break;
                 case 5:
                     pressX.gameObject.SetActive(true);
@@ -161,6 +215,14 @@ public class QTE : MonoBehaviour
                     {
                         youLost = true;
                     }
+
+                    heart[0].gameObject.SetActive(false);
+                    heart[1].gameObject.SetActive(false);
+                    heart[2].gameObject.SetActive(false);
+                    heart[3].gameObject.SetActive(false);
+                    heart[4].gameObject.SetActive(true);
+                    heart[5].gameObject.SetActive(false);
+
                     break;
                 case 6:
                     pressQ.gameObject.SetActive(true);
@@ -181,6 +243,14 @@ public class QTE : MonoBehaviour
                     {
                         youLost = true;
                     }
+
+                    heart[0].gameObject.SetActive(false);
+                    heart[1].gameObject.SetActive(false);
+                    heart[2].gameObject.SetActive(false);
+                    heart[3].gameObject.SetActive(false);
+                    heart[4].gameObject.SetActive(false);
+                    heart[5].gameObject.SetActive(true);
+
                     break;
             }
         }
@@ -191,6 +261,12 @@ public class QTE : MonoBehaviour
             pressR.gameObject.SetActive(false);
             pressX.gameObject.SetActive(false);
             sliderTime.gameObject.SetActive(false);
+            heart[0].gameObject.SetActive(false);
+            heart[1].gameObject.SetActive(false);
+            heart[2].gameObject.SetActive(false);
+            heart[3].gameObject.SetActive(false);
+            heart[4].gameObject.SetActive(false);
+            heart[5].gameObject.SetActive(false);
         }
 
 
@@ -218,6 +294,15 @@ public class QTE : MonoBehaviour
             followScript.enabled = true;
 
             youWin = false;
+
+            cloud.gameObject.SetActive(false);
+
+            heart[0].gameObject.SetActive(false);
+            heart[1].gameObject.SetActive(false);
+            heart[2].gameObject.SetActive(false);
+            heart[3].gameObject.SetActive(false);
+            heart[4].gameObject.SetActive(false);
+            heart[5].gameObject.SetActive(false);
         }
     }
 

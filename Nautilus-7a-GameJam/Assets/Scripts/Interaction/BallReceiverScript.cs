@@ -6,12 +6,12 @@ using UnityEngine.UI;
 public class BallReceiverScript : MonoBehaviour
 {
     public GameObject ball;
-    public GameObject player;
 
     private bool readyToGiveBall;
 
     [Header("UI")]
     public Image interactSprite;
+    public GameObject cloudGirl;
 
     [Header("Girl")]
     public GameObject girl;
@@ -24,6 +24,8 @@ public class BallReceiverScript : MonoBehaviour
         girlAnimator = girl.GetComponent<Animator>();
         followScript = girl.GetComponent<Follow>();
         followScript.enabled = false;
+
+        cloudGirl.SetActive(true);
     }
 
     // Update is called once per frame
@@ -51,6 +53,7 @@ public class BallReceiverScript : MonoBehaviour
 
         girlAnimator.SetTrigger("HasBall");
         ball.SetActive(false);
+        cloudGirl.SetActive(false);
         followScript.enabled = true;
 
         Followers.followers++;
