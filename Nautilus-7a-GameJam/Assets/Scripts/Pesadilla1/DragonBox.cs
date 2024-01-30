@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DragonBox : MonoBehaviour
 {
-
+    public List<Transform> monedasDragonTotales = new List<Transform>();
     GameObject dragon;
     Dragon scriptLista;
 
@@ -26,12 +26,13 @@ public class DragonBox : MonoBehaviour
     {
         for (int i = 0; i < scriptLista.monedasDragonRecogidas.Count; i++)
         {
+            monedasDragonTotales.Add(scriptLista.monedasDragonRecogidas[i]);
             scriptLista.monedasDragonRecogidas[i].gameObject.SetActive(false);
 
-            Debug.Log("Monedas puestas");
+            Debug.Log("Monedas dragon puestas");
         }
         scriptLista.monedasDragonRecogidas.Clear();
-        Debug.Log("Lista Limpia");
+        Debug.Log("Lista ragon Limpia");
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

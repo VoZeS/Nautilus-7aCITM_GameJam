@@ -116,7 +116,7 @@ public class CoinFollow : MonoBehaviour
         }
         else if(objetoAseguir == null)
         {
-            Debug.Log("F");
+            //Debug.Log("F");
         }
     }
 }

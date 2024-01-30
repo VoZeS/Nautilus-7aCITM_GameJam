@@ -16,6 +16,8 @@ public class WellInteraction : MonoBehaviour
     GameObject player;
     IsoCharacter scriptLista;
 
+    public List<Transform> monedasPlayerTotales = new List<Transform>();
+
 
     private void Start()
     {
@@ -94,6 +96,7 @@ public class WellInteraction : MonoBehaviour
         scriptLista.velocidadMovimiento = 5;
         for (int i = 0; i < scriptLista.monedasRecogidas.Count; i++)
         {
+            monedasPlayerTotales.Add(scriptLista.monedasRecogidas[i]);
             scriptLista.monedasRecogidas[i].gameObject.SetActive(false);
             
             Debug.Log("Monedas puestas");

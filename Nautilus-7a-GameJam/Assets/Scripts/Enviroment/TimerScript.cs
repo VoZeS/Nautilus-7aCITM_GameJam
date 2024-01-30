@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
 {
+    GameObject dragon;
+    DragonBox scriptTotalDragon;
+
+    GameObject player;
+    WellInteraction scriptTotalPlayer;
 
     public float tiempoLimite = 10.0f;
     private float tiempoRestante;
@@ -24,6 +29,11 @@ public class TimerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        dragon = GameObject.Find("DragonCoinHand");
+        scriptTotalDragon = dragon.GetComponent<DragonBox>();
+
+        player = GameObject.Find("CharacterIso");
+        scriptTotalPlayer = player.GetComponent<WellInteraction>();
 
         tiempoRestante = tiempoLimite;
 
@@ -60,7 +70,16 @@ public class TimerScript : MonoBehaviour
 
         if (tiempoRestante <= 0 && alive)
         {
-            PerderJuego();
+            if(scriptTotalDragon.monedasDragonTotales.Count>scriptTotalPlayer.monedasPlayerTotales.Count)
+            {
+                PerderJuego();
+                alive = false;
+            }
+            else
+            {
+                alive = false;
+            }
+            //PerderJuego();
             alive = false;
         }
     }
