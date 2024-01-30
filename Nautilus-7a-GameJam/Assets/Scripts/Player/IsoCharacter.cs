@@ -17,6 +17,7 @@ public class IsoCharacter : MonoBehaviour
     public int orientation; // 0 left, 1 right
 
     private Animator playerAnimator;
+    public Animator shadowAnimator;
 
     public float movimientoHorizontal;
     public Vector2 velocidad;
@@ -60,6 +61,7 @@ public class IsoCharacter : MonoBehaviour
         }
 
         playerAnimator.SetBool("Walking", true);
+        shadowAnimator.SetBool("Walking", true);
 
         // Movimiento en un juego 2D isométrico
         movimientoHorizontal = Input.GetAxis("Horizontal");
@@ -93,6 +95,7 @@ public class IsoCharacter : MonoBehaviour
         else
         {
             playerAnimator.SetBool("Walking", false);
+            shadowAnimator.SetBool("Walking", false);
         }
 
         switch (orientation)

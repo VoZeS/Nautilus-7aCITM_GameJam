@@ -8,10 +8,22 @@ public class WinTrigger : MonoBehaviour
 
     public TimerScript timerScript;
 
+    public Collider2D[] NPCsColliders;
+    public Collider2D[] limitsColliders;
+
     // Start is called before the first frame update
     void Start()
     {
         winNightmare2 = false;
+
+        for(int i = 0; i < limitsColliders.Length; i++)
+        {
+            for(int j = 0; j < NPCsColliders.Length; j++)
+            {
+                Physics2D.IgnoreCollision(NPCsColliders[j], limitsColliders[i], true);
+
+            }
+        }
     }
 
     private void Update()

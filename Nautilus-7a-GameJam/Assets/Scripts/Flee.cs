@@ -12,6 +12,7 @@ public class Flee : MonoBehaviour
 
     public GameObject parent;
     private Animator fleeAnimator;
+    public Animator shadowAnimator;
 
     private Vector3 lastPosition;
 
@@ -55,10 +56,12 @@ public class Flee : MonoBehaviour
         if (fleeAnimator != null && isMoving)
         {
             fleeAnimator.SetBool("Walking", true);
+            shadowAnimator.SetBool("Walking", true);
         }
         else if (fleeAnimator != null && !isMoving)
         {
             fleeAnimator.SetBool("Walking", false);
+            shadowAnimator.SetBool("Walking", false);
 
         }
     }
