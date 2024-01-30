@@ -30,7 +30,9 @@ public class TimerScript : MonoBehaviour
     void Start()
     {
         dragon = GameObject.Find("DragonCoinHand");
-        scriptTotalDragon = dragon.GetComponent<DragonBox>();
+
+        if(SceneManager.GetActiveScene().name == "Pesadilla1")
+            scriptTotalDragon = dragon.GetComponent<DragonBox>();
 
         player = GameObject.Find("CharacterIso");
         scriptTotalPlayer = player.GetComponent<WellInteraction>();
@@ -70,17 +72,21 @@ public class TimerScript : MonoBehaviour
 
         if (tiempoRestante <= 0 && alive)
         {
-            if(scriptTotalDragon.monedasDragonTotales.Count>scriptTotalPlayer.monedasPlayerTotales.Count)
+            if(scriptTotalDragon != null )
             {
-                PerderJuego();
+                if (scriptTotalDragon.monedasDragonTotales.Count > scriptTotalPlayer.monedasPlayerTotales.Count)
+                {
+                    PerderJuego();
+                    alive = false;
+                }
+                else
+                {
+                    alive = false;
+                }
+                //PerderJuego();
                 alive = false;
             }
-            else
-            {
-                alive = false;
-            }
-            //PerderJuego();
-            alive = false;
+            
         }
     }
 
