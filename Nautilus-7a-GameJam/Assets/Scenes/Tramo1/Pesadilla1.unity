@@ -1316,6 +1316,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSprite: {fileID: 1422429374}
   interactSlider: {fileID: 246749546}
+  monedasPlayerTotales: []
 --- !u!1 &820666055
 GameObject:
   m_ObjectHideFlags: 0
@@ -1574,6 +1575,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactSprite: {fileID: 1422429374}
   interactSlider: {fileID: 246749546}
+  monedasPlayerTotales: []
 --- !u!4 &1024575147 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2401061516508272805, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
@@ -2435,6 +2437,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdb5bd71bdd8ec34f885c21d92596c1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monedasDragonTotales: []
 --- !u!50 &1945791144
 Rigidbody2D:
   serializedVersion: 4
@@ -2586,6 +2589,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1193895685804240370, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4349916429003600934, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.10848606
