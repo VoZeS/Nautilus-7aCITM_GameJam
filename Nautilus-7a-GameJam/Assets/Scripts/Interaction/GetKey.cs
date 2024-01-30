@@ -13,8 +13,9 @@ public class GetKey : MonoBehaviour
     [Header("UI")]
     public Image interactImage;
 
-    [Header("Player")]
+    [Header("Animators")]
     public Animator playerAnimator;
+    public Animator oldManAnimator;
 
     [Header("Key")]
     public GameObject key;
@@ -26,6 +27,11 @@ public class GetKey : MonoBehaviour
         hasKey = false;
         interactImage.gameObject.SetActive(false);
 
+        if (playerAnimator != null)
+            playerAnimator.SetBool("HasKey", false);
+
+        if (oldManAnimator != null)
+            oldManAnimator.SetBool("HasKey", true);
     }
 
     private void Update()
@@ -40,16 +46,16 @@ public class GetKey : MonoBehaviour
 
                 hasKey = true;
 
-                playerAnimator.SetBool("HasKey", true);
+                if(playerAnimator != null)
+                    playerAnimator.SetBool("HasKey", true);
 
-                if(SceneManager.GetActiveScene().name == "Realidad2")
+                if(oldManAnimator != null)
+                    oldManAnimator.SetBool("HasKey", false);
+
+                if (SceneManager.GetActiveScene().name == "Realidad2" && key != null)
                 {
                     key.SetActive(false);
                 }
-
-                //TODO: Cambio sprite viejo (con llave --> sin llave)
-
-                //TODO: Cambio sprite personaje (sin llave --> con llave)
 
             }
         }
