@@ -74,6 +74,7 @@ public class CoinFollow : MonoBehaviour
             {
                 dragonScript.monedasDragonRecogidas.Add(transform);
                 objetoAseguir = other.transform;
+                collider.enabled = false;
             }
             else
             {
@@ -82,7 +83,7 @@ public class CoinFollow : MonoBehaviour
 
             
 
-            //collider.enabled = false;
+            
 
         } 
     }

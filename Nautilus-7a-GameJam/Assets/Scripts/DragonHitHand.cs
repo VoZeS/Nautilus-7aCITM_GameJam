@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class DragonHitHand : MonoBehaviour
@@ -5,14 +6,20 @@ public class DragonHitHand : MonoBehaviour
     public Transform jugador;
     public float velocidadMovimiento = 5f; // Velocidad de movimiento hacia el jugador.
     public float tiempoQuieto = 2f; // Tiempo que el objeto se queda quieto después de llegar al jugador.
-    public float tiempoQuieto2 = 2f;
+    public float tiempoQuieto2 = 2f; // Tiempo que el objeto se queda quieto después de llegar al jugador.
+
+    [SerializeField]public float distancia = 0.1f;
 
     private Vector3 posicionOriginal;
     private bool llegoAlJugador = false;
+    private bool waiting = true;
+    private bool waiting2 = true;
     private Vector3 posicionJugadorOriginal;
 
     void Start()
     {
+
+       
         // Guardar la posición original al inicio.
         posicionOriginal = transform.position;
 
@@ -22,16 +29,39 @@ public class DragonHitHand : MonoBehaviour
 
     void Update()
     {
-        if (!llegoAlJugador)
+        if (!llegoAlJugador && !waiting)
         {
-            Invoke("MoverHaciaJugador", tiempoQuieto);
-            tiempoQuieto = 2f;
+
+            MoverHaciaJugador();
+
+        }
+        else if (waiting)
+        {
+            tiempoQuieto -= Time.deltaTime;
+            if (tiempoQuieto <= 0f)
+            {
+                // Reiniciar el tiempo y volver a la posición original.
+                waiting = false;
+                tiempoQuieto = 4f;
+                ActualizarPosicionJugadorOriginal();
+            }
+            
+        }
+        else if (waiting2)
+        {
+            tiempoQuieto2 -= Time.deltaTime;
+            if (tiempoQuieto2 <= 0f)
+            {
+                // Reiniciar el tiempo y volver a la posición original.
+                waiting2 = false;
+                tiempoQuieto2 = 2f;
+                ActualizarPosicionJugadorOriginal();
+            }
+
         }
         else
         {
-            // Permanecer quieto durante el tiempo especificado.
-            Invoke("VolverAPosicionOriginal", tiempoQuieto2);
-            tiempoQuieto2 = 2f;
+            VolverAPosicionOriginal();
         }
     }
 
@@ -49,9 +79,14 @@ public class DragonHitHand : MonoBehaviour
             transform.Translate(direccion * desplazamiento);
 
             // Verificar si ha llegado al jugador.
-            if (Vector3.Distance(transform.position, posicionJugadorOriginal) < 0.1f)
+            if (Vector3.Distance(transform.position, posicionJugadorOriginal) <=distancia)
             {
+                
+                transform.Translate(Vector3.zero);
+
                 llegoAlJugador = true;
+                waiting2 = true;
+
             }
         }
         else
@@ -61,19 +96,20 @@ public class DragonHitHand : MonoBehaviour
         }
     }
 
+    
     private void VolverAPosicionOriginal()
     {
         // Mover el objeto de vuelta a la posición original usando transform.Translate.
         transform.Translate((posicionOriginal - transform.position).normalized * velocidadMovimiento * Time.deltaTime);
 
         // Verificar si ha vuelto a la posición original.
-        if (Vector3.Distance(transform.position, posicionOriginal) < 0.1f)
+        if (Vector3.Distance(transform.position, posicionOriginal) <= distancia)
         {
             // Reiniciar la bandera al llegar a la posición original.
             llegoAlJugador = false;
-
+            waiting = true;
             // Actualizar la posición original del jugador.
-            ActualizarPosicionJugadorOriginal();
+            
         }
     }
 
