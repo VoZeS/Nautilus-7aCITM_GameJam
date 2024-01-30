@@ -16,6 +16,8 @@ public class Doppelganger : MonoBehaviour
 
     private bool hitted;
 
+    public TimerScript timerScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +31,7 @@ public class Doppelganger : MonoBehaviour
         {
             Debug.Log("HAS DERROTADO A TU DOPPELGANGER");
 
-            SceneManager.LoadScene("FinalCutscene");
+            timerScript.GanarJuego();
         }
     }
     public void UpdateOrientation()

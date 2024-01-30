@@ -104,7 +104,7 @@ public class TimerScript : MonoBehaviour
         }
     }
 
-    void PerderJuego()
+    public void PerderJuego()
     {
         Debug.Log("Has perdido, se acabó el tiempo!!!");
 
@@ -127,6 +127,37 @@ public class TimerScript : MonoBehaviour
         {
             Debug.Log("Has perdido la pesadilla 3");
             resultNightmare3 = 1; //lose
+            PlayerPrefs.SetInt("Nightmare3", resultNightmare3);
+            PlayerPrefs.Save();
+        }
+        // -----------------------------------
+
+        StartCoroutine(FadeOutAndReload());
+    }
+
+    public void GanarJuego()
+    {
+        Debug.Log("Has perdido, se acabó el tiempo!!!");
+
+        // ------------------------------------------------------- NIGHTMARES RESULTS
+        if (SceneManager.GetActiveScene().name == "Pesadilla1")
+        {
+            Debug.Log("Has ganado la pesadilla 1");
+            resultNightmare1 = 0; //win
+            PlayerPrefs.SetInt("Nightmare1", resultNightmare1);
+            PlayerPrefs.Save();
+        }
+        else if (SceneManager.GetActiveScene().name == "Pesadilla2")
+        {
+            Debug.Log("Has ganado la pesadilla 2");
+            resultNightmare2 = 0; //win
+            PlayerPrefs.SetInt("Nightmare2", resultNightmare2);
+            PlayerPrefs.Save();
+        }
+        else if (SceneManager.GetActiveScene().name == "Pesadilla3")
+        {
+            Debug.Log("Has ganado la pesadilla 3");
+            resultNightmare3 = 0; //win
             PlayerPrefs.SetInt("Nightmare3", resultNightmare3);
             PlayerPrefs.Save();
         }
@@ -166,7 +197,7 @@ public class TimerScript : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
-    void GoToNextLevel()
+    public void GoToNextLevel()
     {
         if (SceneManager.GetActiveScene().name == "Pesadilla1")
             SceneManager.LoadScene("Realidad2");
