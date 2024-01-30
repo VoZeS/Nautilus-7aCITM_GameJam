@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitsNightmare3 : MonoBehaviour
 {
-    public int lives = 2;
+    static public int lives = 2;
     private bool hitted;
 
     private void Start()
@@ -14,8 +14,6 @@ public class HitsNightmare3 : MonoBehaviour
 
     private void Update()
     {
-        //TODO: Añadir escudos
-
         if(hitted)
         {
             Debug.Log("-1 vida");

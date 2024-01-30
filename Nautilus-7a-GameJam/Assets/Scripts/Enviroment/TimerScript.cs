@@ -15,6 +15,12 @@ public class TimerScript : MonoBehaviour
     public UnityEngine.UI.Image pantallaFadeOut;
     private bool alive;
 
+    // --------------------------------------------- NIGHTMARES RESULTS
+    private int resultNightmare1; //0 win, 1 lose
+    private int resultNightmare2; //0 win, 1 lose
+    private int resultNightmare3; //0 win, 1 lose
+    // ------------
+
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +34,17 @@ public class TimerScript : MonoBehaviour
 
         alive = true;
 
+        // We set it as win, but if it loses will be set to 1
+        resultNightmare1 = 0;
+        PlayerPrefs.SetInt("Nightmare1", resultNightmare1);
+
+        resultNightmare2 = 0;
+        PlayerPrefs.SetInt("Nightmare2", resultNightmare2);
+
+        resultNightmare3 = 0;
+        PlayerPrefs.SetInt("Nightmare3", resultNightmare3);
+
+        PlayerPrefs.Save();
     }
 
     void IniciarContador()
@@ -64,6 +81,29 @@ public class TimerScript : MonoBehaviour
     {
         Debug.Log("Has perdido, se acabó el tiempo!!!");
 
+        // ------------------------------------------------------- NIGHTMARES RESULTS
+        if (SceneManager.GetActiveScene().name == "Pesadilla1")
+        {
+            Debug.Log("Has perdido la pesadilla 1");
+            resultNightmare1 = 1; //lose
+            PlayerPrefs.SetInt("Nightmare1", resultNightmare1);
+            PlayerPrefs.Save();
+        }
+        else if (SceneManager.GetActiveScene().name == "Pesadilla2")
+        {
+            Debug.Log("Has perdido la pesadilla 2");
+            resultNightmare2 = 1; //lose
+            PlayerPrefs.SetInt("Nightmare2", resultNightmare2);
+            PlayerPrefs.Save();
+        }
+        else if (SceneManager.GetActiveScene().name == "Pesadilla3")
+        {
+            Debug.Log("Has perdido la pesadilla 3");
+            resultNightmare3 = 1; //lose
+            PlayerPrefs.SetInt("Nightmare3", resultNightmare3);
+            PlayerPrefs.Save();
+        }
+        // -----------------------------------
 
         StartCoroutine(FadeOutAndReload());
     }
