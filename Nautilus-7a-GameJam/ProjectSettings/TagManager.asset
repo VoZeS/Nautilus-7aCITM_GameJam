@@ -12,6 +12,7 @@ TagManager:
   - Ball
   - Dragon
   - Bitter
+  - Hit
   layers:
   - Default
   - TransparentFX

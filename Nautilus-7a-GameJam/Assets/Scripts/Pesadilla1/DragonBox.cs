@@ -12,9 +12,8 @@ public class DragonBox : MonoBehaviour
 
     private void Start()
     {
-        dragon = GameObject.Find("DragonHand");
+        dragon = GameObject.Find("DragonCoinHand");
         scriptLista = dragon.GetComponent<Dragon>();
-
 
     }
 
@@ -37,7 +36,11 @@ public class DragonBox : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        DropCoins();
+        if(collision.gameObject.tag == "Dragon")
+        {
+            DropCoins();
+        }
+        
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
