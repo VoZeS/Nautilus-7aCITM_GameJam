@@ -14,6 +14,7 @@ public class QTE : MonoBehaviour
 
     [Header("Logic")]
     public Follow followScript;
+    public Animator brokenManAnimator;
 
     private bool inZone;
     private float timer;
@@ -203,6 +204,8 @@ public class QTE : MonoBehaviour
 
         if (youWin)
         {
+            brokenManAnimator.SetTrigger("PlayerWon");
+
             completed = true;
             Followers.followers++;
 
