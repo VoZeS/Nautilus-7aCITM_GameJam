@@ -35,7 +35,9 @@ public class TimerScript : MonoBehaviour
             scriptTotalDragon = dragon.GetComponent<DragonBox>();
 
         player = GameObject.Find("CharacterIso");
-        scriptTotalPlayer = player.GetComponent<WellInteraction>();
+
+        if (SceneManager.GetActiveScene().name == "Pesadilla1")
+            scriptTotalPlayer = player.GetComponent<WellInteraction>();
 
         tiempoRestante = tiempoLimite;
 

@@ -699,7 +699,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -764,7 +765,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (8)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -829,7 +831,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloIzquierdo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2476400318902524189, guid: 13c9b09dc45a0df4d9f738fd9a2a534a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1126,7 +1129,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (6)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1390,7 +1394,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (14)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1903,7 +1908,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3891607768632486349, guid: 8e78649cbd56280409b89c55623b69b8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2288,7 +2294,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloIzquierdo
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2476400318902524189, guid: 13c9b09dc45a0df4d9f738fd9a2a534a, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -2594,11 +2601,89 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (7)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
+--- !u!1 &1056001482
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1056001483}
+  - component: {fileID: 1056001484}
+  m_Layer: 6
+  m_Name: Floor1 (1)
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1056001483
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056001482}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.42, y: -3.83, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1584155179}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1056001484
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056001482}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 4.550676, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.101352, y: 1}
+  m_EdgeRadius: 0
 --- !u!4 &1078564249 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8458434882495498199, guid: 8e78649cbd56280409b89c55623b69b8, type: 3}
@@ -2822,7 +2907,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3228,7 +3314,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (3)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3327,6 +3414,83 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2276857296283958914, guid: b1fec1a1ddfbfa54999b344a068cbca5, type: 3}
   m_PrefabInstance: {fileID: 7392666701617482165}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1482244655
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1482244656}
+  - component: {fileID: 1482244657}
+  m_Layer: 6
+  m_Name: Floor1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1482244656
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482244655}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.64, y: -4.76, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1584155179}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1482244657
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1482244655}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 4.550676, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 10.101352, y: 1}
+  m_EdgeRadius: 0
 --- !u!1001 &1487750400
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3387,7 +3551,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (16)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3457,7 +3622,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (11)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3522,11 +3688,45 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (5)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
+--- !u!1 &1584155178
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1584155179}
+  m_Layer: 0
+  m_Name: FloorColliders
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1584155179
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1584155178}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.017223792, y: 0.25045022, z: -2.4057345}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1482244656}
+  - {fileID: 1056001483}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1604932049 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2276857296283958914, guid: b1fec1a1ddfbfa54999b344a068cbca5, type: 3}
@@ -3676,7 +3876,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3741,7 +3942,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (12)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4270,7 +4472,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (9)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4396,7 +4599,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (10)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4461,7 +4665,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (13)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4745,7 +4950,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (15)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5028,7 +5234,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: SueloMedio (4)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7724873996481059970, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -5109,11 +5316,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.46
+      value: -2.46
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.27
+      value: -3.52
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5444,3 +5651,4 @@ SceneRoots:
   - {fileID: 389374830}
   - {fileID: 817056232}
   - {fileID: 6807604699887647691}
+  - {fileID: 1584155179}

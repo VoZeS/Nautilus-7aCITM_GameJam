@@ -14,6 +14,7 @@ public class OpenDoor : MonoBehaviour
 
     [Header("Door")]
     public BoxCollider2D doorCol;
+    public Animator doorAnimator;
 
     [Header("Player")]
     public Animator playerAnimator;
@@ -36,6 +37,8 @@ public class OpenDoor : MonoBehaviour
             if (Input.GetKeyDown("e"))
             {
                 Debug.Log("HAS ABIERTO LA PUERTA");
+
+                doorAnimator.SetTrigger("OpenDoor");
 
                 doorCol.enabled = false;
 

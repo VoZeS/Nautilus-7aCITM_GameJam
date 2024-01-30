@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 3069dc5f1f949f54c8ebd1a44d7c0de3
+guid: a3fe0694ae0f26e4c862c5825bcc0c1e
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: puerta_0
+      name: Rampa_Deslizar_Anim (5)_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 48
-        width: 48
-        height: 48
+        y: 110
+        width: 150
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 934ae9de2552e2540ac6a18a7657b69b
-      internalID: 1955966728
+      spriteID: cc29d62a7d4ef5140a69f8d10ebb3609
+      internalID: 1243871235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puerta_1
+      name: Rampa_Deslizar_Anim (5)_1
       rect:
         serializedVersion: 2
-        x: 48
-        y: 48
-        width: 48
-        height: 48
+        x: 150
+        y: 110
+        width: 150
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,20 +145,104 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b634f707dd8661a439c39a27e4992991
-      internalID: -2041624949
+      spriteID: acc382eb251aca248836d997d5acfac1
+      internalID: 1657291045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: puerta_2
+      name: Rampa_Deslizar_Anim (5)_2
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 110
+        width: 150
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 123d6aae027086f4d992a08f59d516fa
+      internalID: -1460083023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rampa_Deslizar_Anim (5)_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 55
+        width: 150
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4542e798e6ddb42be9b604889c8901
+      internalID: 905646451
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rampa_Deslizar_Anim (5)_4
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 55
+        width: 150
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d391b2829bdea884cb4969f0da755feb
+      internalID: -1898113599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rampa_Deslizar_Anim (5)_5
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 55
+        width: 150
+        height: 55
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21b41e870e9b74446b3ddda76586aab5
+      internalID: 335874546
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Rampa_Deslizar_Anim (5)_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 48
-        height: 48
+        width: 150
+        height: 55
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,8 +250,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3402e23833656e94e9388b36396cb433
-      internalID: 1058111233
+      spriteID: 0d48b1dde838eb34eae48ef0e136031a
+      internalID: 1912551446
       vertices: []
       indices: 
       edges: []
@@ -183,9 +267,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      puerta_0: 1955966728
-      puerta_1: -2041624949
-      puerta_2: 1058111233
+      Rampa_Deslizar_Anim (5)_0: 1243871235
+      Rampa_Deslizar_Anim (5)_1: 1657291045
+      Rampa_Deslizar_Anim (5)_2: -1460083023
+      Rampa_Deslizar_Anim (5)_3: 905646451
+      Rampa_Deslizar_Anim (5)_4: -1898113599
+      Rampa_Deslizar_Anim (5)_5: 335874546
+      Rampa_Deslizar_Anim (5)_6: 1912551446
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

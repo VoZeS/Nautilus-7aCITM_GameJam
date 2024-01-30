@@ -26,6 +26,16 @@ public class GetKey : MonoBehaviour
         hasKey = false;
         interactImage.gameObject.SetActive(false);
 
+
+        if (SceneManager.GetActiveScene().name == "Realidad2")
+        {
+            canGetKey = true;
+        }
+        else
+        {
+            canGetKey = false;
+        }
+
     }
 
     private void Update()
