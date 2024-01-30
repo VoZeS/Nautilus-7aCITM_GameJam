@@ -67,6 +67,7 @@ public class GetKey : MonoBehaviour
                     key.SetActive(false);
                 }
 
+                interactImage.gameObject.SetActive(false);
             }
         }
         else

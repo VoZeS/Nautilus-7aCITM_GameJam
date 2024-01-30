@@ -56,7 +56,7 @@ public class Flee : MonoBehaviour
         {
             fleeAnimator.SetBool("Walking", true);
         }
-        else if (fleeAnimator != null)
+        else if (fleeAnimator != null && !isMoving)
         {
             fleeAnimator.SetBool("Walking", false);
 

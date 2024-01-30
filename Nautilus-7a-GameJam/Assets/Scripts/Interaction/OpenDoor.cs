@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class OpenDoor : MonoBehaviour
@@ -8,24 +9,37 @@ public class OpenDoor : MonoBehaviour
     static public bool canGetKey;
     private bool inZone;
     static public bool hasKey;
+    private bool hasOpenedDoor;
 
     [Header("UI")]
     public Image interactImage;
 
     [Header("Door")]
     public BoxCollider2D doorCol;
+    public BoxCollider2D openedColRight;
+    public BoxCollider2D openedColLeft;
     public Animator doorAnimator;
 
     [Header("Player")]
     public Animator playerAnimator;
+    public Camera cameraComp;
+
+    [Header("Followers")]
+    public Follow girlFollowScript;
+    public Follow brokenHeartFollowScript;
+    public Follow abusedFollowScript;
+
 
     private void Start()
     {
         inZone = false;
         canGetKey = false;
         hasKey = false;
+        hasOpenedDoor = false;
         interactImage.gameObject.SetActive(false);
 
+        openedColRight.gameObject.SetActive(false);
+        openedColLeft.gameObject.SetActive(false);
     }
 
     private void Update()
@@ -44,8 +58,16 @@ public class OpenDoor : MonoBehaviour
 
                 hasKey = false;
 
+                hasOpenedDoor = true;
+
                 playerAnimator.SetBool("HasKey", false);
 
+                openedColRight.gameObject.SetActive(true);
+                openedColLeft.gameObject.SetActive(true);
+
+                girlFollowScript.enabled = false;
+                brokenHeartFollowScript.enabled = false;
+                abusedFollowScript.enabled = false;
             }
         }
         else
@@ -53,6 +75,13 @@ public class OpenDoor : MonoBehaviour
             interactImage.gameObject.SetActive(false);
 
         }
+
+        if (hasOpenedDoor && SceneManager.GetActiveScene().name == "Pesadilla2")
+        {
+            if (cameraComp.orthographicSize <= 7f)
+                cameraComp.orthographicSize += (0.5f * Time.deltaTime);
+        }
+
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

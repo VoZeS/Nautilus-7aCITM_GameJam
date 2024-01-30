@@ -74,7 +74,10 @@ public class TimerScript : MonoBehaviour
 
         if (tiempoRestante <= 0 && alive)
         {
-            if(scriptTotalDragon != null )
+            if (scriptTotalDragon == null)
+                PerderJuego();
+
+            if (scriptTotalDragon != null )
             {
                 if (scriptTotalDragon.monedasDragonTotales.Count > scriptTotalPlayer.monedasPlayerTotales.Count)
                 {
@@ -88,6 +91,7 @@ public class TimerScript : MonoBehaviour
                 //PerderJuego();
                 alive = false;
             }
+
             
         }
     }

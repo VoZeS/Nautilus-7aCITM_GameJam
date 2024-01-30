@@ -16,6 +16,7 @@ public class ClickEMultipleTimes : MonoBehaviour
     public Follow followScript;
     public BoxCollider2D triggerCol;
     public Animator abucheadoAnimator;
+    public GameObject cloud;
 
 
     private bool inZone;
@@ -32,6 +33,8 @@ public class ClickEMultipleTimes : MonoBehaviour
         }
 
         followScript.enabled = false;
+
+        cloud.SetActive(true);
     }
 
     private void Update()
@@ -68,6 +71,8 @@ public class ClickEMultipleTimes : MonoBehaviour
         if(pressCharge >= 1)
         {
             abucheadoAnimator.SetTrigger("PlayerWon");
+
+            cloud.SetActive(false);
 
             Followers.followers++;
 
