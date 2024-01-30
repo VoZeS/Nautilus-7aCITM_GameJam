@@ -1,6 +1,7 @@
 using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
@@ -78,14 +79,33 @@ public class TimerScript : MonoBehaviour
             yield return null;
         }
 
-        // Recarga la escena después del fade out
-        ReiniciarNivel();
+        if(SceneManager.GetActiveScene().name == "Pesadilla1" 
+            || SceneManager.GetActiveScene().name == "Pesadilla2"
+            || SceneManager.GetActiveScene().name == "Pesadilla3")
+        {
+            GoToNextLevel();
+        }
+        else
+        {
+            // Recarga la escena después del fade out
+            ReiniciarNivel();
+        }
+          
     }
 
     void ReiniciarNivel()
     {
         
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+    void GoToNextLevel()
+    {
+        if (SceneManager.GetActiveScene().name == "Pesadilla1")
+            SceneManager.LoadScene("Realidad2");
+        else if(SceneManager.GetActiveScene().name == "Pesadilla2")
+            SceneManager.LoadScene("Realidad3");
+        //TODO: Pesadilla3 --> Cinematica Final
 
     }
 
