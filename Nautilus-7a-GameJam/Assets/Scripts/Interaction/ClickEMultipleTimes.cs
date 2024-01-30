@@ -15,6 +15,7 @@ public class ClickEMultipleTimes : MonoBehaviour
     [Header("Abucheado")]
     public Follow followScript;
     public BoxCollider2D triggerCol;
+    public Animator abucheadoAnimator;
 
 
     private bool inZone;
@@ -66,6 +67,8 @@ public class ClickEMultipleTimes : MonoBehaviour
         // CHALLENGE COMPLETED
         if(pressCharge >= 1)
         {
+            abucheadoAnimator.SetTrigger("PlayerWon");
+
             Followers.followers++;
 
             sliderPress.gameObject.SetActive(false);
