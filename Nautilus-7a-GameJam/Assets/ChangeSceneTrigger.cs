@@ -8,6 +8,7 @@ public class ChangeSceneTrigger : MonoBehaviour
     public float duracionFadeOut = 4.0f;
     public UnityEngine.UI.Image pantallaFadeOut;
 
+    public Animator bedAnimator;
 
 
     private bool isInTrigger;
@@ -22,6 +23,7 @@ public class ChangeSceneTrigger : MonoBehaviour
     {
         if (isInTrigger && Input.GetKeyDown(KeyCode.E))
         {
+            bedAnimator.SetTrigger("Sleep");
             StartCoroutine(FadeOut());
         }
     }
