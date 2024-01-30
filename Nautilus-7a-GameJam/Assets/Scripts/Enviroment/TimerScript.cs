@@ -1,6 +1,7 @@
 using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimerScript : MonoBehaviour
@@ -13,6 +14,12 @@ public class TimerScript : MonoBehaviour
     public float duracionFadeIn = 2.0f;
     public UnityEngine.UI.Image pantallaFadeOut;
     private bool alive;
+
+    // --------------------------------------------- NIGHTMARES RESULTS
+    private int resultNightmare1; //0 win, 1 lose
+    private int resultNightmare2; //0 win, 1 lose
+    private int resultNightmare3; //0 win, 1 lose
+    // ------------
 
     // Start is called before the first frame update
     void Start()
@@ -27,6 +34,17 @@ public class TimerScript : MonoBehaviour
 
         alive = true;
 
+        // We set it as win, but if it loses will be set to 1
+        resultNightmare1 = 0;
+        PlayerPrefs.SetInt("Nightmare1", resultNightmare1);
+
+        resultNightmare2 = 0;
+        PlayerPrefs.SetInt("Nightmare2", resultNightmare2);
+
+        resultNightmare3 = 0;
+        PlayerPrefs.SetInt("Nightmare3", resultNightmare3);
+
+        PlayerPrefs.Save();
     }
 
     void IniciarContador()
@@ -63,6 +81,29 @@ public class TimerScript : MonoBehaviour
     {
         Debug.Log("Has perdido, se acabó el tiempo!!!");
 
+        // ------------------------------------------------------- NIGHTMARES RESULTS
+        if (SceneManager.GetActiveScene().name == "Pesadilla1")
+        {
+            Debug.Log("Has perdido la pesadilla 1");
+            resultNightmare1 = 1; //lose
+            PlayerPrefs.SetInt("Nightmare1", resultNightmare1);
+            PlayerPrefs.Save();
+        }
+        else if (SceneManager.GetActiveScene().name == "Pesadilla2")
+        {
+            Debug.Log("Has perdido la pesadilla 2");
+            resultNightmare2 = 1; //lose
+            PlayerPrefs.SetInt("Nightmare2", resultNightmare2);
+            PlayerPrefs.Save();
+        }
+        else if (SceneManager.GetActiveScene().name == "Pesadilla3")
+        {
+            Debug.Log("Has perdido la pesadilla 3");
+            resultNightmare3 = 1; //lose
+            PlayerPrefs.SetInt("Nightmare3", resultNightmare3);
+            PlayerPrefs.Save();
+        }
+        // -----------------------------------
 
         StartCoroutine(FadeOutAndReload());
     }
@@ -78,14 +119,34 @@ public class TimerScript : MonoBehaviour
             yield return null;
         }
 
-        // Recarga la escena después del fade out
-        ReiniciarNivel();
+        if(SceneManager.GetActiveScene().name == "Pesadilla1" 
+            || SceneManager.GetActiveScene().name == "Pesadilla2"
+            || SceneManager.GetActiveScene().name == "Pesadilla3")
+        {
+            GoToNextLevel();
+        }
+        else
+        {
+            // Recarga la escena después del fade out
+            ReiniciarNivel();
+        }
+          
     }
 
     void ReiniciarNivel()
     {
         
-        UnityEngine.SceneManagement.SceneManager.LoadScene(UnityEngine.SceneManagement.SceneManager.GetActiveScene().name);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+    }
+    void GoToNextLevel()
+    {
+        if (SceneManager.GetActiveScene().name == "Pesadilla1")
+            SceneManager.LoadScene("Realidad2");
+        else if (SceneManager.GetActiveScene().name == "Pesadilla2")
+            SceneManager.LoadScene("Realidad3");
+        else if (SceneManager.GetActiveScene().name == "Pesadilla3")
+            SceneManager.LoadScene("FinalCutscene");
 
     }
 

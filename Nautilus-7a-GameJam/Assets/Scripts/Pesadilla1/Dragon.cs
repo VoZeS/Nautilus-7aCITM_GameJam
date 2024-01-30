@@ -15,7 +15,7 @@ public class Dragon : MonoBehaviour
         BuscarMonedaCercana();
     }
 
-    void Update()
+    void FixedUpdate()
     {
                
         if (!hasMoneda )

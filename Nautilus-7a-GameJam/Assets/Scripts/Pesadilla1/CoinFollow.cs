@@ -5,7 +5,7 @@ using UnityEngine;
 public class CoinFollow : MonoBehaviour
 {
     
-    Transform objetoAseguir;  // Objeto que seguir�
+    public Transform objetoAseguir;  // Objeto que seguir�
     public LayerMask capaSeguible;  // Capa de objetos seguibles
     bool enCaja = false;
 
@@ -46,9 +46,6 @@ public class CoinFollow : MonoBehaviour
                 
             }
 
-
-
-
             // Establece el objeto a seguir como el objeto que activ� el trigger
             if (other.gameObject.tag=="Player" && playerScript.monedasRecogidas.Count < 5)
             {
@@ -85,7 +82,7 @@ public class CoinFollow : MonoBehaviour
 
             
 
-            collider.enabled = false;
+            //collider.enabled = false;
 
         } 
     }
@@ -93,7 +90,7 @@ public class CoinFollow : MonoBehaviour
     void Update()
     {
         // Si hay un objeto a seguir, realiza el seguimiento
-        if (objetoAseguir != null && !enCaja && collision.tag=="Player")
+        if (objetoAseguir != null && !enCaja && collision.tag == "Player")
         {
             distance2player = Vector2.Distance(transform.position, objetoAseguir.position);
             Vector2 direction = objetoAseguir.position - transform.position;
