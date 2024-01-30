@@ -27,19 +27,19 @@ public class StatsManagerScript : MonoBehaviour
         switch (Followers.followers)
         {
             case 0:
-                HitsNightmare3.lives = 2;
+                // TODO: Manage Light Intensity
                 break;
             case 1:
-                HitsNightmare3.lives = 3;
+                // TODO: Manage Light Intensity
                 break;
             case 2:
-                HitsNightmare3.lives = 4;
+                // TODO: Manage Light Intensity
                 break;
             case 3:
-                HitsNightmare3.lives = 5;
+                // TODO: Manage Light Intensity
                 break;
             default:
-                HitsNightmare3.lives = 2;
+                // TODO: Manage Light Intensity
                 break;
         }
     }
