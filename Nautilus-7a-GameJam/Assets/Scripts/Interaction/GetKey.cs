@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GetKey : MonoBehaviour
@@ -12,8 +13,12 @@ public class GetKey : MonoBehaviour
     [Header("UI")]
     public Image interactImage;
 
-    [Header("Player")]
+    [Header("Animators")]
     public Animator playerAnimator;
+    public Animator oldManAnimator;
+
+    [Header("Key")]
+    public GameObject key;
 
     private void Start()
     {
@@ -22,6 +27,11 @@ public class GetKey : MonoBehaviour
         hasKey = false;
         interactImage.gameObject.SetActive(false);
 
+        if (playerAnimator != null)
+            playerAnimator.SetBool("HasKey", false);
+
+        if (oldManAnimator != null)
+            oldManAnimator.SetBool("HasKey", true);
     }
 
     private void Update()
@@ -34,13 +44,18 @@ public class GetKey : MonoBehaviour
             {
                 Debug.Log("HAS COGIDO LA LLAVE");
 
-                 hasKey = true;
+                hasKey = true;
 
-                playerAnimator.SetBool("HasKey", true);
+                if(playerAnimator != null)
+                    playerAnimator.SetBool("HasKey", true);
 
-                //TODO: Cambio sprite viejo (con llave --> sin llave)
+                if(oldManAnimator != null)
+                    oldManAnimator.SetBool("HasKey", false);
 
-                //TODO: Cambio sprite personaje (sin llave --> con llave)
+                if (SceneManager.GetActiveScene().name == "Realidad2" && key != null)
+                {
+                    key.SetActive(false);
+                }
 
             }
         }
