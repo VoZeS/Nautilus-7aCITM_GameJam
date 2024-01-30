@@ -1580,7 +1580,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 70ecf2e2a5cf2ad47935bac369fe904c, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7647059, g: 0.7607843, b: 0.7607843, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -3238,7 +3238,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: d49b0d5179e65e443af12cb96fea9c13, type: 3}
-  m_Color: {r: 0.7647059, g: 0.7647059, b: 0.7647059, a: 1}
+  m_Color: {r: 0.7647059, g: 0.7607843, b: 0.7607843, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -3384,7 +3384,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: -2
   m_Sprite: {fileID: 21300000, guid: 4bd3aab84ccb48d42baed127d583064b, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.7647059, g: 0.7607843, b: 0.7607843, a: 1}
   m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
@@ -5490,6 +5490,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactImage: {fileID: 2050396903}
   playerAnimator: {fileID: 828712728}
+  oldManAnimator: {fileID: 0}
   key: {fileID: 1739759919}
 --- !u!1001 &1821924238
 PrefabInstance:

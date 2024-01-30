@@ -47,12 +47,12 @@ public class WallScript : MonoBehaviour
 
         while (elapsedTime < fadeDuration)
         {
-            wallSpriteRenderer.color = new Color(1f, 1f, 1f, Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration));
+            wallSpriteRenderer.color = new Color(0.7647059f, 0.7607843f, 0.7607843f, Mathf.Lerp(1f, 0f, elapsedTime / fadeDuration));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        wallSpriteRenderer.color = new Color(1f, 1f, 1f, 0f);
+        wallSpriteRenderer.color = new Color(0.7647059f, 0.7607843f, 0.7607843f, 0f);
         wall.SetActive(false);
         fading = false;
 
@@ -70,12 +70,12 @@ public class WallScript : MonoBehaviour
 
         while (elapsedTime < fadeDuration)
         {
-            wallSpriteRenderer.color = new Color(1f, 1f, 1f, Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration));
+            wallSpriteRenderer.color = new Color(0.7647059f, 0.7607843f, 0.7607843f, Mathf.Lerp(0f, 1f, elapsedTime / fadeDuration));
             elapsedTime += Time.deltaTime;
             yield return null;
         }
 
-        wallSpriteRenderer.color = new Color(1f, 1f, 1f, 1f);
+        wallSpriteRenderer.color = new Color(0.7647059f, 0.7607843f, 0.7607843f, 1f);
         fading = false;
     }
 
