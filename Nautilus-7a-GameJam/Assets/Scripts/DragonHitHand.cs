@@ -16,10 +16,14 @@ public class DragonHitHand : MonoBehaviour
     private bool waiting2 = true;
     private Vector3 posicionJugadorOriginal;
 
+    Collider2D collider;
+
     void Start()
     {
 
-       
+        collider = GetComponent<Collider2D>();
+
+        collider.enabled = false;
         // Guardar la posición original al inicio.
         posicionOriginal = transform.position;
 
@@ -49,6 +53,7 @@ public class DragonHitHand : MonoBehaviour
         }
         else if (waiting2)
         {
+            collider.enabled = false;
             tiempoQuieto2 -= Time.deltaTime;
             if (tiempoQuieto2 <= 0f)
             {
@@ -78,6 +83,11 @@ public class DragonHitHand : MonoBehaviour
             // Mover el objeto hacia la posición del jugador usando transform.Translate.
             transform.Translate(direccion * desplazamiento);
 
+            if (Vector3.Distance(transform.position, posicionJugadorOriginal) <= 0.5) 
+            {
+                collider.enabled = true;
+
+            }
             // Verificar si ha llegado al jugador.
             if (Vector3.Distance(transform.position, posicionJugadorOriginal) <=distancia)
             {
@@ -99,6 +109,7 @@ public class DragonHitHand : MonoBehaviour
     
     private void VolverAPosicionOriginal()
     {
+        collider.enabled = false;
         // Mover el objeto de vuelta a la posición original usando transform.Translate.
         transform.Translate((posicionOriginal - transform.position).normalized * velocidadMovimiento * Time.deltaTime);
 
