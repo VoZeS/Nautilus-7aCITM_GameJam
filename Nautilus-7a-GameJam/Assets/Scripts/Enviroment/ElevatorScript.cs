@@ -21,6 +21,11 @@ public class ElevatorScript : MonoBehaviour
     public AudioSource leverSound;
     public AudioSource elevatorSound;
 
+    private Vector3 startPos;
+    private Vector3 endPos;
+
+
+
     private void Update()
     {
         if (isInTrigger && !isMoving && Input.GetKeyDown(KeyCode.E))
@@ -33,9 +38,10 @@ public class ElevatorScript : MonoBehaviour
         if(!isMoving)
         {
             leverAnimator.SetBool("Activated", false);
-            elevatorSound.Pause();
+            elevatorSound.Stop();
         }
-            
+        
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -58,14 +64,16 @@ public class ElevatorScript : MonoBehaviour
     {
         isMoving = true;
         elevatorSound.Play();
-
+        
         
         
 
         // Mueve la caja hacia arriba
         float elapsedTime = 0f;
-        Vector3 startPos = elevator.transform.position;
-        Vector3 endPos = elevator.transform.position + Vector3.up * liftDistance;
+        startPos = elevator.transform.position;
+        endPos = elevator.transform.position + Vector3.up * liftDistance;
+
+        
 
         while (elapsedTime < waitTime)
         {
@@ -73,10 +81,10 @@ public class ElevatorScript : MonoBehaviour
             elapsedTime += Time.deltaTime;
             yield return null;
         }
-
+        elevatorSound.Stop();
         // Espera un momento en la posición superior
         yield return new WaitForSeconds(waitTime);
-
+        elevatorSound.Play();
         // Mueve la caja de nuevo hacia abajo
         elapsedTime = 0f;
         startPos = elevator.transform.position;
