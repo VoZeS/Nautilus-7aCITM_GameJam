@@ -12,7 +12,7 @@ public class CanvasUpdate : MonoBehaviour
     private int resultReality3; //0 win, 1 lose
     // ------------
 
-    [Header("UI")]
+    [Header("Reality UI")]
     public Image atrapa1;
     public Sprite atrapa1Off;
     public Sprite atrapa1On;
@@ -24,6 +24,28 @@ public class CanvasUpdate : MonoBehaviour
     public Image atrapa3;
     public Sprite atrapa3Off;
     public Sprite atrapa3On;
+
+    // --------------------------------------------- PESADILLA 2 RESULTS
+    private int littleGirlOn; //0 win, 1 lose
+    private int brokenManOn; //0 win, 1 lose
+    private int abusedManOn; //0 win, 1 lose
+
+    [Header("Pesadilla 2 UI")]
+    public Image redOrbImage;
+    public Sprite redOrbOff;
+    public Sprite redOrbOn;
+
+    public Image blueOrbImage;
+    public Sprite blueOrbOff;
+    public Sprite blueOrbOn;
+
+    public Image greenOrbImage;
+    public Sprite greenOrbOff;
+    public Sprite greenOrbOn;
+
+    public Follow littleGirl;
+    public Follow brokenMan;
+    public Follow abusedMan;
 
     // Start is called before the first frame update
     void Start()
@@ -49,7 +71,79 @@ public class CanvasUpdate : MonoBehaviour
     {
         UpdateAtrapa();
 
+        if(SceneManager.GetActiveScene().name == "Pesadilla2")
+        {
+            UpdateOrbs();
+        }
+    }
 
+    private void UpdateOrbs()
+    {
+        if(littleGirl.enabled)
+        {
+            littleGirlOn = 0;
+        }
+        else
+        {
+            littleGirlOn = 1;
+        }
+        
+        if(brokenMan.enabled)
+        {
+            brokenManOn = 0;
+        }
+        else
+        {
+            brokenManOn = 1;
+        }
+        
+        if(abusedMan.enabled)
+        {
+            abusedManOn = 0;
+        }
+        else
+        {
+            abusedManOn = 1;
+        }
+
+        switch (littleGirlOn)
+        {
+            case 0:
+                redOrbImage.sprite = redOrbOn;
+                break;
+            case 1:
+                redOrbImage.sprite = redOrbOff;
+                break;
+            default:
+                redOrbImage.sprite = redOrbOff;
+                break;
+        }
+
+        switch (brokenManOn)
+        {
+            case 0:
+                blueOrbImage.sprite = blueOrbOn;
+                break;
+            case 1:
+                blueOrbImage.sprite = blueOrbOff;
+                break;
+            default:
+                blueOrbImage.sprite = blueOrbOff;
+                break;
+        }
+
+        switch (abusedManOn)
+        {
+            case 0:
+                greenOrbImage.sprite = greenOrbOn;
+                break;
+            case 1:
+                greenOrbImage.sprite = greenOrbOff;
+                break;
+            default:
+                greenOrbImage.sprite = greenOrbOff;
+                break;
+        }
     }
 
     private void UpdateAtrapa()
