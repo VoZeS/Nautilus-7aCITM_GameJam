@@ -46,14 +46,20 @@ public class ClickEMultipleTimes : MonoBehaviour
             if (Input.GetKeyDown("e"))
             {
                 if (pressCharge <= 1)
+                {
                     pressCharge += 0.05f;
+                }
+                   
                 else
                     pressCharge = 1;
             }
             else
             {
                 if (pressCharge > 0)
+                {
                     pressCharge -= 0.001f;
+                }
+                   
                 else
                     pressCharge = 0;
             }

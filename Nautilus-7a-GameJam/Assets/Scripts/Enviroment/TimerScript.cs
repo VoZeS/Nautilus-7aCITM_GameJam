@@ -83,9 +83,10 @@ public class TimerScript : MonoBehaviour
         tiempoRestante -= Time.deltaTime;
 
         ActualizarSpriteReloj();
+
         if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado)
         {
-            if (scriptTotalPlayer == null)
+            if (scriptTotalDragon == null)
             {
                 playerAnimator.SetTrigger("Death");
                 alive = false;
@@ -129,18 +130,17 @@ public class TimerScript : MonoBehaviour
                     ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
 
                 }
+                alive = false;
             }
 
+        }
 
-            if (PlatfromCharacter.dead || IsoCharacter.dead)
-            {
-                PerderJuego();
-                PlatfromCharacter.dead = false;
-                IsoCharacter.dead = false;
-                ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
-            }
-
-
+        if (PlatfromCharacter.dead || IsoCharacter.dead)
+        {
+            PerderJuego();
+            PlatfromCharacter.dead = false;
+            IsoCharacter.dead = false;
+            ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
         }
     }
 
