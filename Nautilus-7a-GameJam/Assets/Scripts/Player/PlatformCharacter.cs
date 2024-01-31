@@ -19,13 +19,26 @@ public class PlatfromCharacter : MonoBehaviour
     public bool canMove;
     public bool jumping;
 
+    [Header("Movement")]
+    public AudioSource stepOnGrass1;
+    public AudioSource stepOnGrass2;
+    public AudioSource stepOnGrass3;
+    public AudioSource stepOnConcrete1;
+    public AudioSource stepOnConcrete2;
+    public AudioSource stepOnWood1;
+    public AudioSource stepOnWood2;
+
+
     private int orientation; // 0 left, 1 right
 
     private Animator playerAnimator;
 
+    [Header("Raycast")]
     public float longitudRaycast = 1f;
     public float longitudLateralesRaycast = 0.2f;
     public float longitudLateralDownRaycast = 2f;
+
+    private bool stepping;
 
     void Start()
     {
@@ -34,6 +47,7 @@ public class PlatfromCharacter : MonoBehaviour
 
         dead = false;
         dying = false;
+        stepping = false;
     }
 
     void Update()
@@ -127,6 +141,80 @@ public class PlatfromCharacter : MonoBehaviour
     {
         dying = true;
     }
+
+    public void Stepping()
+    {
+        stepping = true;
+
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Cesped")
+        {
+            int indiceAleatorio = Random.Range(0, 2);
+
+            switch (indiceAleatorio)
+            {
+                case 0:
+                    stepOnGrass1.Play();
+                    break;
+
+                case 1:
+                    stepOnGrass2.Play();
+                    break;
+
+                case 2:
+                    stepOnGrass3.Play();
+                    break;
+                default:
+                    break;
+
+            }
+
+        }
+
+        if (collision.gameObject.tag == "Madera")
+        {
+            int indiceAleatorio = Random.Range(0, 1);
+
+            switch (indiceAleatorio)
+            {
+                case 0:
+                    stepOnWood1.Play();
+                    break;
+
+                case 1:
+                    stepOnWood2.Play();
+                    break;
+
+                default:
+                    break;
+
+            }
+        }
+
+        if (collision.gameObject.tag =="Roca")
+        {
+            int indiceAleatorio = Random.Range(0, 1);
+
+            switch (indiceAleatorio)
+            {
+                case 0:
+                    stepOnConcrete1.Play();
+                    break;
+
+                case 1:
+                    stepOnConcrete2.Play();
+                    break;
+
+                default:
+                    break;
+
+            }
+        }
+    }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {

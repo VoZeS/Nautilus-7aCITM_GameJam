@@ -13,6 +13,9 @@ TagManager:
   - Dragon
   - Bitter
   - Hit
+  - Cesped
+  - Madera
+  - Cemento
   layers:
   - Default
   - TransparentFX
