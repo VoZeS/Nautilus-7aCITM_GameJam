@@ -13,6 +13,9 @@ TagManager:
   - Dragon
   - Bitter
   - Hit
+  - Cesped
+  - Madera
+  - Cemento
   layers:
   - Default
   - TransparentFX
@@ -24,7 +27,7 @@ TagManager:
   - Caja
   - Monedas
   - Dragon
-  - 
+  - Fango
   - 
   - 
   - 

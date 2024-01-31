@@ -332,7 +332,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4011916576300548758, guid: ceb220719b8b2974896436d44895606d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.12
+      value: 2.77
       objectReference: {fileID: 0}
     - target: {fileID: 4011916576300548758, guid: ceb220719b8b2974896436d44895606d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 114919400}
   m_Layer: 6
   m_Name: Tronco3
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1149,7 +1149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4011916576300548758, guid: ceb220719b8b2974896436d44895606d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4.29138
+      value: 4.59
       objectReference: {fileID: 0}
     - target: {fileID: 4011916576300548758, guid: ceb220719b8b2974896436d44895606d, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1566,7 +1566,7 @@ GameObject:
   - component: {fileID: 652800453}
   m_Layer: 6
   m_Name: ColliderRoof3
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1736,7 +1736,7 @@ GameObject:
   - component: {fileID: 703843725}
   m_Layer: 6
   m_Name: Tronco3 (1)
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2100,7 +2100,7 @@ GameObject:
   - component: {fileID: 782858224}
   m_Layer: 6
   m_Name: ColliderRoof2
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2177,7 +2177,7 @@ GameObject:
   - component: {fileID: 794770542}
   m_Layer: 6
   m_Name: ColliderRoof1
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2466,6 +2466,98 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &898009609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 898009612}
+  - component: {fileID: 898009611}
+  - component: {fileID: 898009610}
+  m_Layer: 0
+  m_Name: Trigger casa Arbol
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &898009610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898009609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87b3db4dde0113c4abeeb8eb0f2b555e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wall: {fileID: 831207345}
+  fadeDuration: 0.1
+--- !u!61 &898009611
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898009609}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.17458975, y: -0.05894418}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.6508205, y: 0.76934874}
+  m_EdgeRadius: 0
+--- !u!4 &898009612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 898009609}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 7.3564067, y: 3.559693, z: 0.034073357}
+  m_LocalScale: {x: 6.15, y: 2.277, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &982446162 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6863955013327312008, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
@@ -2624,7 +2716,7 @@ GameObject:
   - component: {fileID: 1056001484}
   m_Layer: 6
   m_Name: Floor1 (1)
-  m_TagString: Untagged
+  m_TagString: Cesped
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3476,7 +3568,7 @@ GameObject:
   - component: {fileID: 1482244657}
   m_Layer: 6
   m_Name: Floor1
-  m_TagString: Untagged
+  m_TagString: Cesped
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4104,7 +4196,7 @@ GameObject:
   - component: {fileID: 1741481276}
   m_Layer: 6
   m_Name: ColliderRamas
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4273,7 +4365,7 @@ GameObject:
   - component: {fileID: 1801545956}
   m_Layer: 6
   m_Name: Tronco2
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4739,7 +4831,7 @@ GameObject:
   - component: {fileID: 2051832577}
   m_Layer: 6
   m_Name: Tronco1
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5383,11 +5475,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.46
+      value: -1.75
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.52
+      value: 3.3
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5751,6 +5843,7 @@ SceneRoots:
   - {fileID: 703843727}
   - {fileID: 2095817181}
   - {fileID: 1453787383}
+  - {fileID: 898009612}
   - {fileID: 2089765451}
   - {fileID: 787778135824678973}
   - {fileID: 1897233272}
