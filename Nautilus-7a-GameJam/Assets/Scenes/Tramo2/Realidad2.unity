@@ -846,7 +846,7 @@ GameObject:
   m_Component:
   - component: {fileID: 422642028}
   - component: {fileID: 422642029}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -900,7 +900,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023293018, y: -0.6910219}
+  m_Offset: {x: 0.94641066, y: -0.6910219}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -911,7 +911,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17698383, y: 8.93512}
+  m_Size: {x: 2.1163912, y: 8.93512}
   m_EdgeRadius: 0
 --- !u!4 &430941649 stripped
 Transform:
@@ -2523,7 +2523,7 @@ GameObject:
   m_Component:
   - component: {fileID: 849505481}
   - component: {fileID: 849505482}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Top
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2577,7 +2577,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 2.3448198, y: 0.41927242}
+  m_Offset: {x: 2.34482, y: 1.3516798}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -2588,7 +2588,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 14.944687, y: 0.16145515}
+  m_Size: {x: 14.944687, y: 2.02627}
   m_EdgeRadius: 0
 --- !u!1001 &862045782
 PrefabInstance:
@@ -5609,7 +5609,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1619818073}
   - component: {fileID: 1619818074}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5663,7 +5663,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023293018, y: -0.22516489}
+  m_Offset: {x: -1.2354226, y: -0.616776}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -5674,7 +5674,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.17698383, y: 8.003401}
+  m_Size: {x: 2.601243, y: 8.786623}
   m_EdgeRadius: 0
 --- !u!4 &1639568587 stripped
 Transform:
@@ -6905,7 +6905,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2069660977}
   - component: {fileID: 2069660978}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CelingHouse
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6959,7 +6959,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.636673, y: 0.43480104}
+  m_Offset: {x: -0.23978996, y: 1.3299122}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -6970,7 +6970,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 3.6709194, y: 0.13039792}
+  m_Size: {x: 5.4238453, y: 1.92062}
   m_EdgeRadius: 0
 --- !u!1001 &2094030116
 PrefabInstance:

@@ -86,7 +86,7 @@ public class TimerScript : MonoBehaviour
 
         ActualizarSpriteReloj();
 
-        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado)
+        if (/*tiempoRestante <= 0 &&*/ alive )
         {
             if (scriptTotalDragon == null)
             {
@@ -100,7 +100,7 @@ public class TimerScript : MonoBehaviour
 
             if (scriptTotalPlayer != null)
             {
-                if (/*tiempoRestante <= 0 &&*/ scriptTotalPlayer.monedasPlayerTotales.Count < 10)
+                if (/*tiempoRestante <= 0 &&*/ ultimoSpriteAlcanzado)
                 {
                     //if (scriptTotalDragon == null)
                     //{
@@ -136,7 +136,7 @@ public class TimerScript : MonoBehaviour
                     ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
 
                 }
-                alive = false;
+                //alive = false;
             }
 
         }

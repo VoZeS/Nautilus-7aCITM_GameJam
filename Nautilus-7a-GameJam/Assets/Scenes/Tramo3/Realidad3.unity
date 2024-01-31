@@ -983,7 +983,7 @@ GameObject:
   m_Component:
   - component: {fileID: 326841954}
   - component: {fileID: 326841955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Col1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1060,7 +1060,7 @@ GameObject:
   m_Component:
   - component: {fileID: 374442876}
   - component: {fileID: 374442877}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Col1 (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3205,7 +3205,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1175876254}
   - component: {fileID: 1175876255}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3259,7 +3259,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.04761839, y: 2.130952}
+  m_Offset: {x: 1.4810209, y: 2.130952}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3270,7 +3270,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.19047832, y: 10.071428}
+  m_Size: {x: 3.0572834, y: 10.071428}
   m_EdgeRadius: 0
 --- !u!1 &1213268542
 GameObject:
@@ -3603,7 +3603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1328484954}
   - component: {fileID: 1328484955}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3657,7 +3657,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.023808956, y: 2.2023811}
+  m_Offset: {x: -0.8053818, y: 2.2023811}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -3668,7 +3668,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.23809528, y: 10.023809}
+  m_Size: {x: 1.8012409, y: 10.023809}
   m_EdgeRadius: 0
 --- !u!4 &1344462987 stripped
 Transform:
@@ -4237,7 +4237,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1506849979}
   - component: {fileID: 1506849980}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Col1 (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5650,11 +5650,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.34
+      value: -6.27
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.93
+      value: -3.58
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5958,6 +5958,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: dyeSound
+      value: 
+      objectReference: {fileID: 2082442464}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 1877202981}
@@ -6106,6 +6110,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &2082442464 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5513626182999986003, guid: a95755e667099aa478d76af9bb756433, type: 3}
+  m_PrefabInstance: {fileID: 1877202980}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2095105339
 PrefabInstance:
   m_ObjectHideFlags: 0

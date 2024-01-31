@@ -69,15 +69,15 @@ public class PlatfromCharacter : MonoBehaviour
             raycast2 = Physics2D.Raycast(parent.transform.position + new Vector3(0.25f,0,0), Vector2.down, longitudRaycast, sueloLayer);
             raycast3 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.25f, 0,0), Vector2.down, longitudRaycast, sueloLayer);
 
-            raycastLeft1 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0, 0), Vector2.left, longitudLateralesRaycast);
-            raycastLeft2 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, -0.5f, 0), Vector2.left, longitudLateralesRaycast);
-            raycastLeft3 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.left, longitudLateralesRaycast);
-            raycastLeft4 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.down, longitudLateralDownRaycast);
+            raycastLeft1 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0, 0), Vector2.left, longitudLateralesRaycast, sueloLayer);
+            raycastLeft2 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, -0.5f, 0), Vector2.left, longitudLateralesRaycast, sueloLayer);
+            raycastLeft3 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.left, longitudLateralesRaycast, sueloLayer);
+            raycastLeft4 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.down, longitudLateralDownRaycast, sueloLayer);
 
-            raycastRight1 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0, 0), Vector2.right, longitudLateralesRaycast);
-            raycastRight2 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, -0.5f, 0), Vector2.right, longitudLateralesRaycast);
-            raycastRight3 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.right, longitudLateralesRaycast);
-            raycastRight4 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.down, longitudLateralDownRaycast);
+            raycastRight1 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0, 0), Vector2.right, longitudLateralesRaycast, sueloLayer);
+            raycastRight2 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, -0.5f, 0), Vector2.right, longitudLateralesRaycast, sueloLayer);
+            raycastRight3 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.right, longitudLateralesRaycast, sueloLayer);
+            raycastRight4 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.down, longitudLateralDownRaycast, sueloLayer);
 
             RaycastHit2D raycastFango, raycastFango2, raycastFango3;
 

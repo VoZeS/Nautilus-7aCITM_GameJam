@@ -2399,7 +2399,7 @@ GameObject:
   m_Component:
   - component: {fileID: 864509935}
   - component: {fileID: 864509934}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: LeftLimitColl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2866,7 +2866,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1132605442}
   - component: {fileID: 1132605441}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: RightLimitColl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4492,7 +4492,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1825550595}
   - component: {fileID: 1825550594}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: TopLimit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4531,7 +4531,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.029316902, y: 38.721977}
+  m_Offset: {x: -0.031998076, y: 56.082}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4542,7 +4542,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.12047768, y: 83.05655}
+  m_Size: {x: 0.15035363, y: 135.13658}
   m_EdgeRadius: 0
 --- !u!4 &1825550595
 Transform:

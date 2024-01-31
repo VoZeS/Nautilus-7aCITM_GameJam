@@ -63,7 +63,16 @@ public class WellInteraction : MonoBehaviour
 
     private void Update()
     {
-        if(coinsDroped >= 3f && !bossStarted)
+        if (!bossStarted)
+        {
+            FindObjectOfType<scoreManager>().ActualizarPuntuacion(monedasPlayerTotales.Count, 3);
+        }
+        else
+        {
+            FindObjectOfType<scoreManager>().ActualizarPuntuacion(monedasPlayerTotales.Count, 10);
+        }
+
+        if (coinsDroped >= 3f && !bossStarted)
         {
             bossStarted = true;
             timer.SetActive(true);
@@ -74,6 +83,7 @@ public class WellInteraction : MonoBehaviour
             esperando = true;
 
             monedasPlayerTotales.Clear();
+
             
 
 
