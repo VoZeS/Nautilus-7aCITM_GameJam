@@ -21,6 +21,9 @@ public class CoinFollow : MonoBehaviour
     Dragon dragonScript = null;
     Collider2D collider;
 
+    public GameObject coinParent;
+    private int orientation; //0 left, 1 right
+
     private void Start()
     {
         collider = GetComponent<Collider2D>();
@@ -52,7 +55,7 @@ public class CoinFollow : MonoBehaviour
                 if (playerScript.monedasRecogidas.Count == 0 )
                 {
 
-                    playerScript.monedasRecogidas.Insert(0, transform);
+                    playerScript.monedasRecogidas.Insert(0, coinParent.transform);
                     objetoAseguir = other.transform;
                     alreadyFollowing = true;
                 }
@@ -61,7 +64,7 @@ public class CoinFollow : MonoBehaviour
                     Transform monedaAnterior = playerScript.monedasRecogidas[playerScript.monedasRecogidas.Count - 1];
 
 
-                    playerScript.monedasRecogidas.Add(transform);
+                    playerScript.monedasRecogidas.Add(coinParent.transform);
 
                     objetoAseguir = monedaAnterior.transform;
 
@@ -72,7 +75,7 @@ public class CoinFollow : MonoBehaviour
             }
             else if(other.gameObject.tag == "Dragon" && dragonScript.monedasDragonRecogidas.Count < 1)
             {
-                dragonScript.monedasDragonRecogidas.Add(transform);
+                dragonScript.monedasDragonRecogidas.Add(coinParent.transform);
                 objetoAseguir = other.transform;
                 collider.enabled = false;
             }
@@ -93,30 +96,57 @@ public class CoinFollow : MonoBehaviour
         // Si hay un objeto a seguir, realiza el seguimiento
         if (objetoAseguir != null && !enCaja && collision.tag == "Player")
         {
-            distance2player = Vector2.Distance(transform.position, objetoAseguir.position);
-            Vector2 direction = objetoAseguir.position - transform.position;
+            distance2player = Vector2.Distance(coinParent.transform.position, objetoAseguir.position);
+            Vector2 direction = objetoAseguir.position - coinParent.transform.position;
             direction.Normalize();
 
             if (distance2player < range && distance2player > nearRange)
             {
-                transform.position = Vector2.MoveTowards(transform.position, objetoAseguir.position, speed * Time.deltaTime);
+                coinParent.transform.position = Vector2.MoveTowards(coinParent.transform.position, objetoAseguir.position, speed * Time.deltaTime);
             }
-            
 
-        }else if(objetoAseguir != null && collision.tag == "Dragon")
+            UpdateOrientation(direction);
+        }
+        else if(objetoAseguir != null && collision.tag == "Dragon")
         {
             // Calcula la direcci�n hacia el objeto a seguir
-            Vector3 direccion = objetoAseguir.position - transform.position;
+            Vector3 direccion = objetoAseguir.position - coinParent.transform.position;
 
             // Normaliza la direcci�n para mantener una velocidad constante
             direccion.Normalize();
 
             // Mueve el objeto hacia el objeto a seguir
-            transform.Translate(direccion * speed * Time.deltaTime);
+            coinParent.transform.Translate(direccion * speed * Time.deltaTime);
         }
         else if(objetoAseguir == null)
         {
             //Debug.Log("F");
+        }
+    }
+
+    void UpdateOrientation(Vector3 direction)
+    {
+        // Actualizar la orientación solo si hay un movimiento
+        if (direction.x >= 0)
+        {
+            orientation = 1;
+        }
+        else
+        {
+            orientation = 0;
+        }
+
+        switch (orientation)
+        {
+            case 0:
+                transform.localScale = new Vector3(Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                break;
+            case 1:
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                break;
+            default:
+                transform.localScale = new Vector3(-Mathf.Abs(transform.localScale.x), transform.localScale.y, transform.localScale.z);
+                break;
         }
     }
 }
