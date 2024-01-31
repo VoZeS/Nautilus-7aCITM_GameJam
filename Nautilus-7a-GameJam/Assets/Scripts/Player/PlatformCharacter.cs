@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlatfromCharacter : MonoBehaviour
 {
     public LayerMask sueloLayer; // Capa del suelo para verificar si el jugador está en el suelo
+    public LayerMask fangoLayer;
 
     [Header("Character")]
     public int characterScale = 5;
@@ -77,6 +78,14 @@ public class PlatfromCharacter : MonoBehaviour
             raycastRight3 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.right, longitudLateralesRaycast);
             raycastRight4 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.down, longitudLateralDownRaycast);
 
+            RaycastHit2D raycastFango, raycastFango2, raycastFango3;
+
+            raycastFango = Physics2D.Raycast(parent.transform.position, Vector2.down, longitudRaycast, fangoLayer);
+            raycastFango2 = Physics2D.Raycast(parent.transform.position + new Vector3(0.25f, 0, 0), Vector2.down, longitudRaycast, fangoLayer);
+            raycastFango3 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.25f, 0, 0), Vector2.down, longitudRaycast, fangoLayer);
+
+            
+
             if (raycast1 || raycast2 || raycast3)
             {
                 jumping = false;
@@ -84,6 +93,12 @@ public class PlatfromCharacter : MonoBehaviour
                 canMove = true;
 
                 
+            }
+            else if(raycastFango || raycastFango2 || raycastFango3)
+            {
+                jumping = false;
+                enElSuelo = true;
+                canMove = false;
             }
             else
                 enElSuelo = false;
