@@ -8,6 +8,7 @@ public class Dragon : MonoBehaviour
     public Transform objetivo; // Asigna el GameObject hacia el cual se dirigirá después de recoger la moneda
     public GameObject monedaActual;
     bool hasMoneda = false;
+    
 
     void Start()
     {
@@ -17,7 +18,7 @@ public class Dragon : MonoBehaviour
 
     void FixedUpdate()
     {
-               
+        
         if (!hasMoneda )
         {
             BuscarMonedaCercana();
@@ -73,7 +74,7 @@ public class Dragon : MonoBehaviour
         {
             hasMoneda = true;
         }
-        else if (collision.gameObject.tag == "Caja")
+        if (collision.gameObject.tag == "Caja")
         {
             hasMoneda = false;
             for (int i = 0; i < monedasDragonRecogidas.Count; i++)

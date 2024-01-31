@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,6 +17,22 @@ public class WellInteraction : MonoBehaviour
     GameObject player;
     IsoCharacter scriptLista;
 
+    public bool bossStarted = false;
+    float coinsDroped = 0f;
+
+    public GameObject coinsHand;
+    public GameObject hitHand;
+    public GameObject coinSpawner;
+    public GameObject bagRoof;
+    public GameObject timer;
+
+    Dragon coinHandScript;
+    DragonHitHand hitHandScript;
+
+    public float tiempoEspera = 1f;
+
+    bool esperando = false;
+
     public List<Transform> monedasPlayerTotales = new List<Transform>();
 
 
@@ -29,12 +46,50 @@ public class WellInteraction : MonoBehaviour
         interactTimer = 0;
 
         scriptLista.monedasRecogidas.Clear();
-        Debug.Log("Lista Limpia");
+        Debug.Log("Lista de Monedas del Player Limpia");
+
+        coinHandScript = coinsHand.GetComponent<Dragon>();
+        hitHandScript = hitHand.GetComponent<DragonHitHand>();
+
+
+        coinsHand.SetActive(false);
+        timer.SetActive(false);
+        coinsHand.SetActive(false);
+        hitHand.SetActive(false);
+        coinSpawner.SetActive(false);
+        bagRoof.SetActive(false);
 
     }
 
     private void Update()
     {
+        if(coinsDroped >= 3f && !bossStarted)
+        {
+            bossStarted = true;
+            timer.SetActive(true);
+            coinsHand.SetActive(true);
+            hitHand.SetActive(true);
+            coinSpawner.SetActive(true);
+            bagRoof.SetActive(true);
+            esperando = true;
+
+            
+
+
+        }
+
+        if (esperando)
+        {
+            tiempoEspera -= Time.deltaTime;
+            if (tiempoEspera <= 0f)
+            {
+                coinHandScript.enabled = true;
+                hitHandScript.enabled = true;
+                Debug.Log("Pesadilla 1 START");
+                esperando = false;
+            }
+        }
+
         if (readyToInteract)
         {
             
@@ -43,7 +98,7 @@ public class WellInteraction : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.E))
             {
                 DropCoins();
-                Debug.Log("E");
+                Debug.Log("Interaction");
                 if (!interacting)
                 {
 
@@ -97,15 +152,20 @@ public class WellInteraction : MonoBehaviour
     }
     void DropCoins()
     {
-        scriptLista.velocidadMovimiento = 5;
+        scriptLista.velocidadMovimiento = 3;
         for (int i = 0; i < scriptLista.monedasRecogidas.Count; i++)
         {
             monedasPlayerTotales.Add(scriptLista.monedasRecogidas[i]);
             scriptLista.monedasRecogidas[i].gameObject.SetActive(false);
+
+            coinsDroped++;
             
-            Debug.Log("Monedas puestas");
+            
+            Debug.Log("Player ha Tirado Monedas al Pozo");
         }
-        
+        scriptLista.monedasRecogidas.Clear();
+
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
