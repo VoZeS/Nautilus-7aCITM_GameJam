@@ -4498,7 +4498,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: tiempoLimite
-      value: 5
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: playerAnimator
