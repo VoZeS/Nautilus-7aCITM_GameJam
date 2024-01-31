@@ -86,7 +86,7 @@ public class TimerScript : MonoBehaviour
 
         ActualizarSpriteReloj();
 
-        if (/*tiempoRestante <= 0 &&*/ alive )
+        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado)
         {
             if (scriptTotalDragon == null)
             {
