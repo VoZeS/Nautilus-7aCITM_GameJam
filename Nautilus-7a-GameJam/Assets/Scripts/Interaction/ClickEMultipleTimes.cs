@@ -47,7 +47,7 @@ public class ClickEMultipleTimes : MonoBehaviour
             {
                 if (pressCharge <= 1)
                 {
-                    pressCharge += 0.05f;
+                    pressCharge += 0.1f;
                 }
                    
                 else

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 public class StatsManagerScript : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class StatsManagerScript : MonoBehaviour
 
     public TilesMovementPlayer playerScript;
     public TilesMovementDoppelganger doppelScript;
+
+    public Light2D globalLight;
 
     // Start is called before the first frame update
     void Start()
@@ -27,19 +30,23 @@ public class StatsManagerScript : MonoBehaviour
         switch (Followers.followers)
         {
             case 0:
-                // TODO: Manage Light Intensity
+                globalLight.color = new Color(0, 0, 0);
                 break;
             case 1:
-                // TODO: Manage Light Intensity
+                globalLight.color = new Color(34f / 255f, 34f / 255f, 34f / 255f);
+
                 break;
             case 2:
-                // TODO: Manage Light Intensity
+                globalLight.color = new Color(56f / 255f, 56f / 255f, 56f / 255f);
+
                 break;
             case 3:
-                // TODO: Manage Light Intensity
+                globalLight.color = new Color(84f / 255f, 84f / 255f, 84f / 255f);
+
                 break;
             default:
-                // TODO: Manage Light Intensity
+                globalLight.color = new Color(0, 0, 0);
+
                 break;
         }
     }

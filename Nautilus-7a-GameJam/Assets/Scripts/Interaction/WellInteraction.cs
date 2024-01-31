@@ -17,7 +17,7 @@ public class WellInteraction : MonoBehaviour
     GameObject player;
     IsoCharacter scriptLista;
 
-    public bool bossStarted = false;
+    bool bossStarted = false;
     float coinsDroped = 0f;
 
     public GameObject coinsHand;
@@ -26,12 +26,18 @@ public class WellInteraction : MonoBehaviour
     //public GameObject bagRoof;
     public GameObject timer;
 
+    public Transform hitHandPosition;
+    public Transform coinHandPosition;
+
+    public float tiempoEspera;
+
+    bool esperando = false;
+    bool moviendo = false;
+
     Dragon coinHandScript;
     DragonHitHand hitHandScript;
 
-    public float tiempoEspera = 1f;
-
-    bool esperando = false;
+    
 
     public List<Transform> monedasPlayerTotales = new List<Transform>();
 
@@ -80,12 +86,34 @@ public class WellInteraction : MonoBehaviour
             hitHand.SetActive(true);
             coinSpawner.SetActive(true);
             //bagRoof.SetActive(true);
-            esperando = true;
+            esperando=true;
+            moviendo = true;
 
             monedasPlayerTotales.Clear();
 
-            
+        }
 
+        if(moviendo)
+        {
+
+            coinsHand.transform.position = Vector3.Lerp(coinsHand.transform.position, coinHandPosition.position, 1 * Time.deltaTime);
+            hitHand.transform.position = Vector3.Lerp(hitHand.transform.position, hitHandPosition.position, 1 * Time.deltaTime);
+
+            float distanciaCoinHand = Vector3.Distance(coinsHand.transform.position, coinHandPosition.position);
+
+            float distanciaHitHand = Vector3.Distance(hitHand.transform.position, hitHandPosition.position);
+
+            if(distanciaCoinHand<=0.1)
+            {
+                moviendo = false;
+                esperando = true;
+            }
+            if (distanciaHitHand <= 0.1)
+            {
+                moviendo = false;
+                esperando = true;
+                
+            }
 
         }
 
