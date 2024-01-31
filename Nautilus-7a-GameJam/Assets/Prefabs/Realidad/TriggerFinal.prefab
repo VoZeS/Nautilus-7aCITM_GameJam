@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7196227484508424571}
   - component: {fileID: 9048523794439629283}
   - component: {fileID: 4567967836735612109}
-  - component: {fileID: 8499258107155472411}
   m_Layer: 0
   m_Name: TriggerFinal
   m_TagString: Untagged
@@ -93,17 +92,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   duracionFadeOut: 4
   pantallaFadeOut: {fileID: 0}
---- !u!114 &8499258107155472411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3272202692921854568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 87b3db4dde0113c4abeeb8eb0f2b555e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wall: {fileID: 0}
-  fadeDuration: 0.5
+  bedAnimator: {fileID: 0}
