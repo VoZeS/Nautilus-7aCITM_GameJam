@@ -43,7 +43,7 @@ public class DragonBox : MonoBehaviour
     {
         if(collision.gameObject.tag == "Dragon")
         {
-            DropCoins();
+            //DropCoins();
             bagAnimator.SetTrigger("PutMoney");
         }
         

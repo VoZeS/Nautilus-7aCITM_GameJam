@@ -73,6 +73,7 @@ public class WellInteraction : MonoBehaviour
             //bagRoof.SetActive(true);
             esperando = true;
 
+            monedasPlayerTotales.Clear();
             
 
 

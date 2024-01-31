@@ -84,32 +84,39 @@ public class TimerScript : MonoBehaviour
 
         ActualizarSpriteReloj();
 
-        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado)
+        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado && scriptTotalPlayer.monedasPlayerTotales.Count <10)
         {
-            if (scriptTotalDragon == null)
-            {
-                playerAnimator.SetTrigger("Death");
-                alive = false;
-            }
+            //if (scriptTotalDragon == null)
+            //{
+            //    playerAnimator.SetTrigger("Death");
+            //    alive = false;
+            //}
 
-            if (scriptTotalDragon != null )
-            {
-                if (scriptTotalDragon.monedasDragonTotales.Count >= scriptTotalPlayer.monedasPlayerTotales.Count)
-                {
-                    playerAnimator.SetTrigger("Death");
-                    alive = false;
-                }
-                else
-                {
-                    GanarJuego();
-                    alive = false;
-                    ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
-                }
-                //PerderJuego();
-                alive = false;
-            }
+            //if (scriptTotalDragon != null )
+            //{
+            //    if (scriptTotalDragon.monedasDragonTotales.Count >= scriptTotalPlayer.monedasPlayerTotales.Count)
+            //    {
+            //        playerAnimator.SetTrigger("Death");
+            //        alive = false;
+            //    }
+            //    else
+            //    {
+            //        GanarJuego();
+            //        alive = false;
+            //        ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
+            //    }
+                
+            //}
+            PerderJuego();
+            alive = false;
 
-            
+        }
+        else if(scriptTotalPlayer.monedasPlayerTotales.Count == 10)
+        {
+            GanarJuego();
+            alive = false;
+            ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
+
         }
 
         if (PlatfromCharacter.dead || IsoCharacter.dead)
