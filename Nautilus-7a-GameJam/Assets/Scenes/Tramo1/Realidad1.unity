@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 114919400}
   m_Layer: 6
   m_Name: Tronco3
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1992,7 +1992,7 @@ GameObject:
   - component: {fileID: 703843725}
   m_Layer: 6
   m_Name: Tronco3 (1)
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5007,7 +5007,7 @@ GameObject:
   - component: {fileID: 1741481276}
   m_Layer: 6
   m_Name: ColliderRamas
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5176,7 +5176,7 @@ GameObject:
   - component: {fileID: 1801545956}
   m_Layer: 6
   m_Name: Tronco2
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -5770,7 +5770,7 @@ GameObject:
   - component: {fileID: 2051832577}
   m_Layer: 6
   m_Name: Tronco1
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
