@@ -1,4 +1,4 @@
-using Microsoft.Unity.VisualStudio.Editor;
+//using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,6 +14,7 @@ public class TimerScript : MonoBehaviour
 
     public float tiempoLimite = 10.0f;
     private float tiempoRestante;
+    private float tiempoTranscurrido = 0;
 
     public float duracionFadeOut = 4.0f;
     public float duracionFadeIn = 2.0f;
@@ -27,6 +28,10 @@ public class TimerScript : MonoBehaviour
     // ------------
 
     public Animator playerAnimator;
+
+    public Sprite[] spritesReloj;  // Array de sprites para las horas del reloj
+    public Image imagenReloj;  // Componente Image donde mostrar el sprite
+    private bool ultimoSpriteAlcanzado = false;
 
     // Start is called before the first frame update
     void Start()
@@ -43,10 +48,10 @@ public class TimerScript : MonoBehaviour
 
         tiempoRestante = tiempoLimite;
 
-
         StartCoroutine(FadeIn());
 
         Invoke("IniciarContador", duracionFadeIn);
+
 
         alive = true;
 
@@ -60,12 +65,15 @@ public class TimerScript : MonoBehaviour
         resultNightmare3 = 0;
         PlayerPrefs.SetInt("Nightmare3", resultNightmare3);
 
+
         PlayerPrefs.Save();
     }
 
     void IniciarContador()
     {
         tiempoRestante = tiempoLimite;
+        tiempoTranscurrido = 0;
+
     }
 
 
@@ -74,7 +82,9 @@ public class TimerScript : MonoBehaviour
     {
         tiempoRestante -= Time.deltaTime;
 
-        if (tiempoRestante <= 0 && alive)
+        ActualizarSpriteReloj();
+
+        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado)
         {
             if (scriptTotalDragon == null)
             {
@@ -93,6 +103,7 @@ public class TimerScript : MonoBehaviour
                 {
                     GanarJuego();
                     alive = false;
+                    ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
                 }
                 //PerderJuego();
                 alive = false;
@@ -106,6 +117,31 @@ public class TimerScript : MonoBehaviour
             PerderJuego();
             PlatfromCharacter.dead = false;
             IsoCharacter.dead = false;
+            ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
+        }
+
+
+    }
+
+    void ActualizarSpriteReloj()
+    {
+        tiempoTranscurrido += Time.deltaTime;
+
+        float fraccionTiempo = tiempoTranscurrido / tiempoLimite;
+
+        int indiceSprite = Mathf.FloorToInt(fraccionTiempo * spritesReloj.Length);
+
+        indiceSprite = Mathf.Clamp(indiceSprite, 0, spritesReloj.Length - 1);
+
+        if (imagenReloj != null)
+        {
+            imagenReloj.sprite = spritesReloj[indiceSprite];
+
+            // Si se alcanza el último sprite, marcar la variable correspondiente
+            if (indiceSprite == spritesReloj.Length - 1)
+            {
+                ultimoSpriteAlcanzado = true;
+            }
         }
     }
 
@@ -154,7 +190,7 @@ public class TimerScript : MonoBehaviour
 
     public void GanarJuego()
     {
-        Debug.Log("Has perdido, se acabó el tiempo!!!");
+        Debug.Log("Has ganado!!!");
 
         // ------------------------------------------------------- NIGHTMARES RESULTS
         if (SceneManager.GetActiveScene().name == "Pesadilla1")
