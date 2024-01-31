@@ -16,10 +16,16 @@ public class PlatfromCharacter : MonoBehaviour
     public GameObject parent;
     private Rigidbody2D rb;
     public bool enElSuelo;
+    public bool canMove;
+    public bool jumping;
 
     private int orientation; // 0 left, 1 right
 
     private Animator playerAnimator;
+
+    public float longitudRaycast = 1f;
+    public float longitudLateralesRaycast = 0.2f;
+    public float longitudLateralDownRaycast = 2f;
 
     void Start()
     {
@@ -35,24 +41,82 @@ public class PlatfromCharacter : MonoBehaviour
         if(!dying)
         {
             // Verificar si el jugador está en el suelo
-            enElSuelo = Physics2D.OverlapCircle(transform.position, 0.5f, sueloLayer);
+            //enElSuelo = Physics2D.OverlapCircle(transform.position, 0.5f, sueloLayer);
             //Debug.Log("En el suelo: " + enElSuelo);
 
-            // Movimiento horizontal
-            float movimientoHorizontal = Input.GetAxis("Horizontal");
-            Vector2 velocidad = new Vector2(movimientoHorizontal * velocidadMovimiento, rb.velocity.y);
-            rb.velocity = velocidad;
+            RaycastHit2D raycast1, raycast2, raycast3, 
+                raycastLeft1, raycastLeft2, raycastLeft3, raycastLeft4,
+                raycastRight1, raycastRight2, raycastRight3, raycastRight4;
 
-            UpdateOrientation(movimientoHorizontal, velocidad);
+            // Lanzar el raycast hacia abajo
+            raycast1 = Physics2D.Raycast(parent.transform.position, Vector2.down, longitudRaycast, sueloLayer);
+            raycast2 = Physics2D.Raycast(parent.transform.position + new Vector3(0.25f,0,0), Vector2.down, longitudRaycast, sueloLayer);
+            raycast3 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.25f, 0,0), Vector2.down, longitudRaycast, sueloLayer);
+
+            raycastLeft1 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0, 0), Vector2.left, longitudLateralesRaycast);
+            raycastLeft2 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, -0.5f, 0), Vector2.left, longitudLateralesRaycast);
+            raycastLeft3 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.left, longitudLateralesRaycast);
+            raycastLeft4 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.down, longitudLateralDownRaycast);
+
+            raycastRight1 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0, 0), Vector2.right, longitudLateralesRaycast);
+            raycastRight2 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, -0.5f, 0), Vector2.right, longitudLateralesRaycast);
+            raycastRight3 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.right, longitudLateralesRaycast);
+            raycastRight4 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.down, longitudLateralDownRaycast);
+
+            if (raycast1 || raycast2 || raycast3)
+            {
+                jumping = false;
+                enElSuelo = true;
+                canMove = true;
+
+                
+            }
+            else
+                enElSuelo = false;
+
+            if(canMove)
+            {
+                // Movimiento horizontal
+                float movimientoHorizontal = Input.GetAxis("Horizontal");
+                Vector2 velocidad = new Vector2(movimientoHorizontal * velocidadMovimiento, rb.velocity.y);
+                rb.velocity = velocidad;
+
+                UpdateOrientation(movimientoHorizontal, velocidad);
+
+            }
 
             // Saltar
             if (enElSuelo && Input.GetKey(KeyCode.Space))
             {
                 rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
                 playerAnimator.SetBool("Walking", false);
+                jumping = true;
             }
+
+            if ((!raycastLeft1 && !raycastLeft2 && !raycastLeft3 && !raycastLeft4)
+                && (!raycastRight1 && !raycastRight2 && !raycastRight3 && !raycastRight4)
+                && jumping)
+            {
+                canMove = true;
+            }
+            else
+                canMove = false;
         }
-        
+        Debug.DrawRay(parent.transform.position, Vector2.down * longitudRaycast, Color.red);
+        Debug.DrawRay(parent.transform.position + new Vector3(0.25f, 0, 0), Vector2.down * longitudRaycast, Color.red);
+        Debug.DrawRay(parent.transform.position + new Vector3(-0.25f, 0, 0), Vector2.down * longitudRaycast, Color.red);
+
+        Debug.DrawRay(parent.transform.position + new Vector3(-0.5f, 0, 0), Vector2.left * longitudLateralesRaycast, Color.red);
+        Debug.DrawRay(parent.transform.position + new Vector3(-0.5f, -0.5f, 0), Vector2.left * longitudLateralesRaycast, Color.red);
+        Debug.DrawRay(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.left * longitudLateralesRaycast, Color.red);
+        Debug.DrawRay(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.down * longitudLateralDownRaycast, Color.red);
+
+        Debug.DrawRay(parent.transform.position + new Vector3(0.5f, 0, 0), Vector2.right * longitudLateralesRaycast, Color.red);
+        Debug.DrawRay(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.right * longitudLateralesRaycast, Color.red);
+        Debug.DrawRay(parent.transform.position + new Vector3(0.5f, -0.5f, 0), Vector2.right * longitudLateralesRaycast, Color.red);
+        Debug.DrawRay(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.down * longitudLateralDownRaycast, Color.red);
+
+
     }
 
     public void Death()
