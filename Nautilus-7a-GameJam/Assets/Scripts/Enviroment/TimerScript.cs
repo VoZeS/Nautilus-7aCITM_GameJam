@@ -41,7 +41,7 @@ public class TimerScript : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "Pesadilla1")
             scriptTotalDragon = dragon.GetComponent<DragonBox>();
 
-        player = GameObject.Find("Well");
+        player = GameObject.Find("InteractZone");
 
         if (SceneManager.GetActiveScene().name == "Pesadilla1")
             scriptTotalPlayer = player.GetComponent<WellInteraction>();
