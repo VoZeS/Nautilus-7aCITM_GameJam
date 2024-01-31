@@ -33,23 +33,27 @@ public class TilesMovementPlayer : MonoBehaviour
     {
         UpdateOrientation();
 
-        if ((Vector2)parent.transform.position != targetPosition)
+        if(!IsoCharacter.dying)
         {
-            if (!hasCollided)
+            if ((Vector2)parent.transform.position != targetPosition)
             {
-                parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+                if (!hasCollided)
+                {
+                    parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+                }
+                else
+                {
+                    targetPosition = lastPosition;
+                    parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+                }
             }
             else
             {
-                targetPosition = lastPosition;
-                parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+                MoverPorTiles();
+
             }
         }
-        else
-        {
-            MoverPorTiles();
-
-        }
+        
     }
 
     void MoverPorTiles()

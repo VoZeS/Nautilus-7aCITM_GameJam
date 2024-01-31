@@ -26,6 +26,8 @@ public class TimerScript : MonoBehaviour
     private int resultNightmare3; //0 win, 1 lose
     // ------------
 
+    public Animator playerAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -75,13 +77,16 @@ public class TimerScript : MonoBehaviour
         if (tiempoRestante <= 0 && alive)
         {
             if (scriptTotalDragon == null)
-                PerderJuego();
+            {
+                playerAnimator.SetTrigger("Death");
+                alive = false;
+            }
 
             if (scriptTotalDragon != null )
             {
                 if (scriptTotalDragon.monedasDragonTotales.Count >= scriptTotalPlayer.monedasPlayerTotales.Count)
                 {
-                    PerderJuego();
+                    playerAnimator.SetTrigger("Death");
                     alive = false;
                 }
                 else
@@ -95,6 +100,9 @@ public class TimerScript : MonoBehaviour
 
             
         }
+
+        if (PlatfromCharacter.dead || IsoCharacter.dead)
+            PerderJuego();
     }
 
     IEnumerator FadeIn()

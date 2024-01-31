@@ -1257,6 +1257,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ceb220719b8b2974896436d44895606d, type: 3}
+--- !u!95 &433873354 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 688465426813427775, guid: a95755e667099aa478d76af9bb756433, type: 3}
+  m_PrefabInstance: {fileID: 1922792174667229654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &474093313
 GameObject:
   m_ObjectHideFlags: 0
@@ -4493,8 +4498,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: tiempoLimite
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 433873354}
     - target: {fileID: 4349916429003600934, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.10848606

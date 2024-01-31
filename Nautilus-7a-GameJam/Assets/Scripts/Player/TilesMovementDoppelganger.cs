@@ -27,22 +27,26 @@ public class TilesMovementDoppelganger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if ((Vector2)parent.transform.position != targetPosition)
+        if(!IsoCharacter.dying)
         {
-            if(!hasCollided && !TilesMovementPlayer.hasCollided)
-                parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
-            else
+            if ((Vector2)parent.transform.position != targetPosition)
             {
-                targetPosition = lastPosition;
-                parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+                if (!hasCollided && !TilesMovementPlayer.hasCollided)
+                    parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+                else
+                {
+                    targetPosition = lastPosition;
+                    parent.transform.position = Vector2.MoveTowards(parent.transform.position, targetPosition, velocidadMovimiento * Time.deltaTime);
+
+                }
 
             }
-
+            else
+            {
+                MoverPorTiles();
+            }
         }
-        else
-        {
-            MoverPorTiles();
-        }
+        
     }
 
     void MoverPorTiles()

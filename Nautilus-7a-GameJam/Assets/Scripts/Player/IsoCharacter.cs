@@ -28,6 +28,9 @@ public class IsoCharacter : MonoBehaviour
     [SerializeField] public float duracionVelocidadReducida; // Duración de la velocidad reducida en segundos.
     private bool velocidadReducidaActiva = false; // Bandera para verificar si la velocidad reducida está activa.
 
+    public static bool dead;
+    public static bool dying;
+
     void Start()
     {
         rb = parent.GetComponent<Rigidbody2D>();
@@ -41,9 +44,22 @@ public class IsoCharacter : MonoBehaviour
 
     void Update()
     {
-        Walk(out movimientoHorizontal, out velocidad);
+        if(!dying)
+        {
+            Walk(out movimientoHorizontal, out velocidad);
 
-        UpdateOrientation(movimientoHorizontal, velocidad);
+            UpdateOrientation(movimientoHorizontal, velocidad);
+        }
+        
+    }
+
+    public void Death()
+    {
+        dead = true;
+    }
+    public void Dying()
+    {
+        dying = true;
     }
 
     private void Walk(out float movimientoHorizontal, out Vector2 velocidad)

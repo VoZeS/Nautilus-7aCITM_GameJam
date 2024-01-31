@@ -4099,8 +4099,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactImage: {fileID: 2050396903}
   doorCol: {fileID: 1964311661}
+  openedColRight: {fileID: 0}
+  openedColLeft: {fileID: 0}
   doorAnimator: {fileID: 1560821704}
   playerAnimator: {fileID: 828712728}
+  cameraComp: {fileID: 0}
+  girlFollowScript: {fileID: 0}
+  brokenHeartFollowScript: {fileID: 0}
+  abusedFollowScript: {fileID: 0}
 --- !u!61 &1321639966
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6497,8 +6503,12 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: tiempoLimite
-      value: 100
+      value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: playerAnimator
+      value: 
+      objectReference: {fileID: 828712728}
     - target: {fileID: 4349916429003600934, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.10848606

@@ -9,7 +9,8 @@ public class PlatfromCharacter : MonoBehaviour
     public int characterScale = 5;
     public float velocidadMovimiento = 5f;
     public float fuerzaSalto = 5f;
-
+    static public bool dead;
+    private bool dying;
 
     [Header("Movement")]
     public GameObject parent;
@@ -24,28 +25,45 @@ public class PlatfromCharacter : MonoBehaviour
     {
         rb = parent.GetComponent<Rigidbody2D>();
         playerAnimator = GetComponent<Animator>();
+
+        dead = false;
+        dying = false;
     }
 
     void Update()
     {
-        // Verificar si el jugador está en el suelo
-        enElSuelo = Physics2D.OverlapCircle(transform.position, 0.5f, sueloLayer);
-        //Debug.Log("En el suelo: " + enElSuelo);
-
-        // Movimiento horizontal
-        float movimientoHorizontal = Input.GetAxis("Horizontal");
-        Vector2 velocidad = new Vector2(movimientoHorizontal * velocidadMovimiento, rb.velocity.y);
-        rb.velocity = velocidad;
-
-        UpdateOrientation(movimientoHorizontal, velocidad);
-
-        // Saltar
-        if (enElSuelo && Input.GetKey(KeyCode.Space))
+        if(!dying)
         {
-            rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
-            playerAnimator.SetBool("Walking", false);
+            // Verificar si el jugador está en el suelo
+            enElSuelo = Physics2D.OverlapCircle(transform.position, 0.5f, sueloLayer);
+            //Debug.Log("En el suelo: " + enElSuelo);
+
+            // Movimiento horizontal
+            float movimientoHorizontal = Input.GetAxis("Horizontal");
+            Vector2 velocidad = new Vector2(movimientoHorizontal * velocidadMovimiento, rb.velocity.y);
+            rb.velocity = velocidad;
+
+            UpdateOrientation(movimientoHorizontal, velocidad);
+
+            // Saltar
+            if (enElSuelo && Input.GetKey(KeyCode.Space))
+            {
+                rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
+                playerAnimator.SetBool("Walking", false);
+            }
         }
+        
     }
+
+    public void Death()
+    {
+        dead = true;
+    }
+    public void Dying()
+    {
+        dying = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enredadera")
