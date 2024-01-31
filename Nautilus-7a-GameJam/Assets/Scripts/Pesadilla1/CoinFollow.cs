@@ -66,7 +66,10 @@ public class CoinFollow : MonoBehaviour
 
                     playerScript.monedasRecogidas.Add(coinParent.transform);
 
-                    objetoAseguir = monedaAnterior.transform;
+                    if (monedaAnterior.gameObject.activeInHierarchy == true)
+                    {
+                        objetoAseguir = monedaAnterior.transform;
+                    }
 
                     alreadyFollowing = true;
                 }

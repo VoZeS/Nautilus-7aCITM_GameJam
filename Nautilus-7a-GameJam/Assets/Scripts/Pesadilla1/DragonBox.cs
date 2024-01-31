@@ -31,6 +31,7 @@ public class DragonBox : MonoBehaviour
         {
             monedasDragonTotales.Add(scriptLista.monedasDragonRecogidas[i]);
             scriptLista.monedasDragonRecogidas[i].gameObject.SetActive(false);
+            scriptLista.monedasDragonRecogidas.Clear();
 
             Debug.Log("Monedas dragon puestas");
         }

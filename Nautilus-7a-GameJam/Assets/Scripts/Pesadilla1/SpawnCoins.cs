@@ -35,12 +35,22 @@ public class SpawnCoins : MonoBehaviour
             // Obtener el tamaño del Collider para calcular la posición aleatoria dentro del mismo
             Vector3 zonaDeSpawnSize = zonaDeSpawnCollider.bounds.size;
 
-            float x = Random.Range(-zonaDeSpawnSize.x / 2f, zonaDeSpawnSize.x / 2f);
-            float y = Random.Range(-zonaDeSpawnSize.y / 2f, zonaDeSpawnSize.y / 2f);
-            float z = Random.Range(-zonaDeSpawnSize.z / 2f, zonaDeSpawnSize.z / 2f);
+            Vector3 randomPosition = zonaDeSpawnCollider.transform.position + new Vector3(
+                Random.Range(-zonaDeSpawnSize.x / 2f, zonaDeSpawnSize.x / 2f),
+                Random.Range(-zonaDeSpawnSize.y / 2f, zonaDeSpawnSize.y / 2f),
+                Random.Range(-zonaDeSpawnSize.z / 2f, zonaDeSpawnSize.z / 2f)
+            );
 
-            // Obtener la posición aleatoria dentro del Collider
-            return zonaDeSpawnCollider.transform.position + new Vector3(x, y, z);
+            // Verificar si la posición aleatoria está dentro del Collider
+            if (zonaDeSpawnCollider.bounds.Contains(randomPosition))
+            {
+                return randomPosition;
+            }
+            else
+            {
+                Debug.LogWarning("La posición generada no está dentro del Collider. Generando otra posición.");
+                return ObtenerPosicionAleatoriaEnZona(); // Llamada recursiva para generar otra posición
+            }
         }
         else
         {
