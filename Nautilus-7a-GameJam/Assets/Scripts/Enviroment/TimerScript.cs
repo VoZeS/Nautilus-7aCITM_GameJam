@@ -102,7 +102,11 @@ public class TimerScript : MonoBehaviour
         }
 
         if (PlatfromCharacter.dead || IsoCharacter.dead)
+        {
             PerderJuego();
+            PlatfromCharacter.dead = false;
+            IsoCharacter.dead = false;
+        }
     }
 
     IEnumerator FadeIn()
