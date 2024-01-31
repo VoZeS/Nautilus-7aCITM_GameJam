@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4622101242084862092}
   - component: {fileID: 1794514907903547135}
   - component: {fileID: 7309991350516122125}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Resbaladizo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.71, y: 1.64, z: 0}
-  m_LocalScale: {x: 4, y: 4, z: 1}
+  m_LocalScale: {x: 3.5, y: 3.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7412855492774092253}
@@ -117,7 +117,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7412855492774092253}
   - component: {fileID: 913918969925085569}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Coll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,9 +183,9 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0, y: 0.65114355}
+    - - {x: -0.045656838, y: 0.4532972}
       - {x: -0.6114733, y: 0.63040173}
-      - {x: -1.2999132, y: 0.48344544}
+      - {x: -1.2999132, y: 0.6508539}
       - {x: -1.2661178, y: -0.7702552}
       - {x: 0.51026165, y: -0.67335045}
       - {x: 2.520912, y: -0.6406484}

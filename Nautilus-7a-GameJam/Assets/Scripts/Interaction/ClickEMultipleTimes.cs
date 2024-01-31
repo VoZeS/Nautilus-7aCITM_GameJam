@@ -47,7 +47,7 @@ public class ClickEMultipleTimes : MonoBehaviour
             {
                 if (pressCharge <= 1)
                 {
-                    pressCharge += 0.05f * Time.fixedDeltaTime;
+                    pressCharge += 0.05f;
                 }
                    
                 else
@@ -57,8 +57,7 @@ public class ClickEMultipleTimes : MonoBehaviour
             {
                 if (pressCharge > 0)
                 {
-                    pressCharge -= 0.001f * Time.fixedDeltaTime;
-                    pressCharge = Mathf.Clamp01(pressCharge);
+                    pressCharge -= 0.001f;
                 }
                    
                 else

@@ -392,7 +392,7 @@ GameObject:
   - component: {fileID: 114919400}
   m_Layer: 6
   m_Name: Tronco3
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1566,7 +1566,7 @@ GameObject:
   - component: {fileID: 652800453}
   m_Layer: 6
   m_Name: ColliderRoof3
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1736,7 +1736,7 @@ GameObject:
   - component: {fileID: 703843725}
   m_Layer: 6
   m_Name: Tronco3 (1)
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2100,7 +2100,7 @@ GameObject:
   - component: {fileID: 782858224}
   m_Layer: 6
   m_Name: ColliderRoof2
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2177,7 +2177,7 @@ GameObject:
   - component: {fileID: 794770542}
   m_Layer: 6
   m_Name: ColliderRoof1
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2716,7 +2716,7 @@ GameObject:
   - component: {fileID: 1056001484}
   m_Layer: 6
   m_Name: Floor1 (1)
-  m_TagString: Untagged
+  m_TagString: Cesped
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3568,7 +3568,7 @@ GameObject:
   - component: {fileID: 1482244657}
   m_Layer: 6
   m_Name: Floor1
-  m_TagString: Untagged
+  m_TagString: Cesped
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4196,7 +4196,7 @@ GameObject:
   - component: {fileID: 1741481276}
   m_Layer: 6
   m_Name: ColliderRamas
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4365,7 +4365,7 @@ GameObject:
   - component: {fileID: 1801545956}
   m_Layer: 6
   m_Name: Tronco2
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4831,7 +4831,7 @@ GameObject:
   - component: {fileID: 2051832577}
   m_Layer: 6
   m_Name: Tronco1
-  m_TagString: Untagged
+  m_TagString: Madera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

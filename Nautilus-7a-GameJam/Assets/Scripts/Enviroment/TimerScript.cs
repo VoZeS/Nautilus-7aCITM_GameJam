@@ -33,6 +33,8 @@ public class TimerScript : MonoBehaviour
     public Image imagenReloj;  // Componente Image donde mostrar el sprite
     private bool ultimoSpriteAlcanzado = false;
 
+    public AudioSource dyeSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -89,6 +91,9 @@ public class TimerScript : MonoBehaviour
             if (scriptTotalDragon == null)
             {
                 playerAnimator.SetTrigger("Death");
+                dyeSound.Play();
+
+
                 alive = false;
 
             }
@@ -120,6 +125,7 @@ public class TimerScript : MonoBehaviour
                     //}
                     //PerderJuego();
                     playerAnimator.SetTrigger("Death");
+                    dyeSound.Play();
                     alive = false;
 
                 }
