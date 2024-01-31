@@ -20,7 +20,7 @@ public class PlatfromCharacter : MonoBehaviour
     public bool canMove;
     public bool jumping;
 
-    [Header("Movement")]
+    [Header("Movement Audios")]
     public AudioSource stepOnGrass1;
     public AudioSource stepOnGrass2;
     public AudioSource stepOnGrass3;
@@ -28,6 +28,7 @@ public class PlatfromCharacter : MonoBehaviour
     public AudioSource stepOnConcrete2;
     public AudioSource stepOnWood1;
     public AudioSource stepOnWood2;
+    public AudioSource jump;
 
 
     private int orientation; // 0 left, 1 right
@@ -117,6 +118,7 @@ public class PlatfromCharacter : MonoBehaviour
             // Saltar
             if (enElSuelo && Input.GetKey(KeyCode.Space))
             {
+                jump.Play();
                 rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
                 playerAnimator.SetBool("Walking", false);
                 jumping = true;
