@@ -23,7 +23,7 @@ public class WellInteraction : MonoBehaviour
     public GameObject coinsHand;
     public GameObject hitHand;
     public GameObject coinSpawner;
-    public GameObject bagRoof;
+    //public GameObject bagRoof;
     public GameObject timer;
 
     Dragon coinHandScript;
@@ -57,7 +57,7 @@ public class WellInteraction : MonoBehaviour
         coinsHand.SetActive(false);
         hitHand.SetActive(false);
         coinSpawner.SetActive(false);
-        bagRoof.SetActive(false);
+        //bagRoof.SetActive(false);
 
     }
 
@@ -70,7 +70,7 @@ public class WellInteraction : MonoBehaviour
             coinsHand.SetActive(true);
             hitHand.SetActive(true);
             coinSpawner.SetActive(true);
-            bagRoof.SetActive(true);
+            //bagRoof.SetActive(true);
             esperando = true;
 
             

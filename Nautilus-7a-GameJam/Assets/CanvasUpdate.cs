@@ -47,6 +47,13 @@ public class CanvasUpdate : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateAtrapa();
+
+
+    }
+
+    private void UpdateAtrapa()
+    {
         resultReality1 = PlayerPrefs.GetInt("Realidad1", resultReality1);
         resultReality2 = PlayerPrefs.GetInt("Realidad2", resultReality2);
         resultReality3 = PlayerPrefs.GetInt("Realidad3", resultReality3);
@@ -65,7 +72,7 @@ public class CanvasUpdate : MonoBehaviour
                 break;
         }
 
-        switch(resultReality2)
+        switch (resultReality2)
         {
             case 0:
                 atrapa2.sprite = atrapa2On;
@@ -78,7 +85,7 @@ public class CanvasUpdate : MonoBehaviour
                 break;
         }
 
-        switch(resultReality3)
+        switch (resultReality3)
         {
             case 0:
                 atrapa3.sprite = atrapa3On;

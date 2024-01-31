@@ -9,6 +9,7 @@ public class DragonBox : MonoBehaviour
     GameObject dragon;
     Dragon scriptLista;
 
+    public Animator bagAnimator;
 
     private void Start()
     {
@@ -43,12 +44,15 @@ public class DragonBox : MonoBehaviour
         if(collision.gameObject.tag == "Dragon")
         {
             DropCoins();
+            bagAnimator.SetTrigger("PutMoney");
         }
         
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
         DropCoins();
+        bagAnimator.SetTrigger("PutMoney");
+
     }
 
 }

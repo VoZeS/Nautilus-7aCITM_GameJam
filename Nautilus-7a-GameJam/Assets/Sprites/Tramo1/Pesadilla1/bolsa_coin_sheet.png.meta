@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ca92b64d97fb6c443ab559c1e0571e51
+guid: bd9ceecc5613a6e4aa6bd3369f99cc7a
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -149,274 +149,190 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_0
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 384
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38c115835a7a06e4289966c36b36d36f
-      internalID: -1618950514
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_1
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 384
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 39a49415cfe0c3d4fb52c6b9b164a2c2
-      internalID: -1751058453
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_2
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 384
-        width: 128
-        height: 128
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f5aad32e47e22624f88abdc5f6a93312
-      internalID: -1310029045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_3
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 384
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c86d809dcd1047d4a83b933980511358
-      internalID: 1894917066
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_4
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 256
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa5eac4bc8e9be9429f2dd553053da87
-      internalID: -396106505
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_5
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 256
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c837f8af4b1a974f9e86f07d651d194
-      internalID: 139846727
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_6
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 257
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 356d7b24312b6fa40915126c52e0635f
-      internalID: 1309298897
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_7
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 256
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6b4a2f62d139a9140a3b8315f4c5a1f1
-      internalID: 614674036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_8
+      name: bolsa_coin_sheet_0
       rect:
         serializedVersion: 2
         x: 0
         y: 128
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 99877c9c14d069a44829c07ea984e3ce
-      internalID: -310799254
+      spriteID: feca172ff7d47a241acc9f87dfef3461
+      internalID: -133344172
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_9
+      name: bolsa_coin_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04a8f736d4378be40962cc8e08d762ed
+      internalID: -818847899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bolsa_coin_sheet_2
       rect:
         serializedVersion: 2
         x: 128
         y: 128
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ea4e3e21c01f504a8161081c2f135cb
-      internalID: -1393437901
+      spriteID: f4052b1ba5e558541b7d6856e1da92a7
+      internalID: 261102266
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_10
+      name: bolsa_coin_sheet_3
       rect:
         serializedVersion: 2
-        x: 256
-        y: 128
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e374b67939b1654d8a0978c556ddddf
-      internalID: 863969213
+      spriteID: 9655b8f64ee58d44a8b5d0dd7ed3e86e
+      internalID: 1513948780
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_11
+      name: bolsa_coin_sheet_4
       rect:
         serializedVersion: 2
-        x: 384
-        y: 128
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 600a4a0d62f4c744a9ee6e55974da4e1
-      internalID: -189356333
+      spriteID: adc0d3b123d7d4e44b3112ea22f49edf
+      internalID: 996331814
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Reloj_Tiempo_Anim_12
+      name: bolsa_coin_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d25e64ac36f52a498d524322dd25a87
+      internalID: 1727926662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bolsa_coin_sheet_6
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 128
-        height: 128
-      alignment: 8
-      pivot: {x: 1, y: 0}
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 59b7f6879cdc1fd4185e381472ae7171
-      internalID: -1981851262
+      spriteID: adb4b1a8d03f53e4e82a9c74b879df48
+      internalID: 555687154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bolsa_coin_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 684a68f90cd3c434fb3f62a26d0cad53
+      internalID: -1304390365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bolsa_coin_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d40475db78fb1f34b9a1e01e3fec9276
+      internalID: -1760784550
       vertices: []
       indices: 
       edges: []
@@ -432,19 +348,15 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Reloj_Tiempo_Anim_0: -1618950514
-      Reloj_Tiempo_Anim_1: -1751058453
-      Reloj_Tiempo_Anim_10: 863969213
-      Reloj_Tiempo_Anim_11: -189356333
-      Reloj_Tiempo_Anim_12: -1981851262
-      Reloj_Tiempo_Anim_2: -1310029045
-      Reloj_Tiempo_Anim_3: 1894917066
-      Reloj_Tiempo_Anim_4: -396106505
-      Reloj_Tiempo_Anim_5: 139846727
-      Reloj_Tiempo_Anim_6: 1309298897
-      Reloj_Tiempo_Anim_7: 614674036
-      Reloj_Tiempo_Anim_8: -310799254
-      Reloj_Tiempo_Anim_9: -1393437901
+      bolsa_coin_sheet_0: -133344172
+      bolsa_coin_sheet_1: -818847899
+      bolsa_coin_sheet_2: 261102266
+      bolsa_coin_sheet_3: 1513948780
+      bolsa_coin_sheet_4: 996331814
+      bolsa_coin_sheet_5: 1727926662
+      bolsa_coin_sheet_6: 555687154
+      bolsa_coin_sheet_7: -1304390365
+      bolsa_coin_sheet_8: -1760784550
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
