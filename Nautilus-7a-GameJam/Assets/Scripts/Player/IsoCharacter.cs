@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IsoCharacter : MonoBehaviour
 {
@@ -15,6 +16,16 @@ public class IsoCharacter : MonoBehaviour
     public GameObject parent;
     private Rigidbody2D rb;
     public int orientation; // 0 left, 1 right
+
+    [Header("Audios")]
+    public AudioSource stepOnConcrete1;
+    public AudioSource stepOnConcrete2;
+    public AudioSource stepOnGrass1;
+    public AudioSource stepOnGrass2;
+    public AudioSource stepOnGrass3;
+
+    private bool stepping;
+
 
     private Animator playerAnimator;
     public Animator shadowAnimator;
@@ -49,6 +60,53 @@ public class IsoCharacter : MonoBehaviour
             Walk(out movimientoHorizontal, out velocidad);
 
             UpdateOrientation(movimientoHorizontal, velocidad);
+        }
+
+        if (stepping)
+        {
+            if (SceneManager.GetActiveScene().name == "Pesadilla2" || SceneManager.GetActiveScene().name == "Pesadilla1")
+            {
+                int indiceAleatorio = Random.Range(0, 1);
+
+                switch (indiceAleatorio)
+                {
+                    case 0:
+                        stepOnConcrete1.Play();
+                        break;
+
+                    case 1:
+                        stepOnConcrete2.Play();
+                        break;
+
+                    default:
+                        break;
+
+                }
+            }
+
+            if (SceneManager.GetActiveScene().name == "Pesadilla3")
+            {
+                int indiceAleatorio = Random.Range(0, 2);
+
+                switch (indiceAleatorio)
+                {
+                    case 0:
+                        stepOnGrass1.Play();
+                        break;
+
+                    case 1:
+                        stepOnGrass2.Play();
+                        break;
+
+                    case 2:
+                        stepOnGrass3.Play();
+                        break;
+                    default:
+                        break;
+
+                }
+            }
+
         }
         
     }
@@ -141,4 +199,11 @@ public class IsoCharacter : MonoBehaviour
         // Restaurar la velocidad normal.
         velocidadMovimiento = velocidadNormal;
     }
+
+    public void Stepping()
+    {
+        stepping = true;
+
+    }
+
 }
