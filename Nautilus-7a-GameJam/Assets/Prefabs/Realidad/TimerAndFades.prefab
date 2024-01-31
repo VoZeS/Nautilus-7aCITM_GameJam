@@ -97,10 +97,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8128400732631664107}
-  - {fileID: 4761620777869899337}
   - {fileID: 4427181594999054762}
   - {fileID: 1980742003472184729}
   - {fileID: 4638327992587109515}
+  - {fileID: 4761620777869899337}
   m_Father: {fileID: 4349916429003600934}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -186,10 +186,10 @@ MonoBehaviour:
   atrapa1: {fileID: 186685623264580060}
   atrapa1Off: {fileID: 21300000, guid: 9b722aef505285f40bf06d6574a4c5b1, type: 3}
   atrapa1On: {fileID: -1101766588, guid: dd0d38d5c2806f84c9bf7b76c8980510, type: 3}
-  atrapa2: {fileID: 2491797788895397461}
+  atrapa2: {fileID: 4839579912323588920}
   atrapa2Off: {fileID: 21300000, guid: 65f421d1c297d7840a41d96bf6fa08dd, type: 3}
   atrapa2On: {fileID: 565497665, guid: 5b370ff12dc83fd4c9ba93243244d5ad, type: 3}
-  atrapa3: {fileID: 4839579912323588920}
+  atrapa3: {fileID: 2491797788895397461}
   atrapa3Off: {fileID: 21300000, guid: d18e5498ff07d6b4d875ffe583341f05, type: 3}
   atrapa3On: {fileID: 853053702, guid: 09d882d3845932f40af683fbca26237f, type: 3}
 --- !u!1 &4532292511070156739
@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: 7207791994766606161}
   - component: {fileID: 4839579912323588920}
   m_Layer: 5
-  m_Name: Atrapa3
+  m_Name: Atrapa2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -387,7 +387,7 @@ GameObject:
   - component: {fileID: 2213659133222587219}
   - component: {fileID: 2491797788895397461}
   m_Layer: 5
-  m_Name: Atrapa2
+  m_Name: Atrapa3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

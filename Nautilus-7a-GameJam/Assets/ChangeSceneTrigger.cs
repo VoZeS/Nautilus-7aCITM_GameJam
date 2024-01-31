@@ -24,16 +24,16 @@ public class ChangeSceneTrigger : MonoBehaviour
         isInTrigger = false;
 
         // We set it as lose, but if it wins will be set to 0
-        resultReality1 = 1;
-        PlayerPrefs.SetInt("Reality1", resultReality1);
+        //resultReality1 = 1;
+        //PlayerPrefs.SetInt("Realidad1", resultReality1);
 
-        resultReality2 = 1;
-        PlayerPrefs.SetInt("Reality2", resultReality2);
+        //resultReality2 = 1;
+        //PlayerPrefs.SetInt("Realidad2", resultReality2);
 
-        resultReality3 = 1;
-        PlayerPrefs.SetInt("Reality3", resultReality3);
+        //resultReality3 = 1;
+        //PlayerPrefs.SetInt("Realidad3", resultReality3);
 
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
     }
 
     // Update is called once per frame

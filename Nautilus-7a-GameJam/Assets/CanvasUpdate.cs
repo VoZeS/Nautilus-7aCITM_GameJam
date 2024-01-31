@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class CanvasUpdate : MonoBehaviour
@@ -27,21 +28,37 @@ public class CanvasUpdate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        PlayerPrefs.GetInt("Reality1", resultReality1);
-        PlayerPrefs.GetInt("Reality2", resultReality2);
-        PlayerPrefs.GetInt("Reality3", resultReality3);
+        if(SceneManager.GetActiveScene().name == "Realidad1")
+        {
+            resultReality1 = 1;
+            PlayerPrefs.SetInt("Realidad1", resultReality1);
+
+            resultReality2 = 1;
+            PlayerPrefs.SetInt("Realidad2", resultReality2);
+
+            resultReality3 = 1;
+            PlayerPrefs.SetInt("Realidad3", resultReality3);
+
+            PlayerPrefs.Save();
+        }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch(resultReality1)
+        resultReality1 = PlayerPrefs.GetInt("Realidad1", resultReality1);
+        resultReality2 = PlayerPrefs.GetInt("Realidad2", resultReality2);
+        resultReality3 = PlayerPrefs.GetInt("Realidad3", resultReality3);
+
+
+        switch (resultReality1)
         {
             case 0:
-                atrapa1.sprite = atrapa1Off;
+                atrapa1.sprite = atrapa1On;
                 break;
             case 1:
-                atrapa1.sprite = atrapa1On;
+                atrapa1.sprite = atrapa1Off;
                 break;
             default:
                 atrapa1.sprite = atrapa1Off;
@@ -51,10 +68,10 @@ public class CanvasUpdate : MonoBehaviour
         switch(resultReality2)
         {
             case 0:
-                atrapa2.sprite = atrapa2Off;
+                atrapa2.sprite = atrapa2On;
                 break;
             case 1:
-                atrapa2.sprite = atrapa2On;
+                atrapa2.sprite = atrapa2Off;
                 break;
             default:
                 atrapa2.sprite = atrapa2Off;
@@ -64,10 +81,10 @@ public class CanvasUpdate : MonoBehaviour
         switch(resultReality3)
         {
             case 0:
-                atrapa3.sprite = atrapa3Off;
+                atrapa3.sprite = atrapa3On;
                 break;
             case 1:
-                atrapa3.sprite = atrapa3On;
+                atrapa3.sprite = atrapa3Off;
                 break;
             default:
                 atrapa3.sprite = atrapa3Off;
