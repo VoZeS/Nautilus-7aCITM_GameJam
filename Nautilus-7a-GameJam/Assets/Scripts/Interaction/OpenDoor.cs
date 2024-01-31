@@ -29,6 +29,12 @@ public class OpenDoor : MonoBehaviour
     public Follow brokenHeartFollowScript;
     public Follow abusedFollowScript;
 
+    [Header("Sound")]
+    public AudioSource doorOpenAudio;
+
+
+
+
 
     private void Start()
     {
@@ -37,6 +43,9 @@ public class OpenDoor : MonoBehaviour
         hasKey = false;
         hasOpenedDoor = false;
         interactImage.gameObject.SetActive(false);
+
+
+
 
         if(openedColRight != null)
             openedColRight.gameObject.SetActive(false);
@@ -57,6 +66,8 @@ public class OpenDoor : MonoBehaviour
 
                 doorAnimator.SetTrigger("OpenDoor");
 
+                doorOpenAudio.PlayDelayed(1);
+
                 doorCol.enabled = false;
 
                 hasKey = false;
@@ -65,8 +76,12 @@ public class OpenDoor : MonoBehaviour
 
                 playerAnimator.SetBool("HasKey", false);
 
-                openedColRight.gameObject.SetActive(true);
-                openedColLeft.gameObject.SetActive(true);
+
+                if (openedColRight != null)
+                    openedColRight.gameObject.SetActive(true);
+
+                if (openedColLeft != null)
+                    openedColLeft.gameObject.SetActive(true);
 
                 girlFollowScript.enabled = false;
                 brokenHeartFollowScript.enabled = false;
