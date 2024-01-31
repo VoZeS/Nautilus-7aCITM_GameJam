@@ -16,12 +16,18 @@ public class ElevatorScript : MonoBehaviour
     private bool isMoving = false;
     private bool isInTrigger = false;
 
+    public Animator leverAnimator;
+
     private void Update()
     {
         if (isInTrigger && !isMoving && Input.GetKeyDown(KeyCode.E))
         {
+            leverAnimator.SetBool("Activated", true);
             StartCoroutine(MoveElevator());
         }
+
+        if(!isMoving)
+            leverAnimator.SetBool("Activated", false);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
