@@ -38,7 +38,7 @@ public class TimerScript : MonoBehaviour
     {
         dragon = GameObject.Find("BagRoof");
 
-        if(SceneManager.GetActiveScene().name == "Pesadilla1")
+        if (SceneManager.GetActiveScene().name == "Pesadilla1")
             scriptTotalDragon = dragon.GetComponent<DragonBox>();
 
         player = GameObject.Find("InteractZone");
@@ -83,51 +83,65 @@ public class TimerScript : MonoBehaviour
         tiempoRestante -= Time.deltaTime;
 
         ActualizarSpriteReloj();
-
-        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado && scriptTotalPlayer.monedasPlayerTotales.Count <10)
+        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado)
         {
-            //if (scriptTotalDragon == null)
-            //{
-            //    playerAnimator.SetTrigger("Death");
-            //    alive = false;
-            //}
+            if (scriptTotalPlayer == null)
+            {
+                playerAnimator.SetTrigger("Death");
+                alive = false;
 
-            //if (scriptTotalDragon != null )
-            //{
-            //    if (scriptTotalDragon.monedasDragonTotales.Count >= scriptTotalPlayer.monedasPlayerTotales.Count)
-            //    {
-            //        playerAnimator.SetTrigger("Death");
-            //        alive = false;
-            //    }
-            //    else
-            //    {
-            //        GanarJuego();
-            //        alive = false;
-            //        ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
-            //    }
-                
-            //}
-            PerderJuego();
-            alive = false;
+            }
+
+            if (scriptTotalPlayer != null)
+            {
+                if (/*tiempoRestante <= 0 &&*/ scriptTotalPlayer.monedasPlayerTotales.Count < 10)
+                {
+                    //if (scriptTotalDragon == null)
+                    //{
+                    //    playerAnimator.SetTrigger("Death");
+                    //    alive = false;
+                    //}
+
+                    //if (scriptTotalDragon != null )
+                    //{
+                    //    if (scriptTotalDragon.monedasDragonTotales.Count >= scriptTotalPlayer.monedasPlayerTotales.Count)
+                    //    {
+                    //        playerAnimator.SetTrigger("Death");
+                    //        alive = false;
+                    //    }
+                    //    else
+                    //    {
+                    //        GanarJuego();
+                    //        alive = false;
+                    //        ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
+                    //    }
+
+                    //}
+                    //PerderJuego();
+                    playerAnimator.SetTrigger("Death");
+                    alive = false;
+
+                }
+                else if (scriptTotalPlayer.monedasPlayerTotales.Count == 10)
+                {
+                    GanarJuego();
+                    alive = false;
+                    ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
+
+                }
+            }
+
+
+            if (PlatfromCharacter.dead || IsoCharacter.dead)
+            {
+                PerderJuego();
+                PlatfromCharacter.dead = false;
+                IsoCharacter.dead = false;
+                ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
+            }
+
 
         }
-        else if(scriptTotalPlayer.monedasPlayerTotales.Count == 10)
-        {
-            GanarJuego();
-            alive = false;
-            ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
-
-        }
-
-        if (PlatfromCharacter.dead || IsoCharacter.dead)
-        {
-            PerderJuego();
-            PlatfromCharacter.dead = false;
-            IsoCharacter.dead = false;
-            ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
-        }
-
-
     }
 
     void ActualizarSpriteReloj()
@@ -237,7 +251,7 @@ public class TimerScript : MonoBehaviour
             yield return null;
         }
 
-        if(SceneManager.GetActiveScene().name == "Pesadilla1" 
+        if (SceneManager.GetActiveScene().name == "Pesadilla1"
             || SceneManager.GetActiveScene().name == "Pesadilla2"
             || SceneManager.GetActiveScene().name == "Pesadilla3")
         {
@@ -248,12 +262,12 @@ public class TimerScript : MonoBehaviour
             // Recarga la escena después del fade out
             ReiniciarNivel();
         }
-          
+
     }
 
     void ReiniciarNivel()
     {
-        
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
     }
@@ -269,6 +283,6 @@ public class TimerScript : MonoBehaviour
     }
 
 
-    
+
 
 }
