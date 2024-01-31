@@ -16,7 +16,7 @@ public class DragonBox : MonoBehaviour
         scriptLista = dragon.GetComponent<Dragon>();
 
         scriptLista.monedasDragonRecogidas.Clear();
-        Debug.Log("Lista ragon Limpia");
+        Debug.Log("Lista Dragon Limpia");
 
     }
 
