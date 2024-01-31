@@ -38,8 +38,11 @@ public class OpenDoor : MonoBehaviour
         hasOpenedDoor = false;
         interactImage.gameObject.SetActive(false);
 
-        openedColRight.gameObject.SetActive(false);
-        openedColLeft.gameObject.SetActive(false);
+        if(openedColRight != null)
+            openedColRight.gameObject.SetActive(false);
+
+        if (openedColLeft != null)
+            openedColLeft.gameObject.SetActive(false);
     }
 
     private void Update()

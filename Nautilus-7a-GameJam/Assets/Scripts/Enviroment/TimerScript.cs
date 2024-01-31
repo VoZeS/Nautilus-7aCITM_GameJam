@@ -29,12 +29,12 @@ public class TimerScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        dragon = GameObject.Find("DragonCoinHand");
+        dragon = GameObject.Find("BagRoof");
 
         if(SceneManager.GetActiveScene().name == "Pesadilla1")
             scriptTotalDragon = dragon.GetComponent<DragonBox>();
 
-        player = GameObject.Find("CharacterIso");
+        player = GameObject.Find("Well");
 
         if (SceneManager.GetActiveScene().name == "Pesadilla1")
             scriptTotalPlayer = player.GetComponent<WellInteraction>();
@@ -79,13 +79,14 @@ public class TimerScript : MonoBehaviour
 
             if (scriptTotalDragon != null )
             {
-                if (scriptTotalDragon.monedasDragonTotales.Count > scriptTotalPlayer.monedasPlayerTotales.Count)
+                if (scriptTotalDragon.monedasDragonTotales.Count >= scriptTotalPlayer.monedasPlayerTotales.Count)
                 {
                     PerderJuego();
                     alive = false;
                 }
                 else
                 {
+                    GanarJuego();
                     alive = false;
                 }
                 //PerderJuego();

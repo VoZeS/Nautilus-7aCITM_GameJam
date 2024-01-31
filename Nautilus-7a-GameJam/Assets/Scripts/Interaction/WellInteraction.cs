@@ -27,6 +27,10 @@ public class WellInteraction : MonoBehaviour
         interactSprite.gameObject.SetActive(false);
         interactSlider.gameObject.SetActive(false);
         interactTimer = 0;
+
+        scriptLista.monedasRecogidas.Clear();
+        Debug.Log("Lista Limpia");
+
     }
 
     private void Update()
@@ -101,8 +105,7 @@ public class WellInteraction : MonoBehaviour
             
             Debug.Log("Monedas puestas");
         }
-        scriptLista.monedasRecogidas.Clear();
-        Debug.Log("Lista Limpia");
+        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -15,6 +15,9 @@ public class DragonBox : MonoBehaviour
         dragon = GameObject.Find("DragonCoinHand");
         scriptLista = dragon.GetComponent<Dragon>();
 
+        scriptLista.monedasDragonRecogidas.Clear();
+        Debug.Log("Lista ragon Limpia");
+
     }
 
     private void Update()
@@ -31,8 +34,7 @@ public class DragonBox : MonoBehaviour
 
             Debug.Log("Monedas dragon puestas");
         }
-        scriptLista.monedasDragonRecogidas.Clear();
-        Debug.Log("Lista ragon Limpia");
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
