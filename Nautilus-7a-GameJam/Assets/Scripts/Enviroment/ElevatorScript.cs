@@ -18,16 +18,24 @@ public class ElevatorScript : MonoBehaviour
 
     public Animator leverAnimator;
 
+    public AudioSource leverSound;
+    public AudioSource elevatorSound;
+
     private void Update()
     {
         if (isInTrigger && !isMoving && Input.GetKeyDown(KeyCode.E))
         {
             leverAnimator.SetBool("Activated", true);
+            leverSound.Play();
             StartCoroutine(MoveElevator());
         }
 
         if(!isMoving)
+        {
             leverAnimator.SetBool("Activated", false);
+            elevatorSound.Pause();
+        }
+            
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -49,7 +57,9 @@ public class ElevatorScript : MonoBehaviour
     private IEnumerator MoveElevator()
     {
         isMoving = true;
+        elevatorSound.Play();
 
+        
         
 
         // Mueve la caja hacia arriba
