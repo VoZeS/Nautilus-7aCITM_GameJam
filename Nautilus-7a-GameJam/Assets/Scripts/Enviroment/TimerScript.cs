@@ -189,7 +189,11 @@ public class TimerScript : MonoBehaviour
 
             if (indiceSprite==5)
             {
-                clockTickingSound.Play();
+                if (clockTickingSound != null)
+                {
+                    clockTickingSound.Play();
+                }
+                   
             }
 
 
