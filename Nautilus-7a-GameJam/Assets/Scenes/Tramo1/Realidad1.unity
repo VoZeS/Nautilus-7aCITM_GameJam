@@ -1249,10 +1249,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4199120640406982553, guid: ceb220719b8b2974896436d44895606d, type: 3}
-      propertyPath: bushSound
-      value: 
-      objectReference: {fileID: 1714695276}
     - target: {fileID: 8180927217552270891, guid: ceb220719b8b2974896436d44895606d, type: 3}
       propertyPath: m_Name
       value: Enredadera
@@ -4034,11 +4030,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
---- !u!82 &1714695276 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 8819732896557472414, guid: ceb220719b8b2974896436d44895606d, type: 3}
-  m_PrefabInstance: {fileID: 426650555}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1717982486
 PrefabInstance:
   m_ObjectHideFlags: 0
