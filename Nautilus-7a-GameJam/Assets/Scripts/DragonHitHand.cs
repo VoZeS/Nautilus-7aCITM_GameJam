@@ -5,8 +5,8 @@ public class DragonHitHand : MonoBehaviour
 {
     public Transform jugador;
     public float velocidadMovimiento = 5f; // Velocidad de movimiento hacia el jugador.
-    public float tiempoQuieto = 2f; // Tiempo que el objeto se queda quieto después de llegar al jugador.
-    public float tiempoQuieto2 = 2f; // Tiempo que el objeto se queda quieto después de llegar al jugador.
+    public float tiempoQuieto = 2f; // Tiempo que el objeto se queda quieto despuÃ©s de llegar al jugador.
+    public float tiempoQuieto2 = 2f; // Tiempo que el objeto se queda quieto despuÃ©s de llegar al jugador.
 
     [SerializeField]public float distancia = 0.1f;
 
@@ -16,18 +16,18 @@ public class DragonHitHand : MonoBehaviour
     private bool waiting2 = true;
     private Vector3 posicionJugadorOriginal;
 
-    Collider2D collider;
+    public Animator animator;
+
+    public Collider2D collider;
 
     void Start()
     {
 
-        collider = GetComponent<Collider2D>();
-
         collider.enabled = false;
-        // Guardar la posición original al inicio.
+        // Guardar la posiciÃ³n original al inicio.
         posicionOriginal = transform.position;
 
-        // Actualizar la posición original del jugador al inicio.
+        // Actualizar la posiciÃ³n original del jugador al inicio.
         ActualizarPosicionJugadorOriginal();
     }
 
@@ -44,7 +44,7 @@ public class DragonHitHand : MonoBehaviour
             tiempoQuieto -= Time.deltaTime;
             if (tiempoQuieto <= 0f)
             {
-                // Reiniciar el tiempo y volver a la posición original.
+                // Reiniciar el tiempo y volver a la posiciÃ³n original.
                 waiting = false;
                 tiempoQuieto = 4f;
                 ActualizarPosicionJugadorOriginal();
@@ -57,7 +57,7 @@ public class DragonHitHand : MonoBehaviour
             tiempoQuieto2 -= Time.deltaTime;
             if (tiempoQuieto2 <= 0f)
             {
-                // Reiniciar el tiempo y volver a la posición original.
+                // Reiniciar el tiempo y volver a la posiciÃ³n original.
                 waiting2 = false;
                 tiempoQuieto2 = 2f;
                 ActualizarPosicionJugadorOriginal();
@@ -72,15 +72,16 @@ public class DragonHitHand : MonoBehaviour
 
     private void MoverHaciaJugador()
     {
+        animator.SetBool("InPlayer", true);
         if (jugador != null)
         {
-            // Calcular la dirección hacia el jugador.
+            // Calcular la direcciÃ³n hacia el jugador.
             Vector3 direccion = (posicionJugadorOriginal - transform.position).normalized;
 
             // Calcular el desplazamiento hacia el jugador.
             float desplazamiento = velocidadMovimiento * Time.deltaTime;
 
-            // Mover el objeto hacia la posición del jugador usando transform.Translate.
+            // Mover el objeto hacia la posiciÃ³n del jugador usando transform.Translate.
             transform.Translate(direccion * desplazamiento);
 
             if (Vector3.Distance(transform.position, posicionJugadorOriginal) <= 0.5) 
@@ -101,25 +102,27 @@ public class DragonHitHand : MonoBehaviour
         }
         else
         {
-            // Manejar la situación en la que el jugador no está asignado.
-            Debug.LogWarning("El objeto jugador no está asignado.");
+            // Manejar la situaciÃ³n en la que el jugador no estÃ¡ asignado.
+            Debug.LogWarning("El objeto jugador no estÃ¡ asignado.");
         }
     }
 
     
     private void VolverAPosicionOriginal()
     {
+        animator.SetBool("InPlayer", false);
+
         collider.enabled = false;
-        // Mover el objeto de vuelta a la posición original usando transform.Translate.
+        // Mover el objeto de vuelta a la posiciÃ³n original usando transform.Translate.
         transform.Translate((posicionOriginal - transform.position).normalized * velocidadMovimiento * Time.deltaTime);
 
-        // Verificar si ha vuelto a la posición original.
+        // Verificar si ha vuelto a la posiciÃ³n original.
         if (Vector3.Distance(transform.position, posicionOriginal) <= distancia)
         {
-            // Reiniciar la bandera al llegar a la posición original.
+            // Reiniciar la bandera al llegar a la posiciÃ³n original.
             llegoAlJugador = false;
             waiting = true;
-            // Actualizar la posición original del jugador.
+            // Actualizar la posiciÃ³n original del jugador.
             
         }
     }
@@ -128,14 +131,16 @@ public class DragonHitHand : MonoBehaviour
     {
         if (jugador != null)
         {
-            // Guardar la posición actual del jugador como posición original.
+            // Guardar la posiciÃ³n actual del jugador como posiciÃ³n original.
             posicionJugadorOriginal = jugador.position;
         }
         else
         {
-            // Manejar la situación en la que el jugador no está asignado.
-            Debug.LogWarning("El objeto jugador no está asignado.");
+            // Manejar la situaciÃ³n en la que el jugador no estÃ¡ asignado.
+            Debug.LogWarning("El objeto jugador no estÃ¡ asignado.");
         }
     }
+
+
 }
 

@@ -7,13 +7,17 @@ public class Dragon : MonoBehaviour
     public float velocidadMovimiento = 5f;
     public Transform objetivo; // Asigna el GameObject hacia el cual se dirigirá después de recoger la moneda
     public GameObject monedaActual;
-    bool hasMoneda = false;
+    public bool hasMoneda = false;
+
+    Animator animator;
     
 
     void Start()
     {
         // Llamamos al método para buscar la moneda más cercana al inicio
         BuscarMonedaCercana();
+
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
@@ -73,10 +77,12 @@ public class Dragon : MonoBehaviour
         if(collision.gameObject.tag=="Coin")
         {
             hasMoneda = true;
+            animator.SetBool("hasMoneda", true);
         }
         if (collision.gameObject.tag == "Caja")
         {
             hasMoneda = false;
+            animator.SetBool("hasMoneda", false);
             for (int i = 0; i < monedasDragonRecogidas.Count; i++)
             {
                 monedasDragonRecogidas[i].gameObject.SetActive(false);
