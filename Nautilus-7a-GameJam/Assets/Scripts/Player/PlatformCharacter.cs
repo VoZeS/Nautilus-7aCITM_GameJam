@@ -30,7 +30,6 @@ public class PlatfromCharacter : MonoBehaviour
     public AudioSource stepOnWood2;
     public AudioSource jump;
 
-
     private int orientation; // 0 left, 1 right
 
     private Animator playerAnimator;
@@ -236,7 +235,7 @@ public class PlatfromCharacter : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enredadera")
-        {
+        { 
             velocidadMovimiento = 1f;
             fuerzaSalto = 1f;
         }
