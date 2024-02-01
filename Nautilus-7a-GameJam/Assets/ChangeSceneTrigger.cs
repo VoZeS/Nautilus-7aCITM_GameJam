@@ -1,4 +1,3 @@
-using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -10,6 +9,8 @@ public class ChangeSceneTrigger : MonoBehaviour
     public UnityEngine.UI.Image pantallaFadeOut;
 
     public Animator bedAnimator;
+
+    public Image interactImage;
 
     // --------------------------------------------- REALITY RESULTS
     private int resultReality1; //0 win, 1 lose
