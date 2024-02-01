@@ -6,16 +6,15 @@ using UnityEngine.UI;
 public class DragonBox : MonoBehaviour
 {
     public List<Transform> monedasDragonTotales = new List<Transform>();
-    GameObject dragon;
-    Dragon scriptLista;
+    public Dragon scriptLista;
+    public Animator animator;
+    public Collider2D collider;
 
-    public Animator bagAnimator;
+    //public Animator bagAnimator;
 
     private void Start()
     {
-        dragon = GameObject.Find("DragonCoinHand");
-        scriptLista = dragon.GetComponent<Dragon>();
-
+               
         scriptLista.monedasDragonRecogidas.Clear();
         Debug.Log("Lista Dragon Limpia");
 
@@ -44,16 +43,23 @@ public class DragonBox : MonoBehaviour
         if(collision.gameObject.tag == "Dragon")
         {
             //DropCoins();
-            bagAnimator.SetTrigger("PutMoney");
+            animator.SetTrigger("PutMoney");
         }
         
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        DropCoins();
-        bagAnimator.SetTrigger("PutMoney");
+        if (collision.gameObject.tag == "Dragon")
+        {
+            //DropCoins();
+            animator.SetTrigger("Done");
+        }
 
     }
+
+
+
 
 }
 
