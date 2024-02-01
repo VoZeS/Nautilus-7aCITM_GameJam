@@ -114,13 +114,6 @@ public class TimerScript : MonoBehaviour
                         alive = false;
 
                     }
-                    else if (scriptTotalPlayer.monedasPlayerTotales.Count >= 10)
-                    {
-                        GanarJuego();
-                        alive = false;
-                        ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
-
-                    }
                 }
 
             }
@@ -160,6 +153,36 @@ public class TimerScript : MonoBehaviour
                 GanarJuego();
                 alive = false;
                 ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
+
+            }
+        }
+        else
+        {
+            if (alive && ultimoSpriteAlcanzado)
+            {
+                if (scriptTotalDragon == null)
+                {
+                    playerAnimator.SetTrigger("Death");
+                    dyeSound.Play();
+
+
+                    alive = false;
+
+                }
+
+                if (scriptTotalPlayer != null)
+                {
+                    if (ultimoSpriteAlcanzado)
+                    {
+
+                        playerAnimator.SetTrigger("Death");
+                        dyeSound.Play();
+                        alive = false;
+
+                    }
+
+                    //alive = false;
+                }
 
             }
         }

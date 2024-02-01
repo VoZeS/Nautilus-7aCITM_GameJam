@@ -40,11 +40,11 @@ public class BadCutsceneManager : MonoBehaviour
         {
             thirdVAnimator.SetTrigger("ThirdV");
         }
-        else if (timer >= 7f && timer < 9f)
+        else if (timer >= 7f && timer < 11f)
         {
             fourthVAnimator.SetTrigger("FourthV");
         }
-        else if(timer >= 9f)
+        else if(timer >= 11f)
         {
             StartFadeOut();
         }
