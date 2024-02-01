@@ -35,7 +35,6 @@ public class TimerScript : MonoBehaviour
 
     public AudioSource dyeSound;
     public AudioSource clockTickingSound;
-    public AudioSource winPesadilla;
 
     public ChangeSceneTrigger finalTriggerScript;
 
@@ -253,7 +252,6 @@ public class TimerScript : MonoBehaviour
     public void GanarJuego()
     {
         Debug.Log("Has ganado!!!");
-        winPesadilla.Play();
 
         // ------------------------------------------------------- NIGHTMARES RESULTS
         if (SceneManager.GetActiveScene().name == "Pesadilla1")
