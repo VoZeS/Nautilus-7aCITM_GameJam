@@ -34,13 +34,18 @@ public class MainMenuLogic : MonoBehaviour
 
             StartFadeOut();
         }
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape)&& settingsMenu.active==true)
         {
 
             settingsMenu.SetActive(false);
         }
+        if (Input.GetKeyDown(KeyCode.Escape) && settingsMenu.active == false)
+        {
+            Application.Quit();
+        }
 
-       
+
+
     }
 
 
