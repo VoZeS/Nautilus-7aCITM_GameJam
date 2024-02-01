@@ -31,7 +31,7 @@ public class OpenDoor : MonoBehaviour
 
     [Header("Sound")]
     public AudioSource doorOpenAudio;
-
+    public AudioSource padlockAudio;
 
 
 
@@ -65,7 +65,7 @@ public class OpenDoor : MonoBehaviour
                 Debug.Log("HAS ABIERTO LA PUERTA");
 
                 doorAnimator.SetTrigger("OpenDoor");
-
+                padlockAudio.Play();
                 doorOpenAudio.PlayDelayed(1);
 
                 doorCol.enabled = false;
