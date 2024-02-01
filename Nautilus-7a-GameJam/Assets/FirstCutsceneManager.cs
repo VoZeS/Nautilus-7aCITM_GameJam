@@ -17,6 +17,10 @@ public class FirstCutsceneManager : MonoBehaviour
     public Animator fourthVAnimator;
     public Animator fifthVAnimator;
 
+    public AudioSource swoosh1;
+    public AudioSource swoosh2;
+    public AudioSource swoosh3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,22 +36,27 @@ public class FirstCutsceneManager : MonoBehaviour
         if (timer >= 2f && timer < 4f)
         {
             firstVAnimator.SetTrigger("FirstV");
+            
         }
         else if (timer >= 4f && timer < 6f)
         {
             secondVAnimator.SetTrigger("SecondV");
+            
         }
         else if (timer >= 6f && timer < 8f)
         {
             thirdVAnimator.SetTrigger("ThirdV");
+            
         }
         else if (timer >= 8f && timer < 9f)
         {
             fourthVAnimator.SetTrigger("FourthV");
+            
         }
         else if (timer >= 9f && timer < 11f)
         {
             fifthVAnimator.SetTrigger("FifthV");
+            
         }
         else if(timer >= 11f)
         {

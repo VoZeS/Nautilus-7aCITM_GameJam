@@ -18,6 +18,8 @@ public class ClickEMultipleTimes : MonoBehaviour
     public Animator abucheadoAnimator;
     public GameObject cloud;
 
+    public AudioSource followAudio;
+
 
     private bool inZone;
     private float pressCharge;
@@ -90,7 +92,7 @@ public class ClickEMultipleTimes : MonoBehaviour
                 abucheadorAnimator[i].SetTrigger("PlayerWins");
                 fleeScript[i].enabled = true;
             }
-
+            followAudio.Play();
             followScript.enabled = true;
             triggerCol.enabled = false;
 
