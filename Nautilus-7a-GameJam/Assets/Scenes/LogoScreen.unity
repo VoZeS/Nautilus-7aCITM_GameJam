@@ -295,10 +295,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 424ad68645de4a54ea6e47d04d782ebc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  duracionFadeOut: 4
+  duracionFadeOut: 2
   duracionFadeIn: 2
   pantallaFadeOut: {fileID: 781143752}
-  tiempoLimite: 10
+  tiempoLimite: 3
 --- !u!4 &1232207843
 Transform:
   m_ObjectHideFlags: 0
