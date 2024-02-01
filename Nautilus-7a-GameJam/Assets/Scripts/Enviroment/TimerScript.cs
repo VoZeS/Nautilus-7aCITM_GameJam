@@ -36,6 +36,8 @@ public class TimerScript : MonoBehaviour
     public AudioSource dyeSound;
     public AudioSource clockTickingSound;
 
+    public ChangeSceneTrigger finalTriggerScript;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -87,7 +89,7 @@ public class TimerScript : MonoBehaviour
 
         ActualizarSpriteReloj();
 
-        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado)
+        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado && !finalTriggerScript.isSleeping)
         {
             if (scriptTotalDragon == null)
             {
