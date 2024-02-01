@@ -93,7 +93,7 @@ public class QTE : MonoBehaviour
 
                     if (Input.GetKeyDown("q"))
                     {
-                        timer = 1.8f;
+                        timer = 2f;
                         counter++;
                     }
                     if (timer > 0)
@@ -121,7 +121,7 @@ public class QTE : MonoBehaviour
 
                     if (Input.GetKeyDown("x"))
                     {
-                        timer = 1.6f;
+                        timer = 2f;
                         counter++;
                     }
                     if (timer > 0)
@@ -149,7 +149,7 @@ public class QTE : MonoBehaviour
 
                     if (Input.GetKeyDown("r"))
                     {
-                        timer = 1.4f;
+                        timer = 1.6f;
                         counter++;
                     }
                     if (timer > 0)
@@ -177,7 +177,7 @@ public class QTE : MonoBehaviour
 
                     if (Input.GetKeyDown("q"))
                     {
-                        timer = 1.2f;
+                        timer = 1.6f;
                         counter++;
                     }
                     if (timer > 0)
@@ -205,7 +205,7 @@ public class QTE : MonoBehaviour
 
                     if (Input.GetKeyDown("x"))
                     {
-                        timer = 1f;
+                        timer = 1.6f;
                         counter++;
                     }
                     if (timer > 0)
@@ -233,7 +233,7 @@ public class QTE : MonoBehaviour
 
                     if (Input.GetKeyDown("q"))
                     {
-                        timer = 1f;
+                        timer = 1.4f;
                         youWin = true;
                     }
                     if (timer > 0)

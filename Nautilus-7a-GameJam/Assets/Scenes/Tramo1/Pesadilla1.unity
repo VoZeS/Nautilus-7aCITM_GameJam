@@ -557,8 +557,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.20844984, y: 4.4101496, z: 0}
-    m_Extent: {x: 9.11035, y: 4.77565, z: 0}
+    m_Center: {x: -0.20709991, y: 4.4195004, z: 0}
+    m_Extent: {x: 9.1074, y: 4.7717, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -34536,8 +34536,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.51575005, y: -0.18704998, z: 0}
-    m_Extent: {x: 1.38475, y: 1.20935, z: 0}
+    m_Center: {x: 0.50680006, y: -0.19520003, z: 0}
+    m_Extent: {x: 1.3878, y: 1.2045, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -38667,7 +38667,7 @@ MonoBehaviour:
   - {fileID: 345060080}
   - {fileID: 833907419}
   - {fileID: 477393005}
-  tiempoEntreSpawns: 3
+  tiempoEntreSpawns: 4
 --- !u!4 &1382333928
 Transform:
   m_ObjectHideFlags: 0
