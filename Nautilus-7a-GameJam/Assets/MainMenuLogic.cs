@@ -10,13 +10,20 @@ public class MainMenuLogic : MonoBehaviour
     public float fadeDuration;
 
     public GameObject mainMenu;
+    public GameObject settingsMenu;
+
     public GameObject firstCutscene;
+         
 
     public static bool play;
 
+    public bool settings;
+
     private void Start()
     {
+        image.enabled = false;
         play = false;
+        settingsMenu.SetActive(false);
     }
 
     // Update is called once per frame
@@ -27,7 +34,15 @@ public class MainMenuLogic : MonoBehaviour
 
             StartFadeOut();
         }
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+            settingsMenu.SetActive(false);
+        }
+
+       
     }
+
 
     public void StartFadeOut()
     {
@@ -40,6 +55,7 @@ public class MainMenuLogic : MonoBehaviour
         float elapsedTime = 0f;
         Color startColor = image.color;
 
+        image.enabled = true;
         while (elapsedTime < fadeDuration)
         {
             // Calcula el nuevo color con opacidad reducida
@@ -61,6 +77,19 @@ public class MainMenuLogic : MonoBehaviour
         firstCutscene.SetActive(true);
 
         play = true;
+
+    }
+
+    public void ShowOptions()
+    {
+        if (settingsMenu.active==false)
+        {
+            settingsMenu.SetActive(true);
+        }
+        else if(settingsMenu.active == true)
+        {
+            settingsMenu.SetActive(false);
+        }
 
     }
 
