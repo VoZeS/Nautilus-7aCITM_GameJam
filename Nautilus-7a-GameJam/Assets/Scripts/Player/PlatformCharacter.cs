@@ -121,7 +121,7 @@ public class PlatfromCharacter : MonoBehaviour
 
                 if((raycastLeft1 || raycastLeft2 || raycastLeft3 || raycastLeft4)
                 || (raycastRight1 || raycastRight2 || raycastRight3 || raycastRight4))                
-                    rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto*1.1f);
+                    rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto*1.3f);
                 else
                     rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
 
