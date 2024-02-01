@@ -65,8 +65,19 @@ public class OpenDoor : MonoBehaviour
                 Debug.Log("HAS ABIERTO LA PUERTA");
 
                 doorAnimator.SetTrigger("OpenDoor");
-                padlockAudio.Play();
-                doorOpenAudio.PlayDelayed(1);
+
+                if (SceneManager.GetActiveScene().name=="Pesadilla2")
+                {
+                    padlockAudio.Play();
+                    doorOpenAudio.Play();
+                }
+
+                if (SceneManager.GetActiveScene().name == "Realidad2")
+                {
+                    padlockAudio.Play();
+                    doorOpenAudio.PlayDelayed(1);
+                }
+
 
                 doorCol.enabled = false;
 

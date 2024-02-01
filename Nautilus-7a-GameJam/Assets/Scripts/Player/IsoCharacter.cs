@@ -64,6 +64,7 @@ public class IsoCharacter : MonoBehaviour
 
         if (stepping)
         {
+            Debug.Log("Pisando");
             if (SceneManager.GetActiveScene().name == "Pesadilla2" || SceneManager.GetActiveScene().name == "Pesadilla1")
             {
                 int indiceAleatorio = Random.Range(0, 1);
@@ -203,7 +204,7 @@ public class IsoCharacter : MonoBehaviour
     public void Stepping()
     {
         stepping = true;
-
+        Debug.Log("Stepping Trueeeeee");
     }
 
 }
