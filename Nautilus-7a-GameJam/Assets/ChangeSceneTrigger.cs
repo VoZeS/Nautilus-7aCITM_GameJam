@@ -10,7 +10,7 @@ public class ChangeSceneTrigger : MonoBehaviour
 
     public Animator bedAnimator;
 
-    public Image interactImage;
+    public GameObject interactE;
 
     // --------------------------------------------- REALITY RESULTS
     private int resultReality1; //0 win, 1 lose
@@ -23,6 +23,8 @@ public class ChangeSceneTrigger : MonoBehaviour
     void Start()
     {
         isInTrigger = false;
+
+        interactE.SetActive(false);
 
         // We set it as lose, but if it wins will be set to 0
         //resultReality1 = 1;
@@ -76,14 +78,17 @@ public class ChangeSceneTrigger : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         isInTrigger = true;
+        interactE.SetActive(true);
+
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         isInTrigger = false;
+        interactE.SetActive(false);
     }
 
-    IEnumerator FadeOut()
+        IEnumerator FadeOut()
     {
         float tiempoInicioFade = Time.time;
 
