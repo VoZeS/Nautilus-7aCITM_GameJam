@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Tramo3/Pesadilla3.unity
     guid: e8b6846e49a952941b8e64c2756eb5e6
   - enabled: 1
-    path: Assets/Scenes/FinalCutscene.unity
+    path: Assets/Scenes/GoodFinalCutscene.unity
     guid: 59c36f63b62a14e40b1ef59a61715eee
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 256d843828f2f7c44ae27e3d03cd421e
   m_configObjects: {}
