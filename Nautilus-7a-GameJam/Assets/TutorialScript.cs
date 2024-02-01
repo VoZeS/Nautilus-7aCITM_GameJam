@@ -7,6 +7,8 @@ public class TutorialScript : MonoBehaviour
     public GameObject WASD;
     public GameObject spaceBar;
 
+    private bool inJump;
+
     private float timer;
 
     // Start is called before the first frame update
@@ -16,6 +18,8 @@ public class TutorialScript : MonoBehaviour
         spaceBar.SetActive(false);
 
         timer = 0;
+
+        inJump = false;
     }
 
     // Update is called once per frame
@@ -23,7 +27,7 @@ public class TutorialScript : MonoBehaviour
     {
         timer += Time.deltaTime;
 
-        if(timer <= 4f)
+        if(timer <= 4f && !inJump)
             WASD.SetActive(true);
         else
             WASD.SetActive(false);
@@ -35,6 +39,8 @@ public class TutorialScript : MonoBehaviour
         {
             WASD.SetActive(false);
             spaceBar.SetActive(true);
+
+            inJump = true;
         }
     }
 
@@ -43,6 +49,8 @@ public class TutorialScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             spaceBar.SetActive(false);
+            inJump = false;
+
         }
     }
 }

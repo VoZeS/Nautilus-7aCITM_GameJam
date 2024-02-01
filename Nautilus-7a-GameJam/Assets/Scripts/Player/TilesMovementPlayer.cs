@@ -19,6 +19,8 @@ public class TilesMovementPlayer : MonoBehaviour
     private Animator playerAnimator;
     public GameObject parent;
 
+    public GameObject particles;
+
     private void Start()
     {
         targetPosition = transform.position;
@@ -49,6 +51,8 @@ public class TilesMovementPlayer : MonoBehaviour
             }
             else
             {
+                particles.SetActive(false);
+
                 MoverPorTiles();
 
             }
@@ -64,6 +68,7 @@ public class TilesMovementPlayer : MonoBehaviour
 
         hasCollided = false;
 
+        particles.SetActive(true);
 
         if (movimientoHorizontal > 0f)
         {
