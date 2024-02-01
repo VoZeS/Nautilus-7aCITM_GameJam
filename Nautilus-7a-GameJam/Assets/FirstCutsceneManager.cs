@@ -31,37 +31,42 @@ public class FirstCutsceneManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timer += Time.deltaTime;
 
-        if (timer >= 2f && timer < 4f)
+        if(MainMenuLogic.play)
         {
-            firstVAnimator.SetTrigger("FirstV");
-            
+            timer += Time.deltaTime;
+
+            if (timer >= 2f && timer < 4f)
+            {
+                firstVAnimator.SetTrigger("FirstV");
+
+            }
+            else if (timer >= 4f && timer < 6f)
+            {
+                secondVAnimator.SetTrigger("SecondV");
+
+            }
+            else if (timer >= 6f && timer < 8f)
+            {
+                thirdVAnimator.SetTrigger("ThirdV");
+
+            }
+            else if (timer >= 8f && timer < 9f)
+            {
+                fourthVAnimator.SetTrigger("FourthV");
+
+            }
+            else if (timer >= 9f && timer < 11f)
+            {
+                fifthVAnimator.SetTrigger("FifthV");
+
+            }
+            else if (timer >= 11f)
+            {
+                StartFadeOut();
+            }
         }
-        else if (timer >= 4f && timer < 6f)
-        {
-            secondVAnimator.SetTrigger("SecondV");
-            
-        }
-        else if (timer >= 6f && timer < 8f)
-        {
-            thirdVAnimator.SetTrigger("ThirdV");
-            
-        }
-        else if (timer >= 8f && timer < 9f)
-        {
-            fourthVAnimator.SetTrigger("FourthV");
-            
-        }
-        else if (timer >= 9f && timer < 11f)
-        {
-            fifthVAnimator.SetTrigger("FifthV");
-            
-        }
-        else if(timer >= 11f)
-        {
-            StartFadeOut();
-        }
+        
 
     }
 
