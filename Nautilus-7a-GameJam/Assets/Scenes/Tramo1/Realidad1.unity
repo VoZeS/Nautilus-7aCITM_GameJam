@@ -8512,8 +8512,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.16009998, y: -0.25075, z: 0}
-    m_Extent: {x: 1.9312, y: 1.42085, z: 0}
+    m_Center: {x: 0.16705, y: -0.2478, z: 0}
+    m_Extent: {x: 1.93075, y: 1.4325, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -9217,8 +9217,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -1.32245, y: 0.02455002, z: 0}
-    m_Extent: {x: 1.70425, y: 1.20455, z: 0}
+    m_Center: {x: -1.31805, y: 0.02335, z: 0}
+    m_Extent: {x: 1.70125, y: 1.20365, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -9906,8 +9906,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.23804998, y: 0.05950001, z: 0}
-    m_Extent: {x: 1.75975, y: 0.98080003, z: 0}
+    m_Center: {x: 0.24409997, y: 0.056900024, z: 0}
+    m_Extent: {x: 1.7527, y: 0.9865, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -11039,7 +11039,7 @@ PrefabInstance:
       objectReference: {fileID: 255197564}
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: tiempoLimite
-      value: 60
+      value: 45
       objectReference: {fileID: 0}
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: playerAnimator
@@ -12051,11 +12051,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.18
+      value: -8.1
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.34
+      value: -3.29
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.z
@@ -12395,6 +12395,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fondo
       objectReference: {fileID: 0}
+    - target: {fileID: 5407136093180482178, guid: 19a9d267be34cbe4bbca93308a760038, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 2ec0bc38473a98446be84d7c0113b085, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

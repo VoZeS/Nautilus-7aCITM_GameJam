@@ -115,7 +115,7 @@ public class TimerScript : MonoBehaviour
                         alive = false;
 
                     }
-                    else if (scriptTotalPlayer.monedasPlayerTotales.Count == 10)
+                    else if (scriptTotalPlayer.monedasPlayerTotales.Count >= 10)
                     {
                         GanarJuego();
                         alive = false;
@@ -126,7 +126,7 @@ public class TimerScript : MonoBehaviour
 
             }
         }
-        else  // SUEÑOS
+        else if(scriptTotalPlayer != null) // SUEÑOS
         {
             if (alive && ultimoSpriteAlcanzado)
             {
@@ -150,15 +150,17 @@ public class TimerScript : MonoBehaviour
                         alive = false;
 
                     }
-                    else if (scriptTotalPlayer.monedasPlayerTotales.Count == 10)
-                    {
-                        GanarJuego();
-                        alive = false;
-                        ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
-
-                    }
+                    
                     //alive = false;
                 }
+
+            }
+
+            if (scriptTotalPlayer.monedasPlayerTotales.Count >= 10)
+            {
+                GanarJuego();
+                alive = false;
+                ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
 
             }
         }

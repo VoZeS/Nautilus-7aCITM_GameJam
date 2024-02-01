@@ -557,8 +557,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.20090008, y: 4.41155, z: 0}
-    m_Extent: {x: 9.1051, y: 4.7743497, z: 0}
+    m_Center: {x: -0.20844984, y: 4.4101496, z: 0}
+    m_Extent: {x: 9.11035, y: 4.77565, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -29525,9 +29525,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jugador: {fileID: 1024575147}
-  velocidadMovimiento: 15
-  tiempoQuieto: 4
-  tiempoQuieto2: 2
+  velocidadMovimiento: 10
+  tiempoQuieto: 5
+  tiempoQuieto2: 3
   distancia: 0.1
   animator: {fileID: 788844061}
   collider: {fileID: 788844060}
@@ -34536,8 +34536,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.50584996, y: -0.18830001, z: 0}
-    m_Extent: {x: 1.39035, y: 1.2124, z: 0}
+    m_Center: {x: 0.51575005, y: -0.18704998, z: 0}
+    m_Extent: {x: 1.38475, y: 1.20935, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -38667,7 +38667,7 @@ MonoBehaviour:
   - {fileID: 345060080}
   - {fileID: 833907419}
   - {fileID: 477393005}
-  tiempoEntreSpawns: 5
+  tiempoEntreSpawns: 3
 --- !u!4 &1382333928
 Transform:
   m_ObjectHideFlags: 0
@@ -52587,7 +52587,7 @@ PrefabInstance:
       objectReference: {fileID: 1642653824}
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: tiempoLimite
-      value: 50
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: winPesadilla

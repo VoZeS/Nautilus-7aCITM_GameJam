@@ -24,14 +24,14 @@ public class scoreManager : MonoBehaviour
     public void ActualizarPuntuacion(int puntuacionActual, int puntuacionMaxima)
     {
 
-        if (puntuacionActual == 10)
+        if (puntuacionActual >= 10)
         {
             puntuacion1Image.enabled = true;
             puntuacionImage.sprite = numerosSprites[0];
 
         }
         
-        if (puntuacionMaxima == 10)
+        if (puntuacionMaxima >= 10)
         {
             puntuacionMax1Image.enabled = true;
             puntuacionMaxImage.sprite = numerosSprites[0];
@@ -41,7 +41,7 @@ public class scoreManager : MonoBehaviour
         //puntuacionActual = Mathf.Min(puntuacionActual, puntuacionMaxima);
 
         
-        if (puntuacionActual != 10 )
+        if (puntuacionActual <= 10 )
         {
             // Obtener el sprite correspondiente al número actual
             Sprite spriteNumero = numerosSprites[puntuacionActual];
