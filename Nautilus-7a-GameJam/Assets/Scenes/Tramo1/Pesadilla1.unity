@@ -557,8 +557,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.20560026, y: 4.4221497, z: 0}
-    m_Extent: {x: 9.1105, y: 4.77565, z: 0}
+    m_Center: {x: -0.20725012, y: 4.4136496, z: 0}
+    m_Extent: {x: 9.11245, y: 4.77215, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -834,6 +834,10 @@ PrefabInstance:
     - target: {fileID: 7600657309622827975, guid: 63b5f6ec22bbcde459b8698feba25156, type: 3}
       propertyPath: m_Name
       value: ParticulasAndar
+      objectReference: {fileID: 0}
+    - target: {fileID: 7600657309622827975, guid: 63b5f6ec22bbcde459b8698feba25156, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -29633,7 +29637,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.025209785, y: 0.018007122}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -29644,7 +29648,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.5}
+  m_Size: {x: 0.37755227, y: 0.31993002}
   m_EdgeRadius: 0
 --- !u!95 &788844061
 Animator:
@@ -34536,8 +34540,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.51075, y: -0.19125003, z: 0}
-    m_Extent: {x: 1.39165, y: 1.20685, z: 0}
+    m_Center: {x: 0.5106, y: -0.19939995, z: 0}
+    m_Extent: {x: 1.395, y: 1.2076, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
