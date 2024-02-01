@@ -9,6 +9,8 @@ public class Dragon : MonoBehaviour
     public GameObject monedaActual;
     public bool hasMoneda = false;
 
+    public AudioSource throwCoin;
+
     Animator animator;
     
 
@@ -81,6 +83,7 @@ public class Dragon : MonoBehaviour
         }
         if (collision.gameObject.tag == "Caja")
         {
+            throwCoin.Play();
             hasMoneda = false;
             animator.SetBool("hasMoneda", false);
             for (int i = 0; i < monedasDragonRecogidas.Count; i++)
