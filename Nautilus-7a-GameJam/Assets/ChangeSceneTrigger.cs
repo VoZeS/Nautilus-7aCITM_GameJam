@@ -19,12 +19,17 @@ public class ChangeSceneTrigger : MonoBehaviour
     // ------------
 
     private bool isInTrigger;
+
+    public bool isSleeping;
+
     // Start is called before the first frame update
     void Start()
     {
         isInTrigger = false;
 
         interactE.SetActive(false);
+
+        isSleeping = false;
 
         // We set it as lose, but if it wins will be set to 0
         //resultReality1 = 1;
@@ -45,6 +50,7 @@ public class ChangeSceneTrigger : MonoBehaviour
         if (isInTrigger && Input.GetKeyDown(KeyCode.E))
         {
             bedAnimator.SetTrigger("Sleep");
+            isSleeping = true;
 
             // ------------------------------------------------------- REALITY RESULTS
             if (SceneManager.GetActiveScene().name == "Realidad1")

@@ -8341,6 +8341,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dba6222cf859ec14e992c55119cb8010, type: 3}
+--- !u!114 &951677016 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4567967836735612109, guid: dba6222cf859ec14e992c55119cb8010, type: 3}
+  m_PrefabInstance: {fileID: 951677015}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04b2d106cb21aa45acf8e0e9096160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &955632176
 GameObject:
   m_ObjectHideFlags: 0
@@ -12466,8 +12477,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.6201, y: 0.12400001, z: 0}
-    m_Extent: {x: 1.5857, y: 1.5539999, z: 0}
+    m_Center: {x: 0.62039995, y: 0.11500001, z: 0}
+    m_Extent: {x: 1.595, y: 1.5609, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -18142,7 +18153,7 @@ PrefabInstance:
       objectReference: {fileID: 389081641}
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: tiempoLimite
-      value: 30
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: playerAnimator
@@ -18152,6 +18163,10 @@ PrefabInstance:
       propertyPath: clockTickingSound
       value: 
       objectReference: {fileID: 1553015183}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: finalTriggerScript
+      value: 
+      objectReference: {fileID: 951677016}
     - target: {fileID: 1980742003472184729, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.9768163

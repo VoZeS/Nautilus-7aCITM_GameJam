@@ -74,12 +74,14 @@ public class GetKey : MonoBehaviour
                     key.SetActive(false);
                 }
 
-                interactImage.SetActive(false);
+                if (interactImage != null)
+                    interactImage.SetActive(false);
             }
         }
         else
         {
-            interactImage.SetActive(false);
+            if(interactImage != null)
+                interactImage.SetActive(false);
 
         }
     }
