@@ -28,11 +28,11 @@ public class GetKey : MonoBehaviour
         canGetKey = false;
         hasKey = false;
 
-        if(interactImage != null)
+        if (interactImage != null)
             interactImage.SetActive(false);
 
-        if(lightPlayer != null )
-            lightPlayer.SetActive(false); 
+        if (lightPlayer != null)
+            lightPlayer.SetActive(false);
 
         if (SceneManager.GetActiveScene().name == "Realidad2")
         {
@@ -52,52 +52,46 @@ public class GetKey : MonoBehaviour
 
     private void Update()
     {
-        if(canGetKey && inZone)
+        if (canGetKey && inZone)
         {
-            interactImage.SetActive(true);
 
             if (Input.GetKeyDown("e"))
             {
                 Debug.Log("HAS COGIDO LA LLAVE");
 
                 hasKey = true;
-                lightPlayer.SetActive(true);
+                if (lightPlayer != null)
+                    lightPlayer.SetActive(true);
 
                 if (playerAnimator != null)
                     playerAnimator.SetBool("HasKey", true);
 
-                if(oldManAnimator != null)
+                if (oldManAnimator != null)
                     oldManAnimator.SetBool("HasKey", false);
 
                 if (SceneManager.GetActiveScene().name == "Realidad2" && key != null)
                 {
                     key.SetActive(false);
                 }
-
-                if (interactImage != null)
-                    interactImage.SetActive(false);
             }
-        }
-        else
-        {
-            if(interactImage != null)
-                interactImage.SetActive(false);
-
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             inZone = true;
+            if(canGetKey)
+                interactImage.SetActive(true);
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player"))
         {
             inZone = false;
+            interactImage.SetActive(false);
         }
     }
 }

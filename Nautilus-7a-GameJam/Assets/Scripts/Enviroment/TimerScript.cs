@@ -90,60 +90,79 @@ public class TimerScript : MonoBehaviour
 
         ActualizarSpriteReloj();
 
-        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado && !finalTriggerScript.isSleeping)
+        // REALIDADES
+        if(finalTriggerScript != null)
         {
-            if (scriptTotalDragon == null)
+            if (alive && ultimoSpriteAlcanzado && !finalTriggerScript.isSleeping)
             {
-                playerAnimator.SetTrigger("Death");
-                dyeSound.Play();
-
-
-                alive = false;
-
-            }
-
-            if (scriptTotalPlayer != null)
-            {
-                if (/*tiempoRestante <= 0 &&*/ ultimoSpriteAlcanzado)
+                if (scriptTotalDragon == null)
                 {
-                    //if (scriptTotalDragon == null)
-                    //{
-                    //    playerAnimator.SetTrigger("Death");
-                    //    alive = false;
-                    //}
-
-                    //if (scriptTotalDragon != null )
-                    //{
-                    //    if (scriptTotalDragon.monedasDragonTotales.Count >= scriptTotalPlayer.monedasPlayerTotales.Count)
-                    //    {
-                    //        playerAnimator.SetTrigger("Death");
-                    //        alive = false;
-                    //    }
-                    //    else
-                    //    {
-                    //        GanarJuego();
-                    //        alive = false;
-                    //        ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
-                    //    }
-
-                    //}
-                    //PerderJuego();
                     playerAnimator.SetTrigger("Death");
                     dyeSound.Play();
+
+
                     alive = false;
 
                 }
-                else if (scriptTotalPlayer.monedasPlayerTotales.Count == 10)
+
+                if (scriptTotalPlayer != null)
                 {
-                    GanarJuego();
+                    if (ultimoSpriteAlcanzado)
+                    {
+                        
+                        playerAnimator.SetTrigger("Death");
+                        dyeSound.Play();
+                        alive = false;
+
+                    }
+                    else if (scriptTotalPlayer.monedasPlayerTotales.Count == 10)
+                    {
+                        GanarJuego();
+                        alive = false;
+                        ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
+
+                    }
+                }
+
+            }
+        }
+        else  // SUEÑOS
+        {
+            if (alive && ultimoSpriteAlcanzado)
+            {
+                if (scriptTotalDragon == null)
+                {
+                    playerAnimator.SetTrigger("Death");
+                    dyeSound.Play();
+
+
                     alive = false;
-                    ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
 
                 }
-                //alive = false;
-            }
 
+                if (scriptTotalPlayer != null)
+                {
+                    if (ultimoSpriteAlcanzado)
+                    {
+
+                        playerAnimator.SetTrigger("Death");
+                        dyeSound.Play();
+                        alive = false;
+
+                    }
+                    else if (scriptTotalPlayer.monedasPlayerTotales.Count == 10)
+                    {
+                        GanarJuego();
+                        alive = false;
+                        ultimoSpriteAlcanzado = true;  // Marcar que se alcanzó el último sprite
+
+                    }
+                    //alive = false;
+                }
+
+            }
         }
+        
 
         if (PlatfromCharacter.dead || IsoCharacter.dead)
         {

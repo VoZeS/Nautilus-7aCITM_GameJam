@@ -123,7 +123,8 @@ public class OpenDoor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             inZone = true;
-            interactImage.SetActive(true);
+            if (interactImage != null && GetKey.hasKey)
+                interactImage.SetActive(true);
 
         }
     }

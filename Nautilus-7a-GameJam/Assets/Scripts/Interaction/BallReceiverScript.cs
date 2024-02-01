@@ -10,7 +10,7 @@ public class BallReceiverScript : MonoBehaviour
     private bool readyToGiveBall;
 
     [Header("UI")]
-    public Image interactSprite;
+    public GameObject interactSprite;
     public GameObject cloudGirl;
 
     [Header("Girl")]
@@ -20,7 +20,7 @@ public class BallReceiverScript : MonoBehaviour
 
     void Start()
     {
-        interactSprite.gameObject.SetActive(false);
+        interactSprite.SetActive(false);
         girlAnimator = girl.GetComponent<Animator>();
         followScript = girl.GetComponent<Follow>();
         followScript.enabled = false;
@@ -33,17 +33,12 @@ public class BallReceiverScript : MonoBehaviour
     {
         if (readyToGiveBall)
         {
-            interactSprite.gameObject.SetActive(true);
+            interactSprite.SetActive(true);
 
             if (Input.GetKey("e"))
             {
                 Interact();
             }
-        }
-        else
-        {
-            interactSprite.gameObject.SetActive(false);
-
         }
     }
 
@@ -79,6 +74,7 @@ public class BallReceiverScript : MonoBehaviour
         if (collision.gameObject.CompareTag("Ball"))
         {
             readyToGiveBall = false;
+            interactSprite.SetActive(false);
         }
     }
 }
