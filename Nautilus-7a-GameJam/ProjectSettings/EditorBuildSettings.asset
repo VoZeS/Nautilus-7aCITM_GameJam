@@ -30,7 +30,7 @@ EditorBuildSettings:
     path: Assets/Scenes/GoodFinalCutscene.unity
     guid: 59c36f63b62a14e40b1ef59a61715eee
   - enabled: 1
-    path: Assets/Scenes/BadFinalCutscene 1.unity
+    path: Assets/Scenes/BadFinalCutscene.unity
     guid: 2879d97f8640cd745b933a66935933c3
   - enabled: 1
     path: Assets/Scenes/Credits.unity
