@@ -33,6 +33,8 @@ public class OpenDoor : MonoBehaviour
     public AudioSource doorOpenAudio;
     public AudioSource padlockAudio;
 
+    public BoxCollider2D doorTrigger;
+
 
 
 
@@ -44,7 +46,7 @@ public class OpenDoor : MonoBehaviour
         hasOpenedDoor = false;
         interactImage.gameObject.SetActive(false);
 
-
+        doorTrigger.enabled = true;
 
 
         if(openedColRight != null)
@@ -65,6 +67,8 @@ public class OpenDoor : MonoBehaviour
                 Debug.Log("HAS ABIERTO LA PUERTA");
 
                 doorAnimator.SetTrigger("OpenDoor");
+
+                doorTrigger.enabled = false;
 
                 if (SceneManager.GetActiveScene().name=="Pesadilla2")
                 {

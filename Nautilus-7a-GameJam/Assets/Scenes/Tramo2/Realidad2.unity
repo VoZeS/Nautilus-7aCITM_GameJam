@@ -2445,7 +2445,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 7
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -7680,6 +7680,11 @@ AudioSource:
   m_CorrespondingSourceObject: {fileID: 3862058759697955085, guid: a95755e667099aa478d76af9bb756433, type: 3}
   m_PrefabInstance: {fileID: 822880513}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &826022820 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4011916576300548758, guid: ceb220719b8b2974896436d44895606d, type: 3}
+  m_PrefabInstance: {fileID: 5817264399327290776}
+  m_PrefabAsset: {fileID: 0}
 --- !u!95 &828712728 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 688465426813427775, guid: a95755e667099aa478d76af9bb756433, type: 3}
@@ -10379,6 +10384,7 @@ MonoBehaviour:
   abusedFollowScript: {fileID: 0}
   doorOpenAudio: {fileID: 1171680873}
   padlockAudio: {fileID: 231138000}
+  doorTrigger: {fileID: 1321639966}
 --- !u!61 &1321639966
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -12360,8 +12366,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.62415, y: 0.12579995, z: 0}
-    m_Extent: {x: 1.5889499, y: 1.565, z: 0}
+    m_Center: {x: 0.61259997, y: 0.12110001, z: 0}
+    m_Extent: {x: 1.5924, y: 1.5555, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

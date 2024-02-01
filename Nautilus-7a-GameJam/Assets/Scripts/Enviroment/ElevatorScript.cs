@@ -24,7 +24,13 @@ public class ElevatorScript : MonoBehaviour
     private Vector3 startPos;
     private Vector3 endPos;
 
+    public GameObject interactE;
 
+    private void Start()
+    {
+        interactE.SetActive(false);
+
+    }
 
     private void Update()
     {
@@ -40,15 +46,14 @@ public class ElevatorScript : MonoBehaviour
             leverAnimator.SetBool("Activated", false);
             elevatorSound.Stop();
         }
-        
-        
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
         isInTrigger = true;
-        
+        interactE.SetActive(true);
 
     }
 
@@ -56,7 +61,7 @@ public class ElevatorScript : MonoBehaviour
     {
 
         isInTrigger = false;
-        
+        interactE.SetActive(false);
 
     }
 
@@ -65,9 +70,6 @@ public class ElevatorScript : MonoBehaviour
         isMoving = true;
         elevatorSound.Play();
         
-        
-        
-
         // Mueve la caja hacia arriba
         float elapsedTime = 0f;
         startPos = elevator.transform.position;

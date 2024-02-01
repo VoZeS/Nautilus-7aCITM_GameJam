@@ -69,12 +69,12 @@ public class PlatfromCharacter : MonoBehaviour
             raycast3 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.25f, 0,0), Vector2.down, longitudRaycast, sueloLayer);
 
             raycastLeft1 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0, 0), Vector2.left, longitudLateralesRaycast, sueloLayer);
-            raycastLeft2 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, -0.5f, 0), Vector2.left, longitudLateralesRaycast, sueloLayer);
+            raycastLeft2 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, -0.4f, 0), Vector2.left, longitudLateralesRaycast, sueloLayer);
             raycastLeft3 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.left, longitudLateralesRaycast, sueloLayer);
             raycastLeft4 = Physics2D.Raycast(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.down, longitudLateralDownRaycast, sueloLayer);
 
             raycastRight1 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0, 0), Vector2.right, longitudLateralesRaycast, sueloLayer);
-            raycastRight2 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, -0.5f, 0), Vector2.right, longitudLateralesRaycast, sueloLayer);
+            raycastRight2 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, -0.4f, 0), Vector2.right, longitudLateralesRaycast, sueloLayer);
             raycastRight3 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.right, longitudLateralesRaycast, sueloLayer);
             raycastRight4 = Physics2D.Raycast(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.down, longitudLateralDownRaycast, sueloLayer);
 
@@ -118,7 +118,13 @@ public class PlatfromCharacter : MonoBehaviour
             if (enElSuelo && Input.GetKey(KeyCode.Space))
             {
                 jump.Play();
-                rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
+
+                if((raycastLeft1 || raycastLeft2 || raycastLeft3 || raycastLeft4)
+                || (raycastRight1 || raycastRight2 || raycastRight3 || raycastRight4))                
+                    rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto*1.3f);
+                else
+                    rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto);
+
                 playerAnimator.SetBool("Walking", false);
                 jumping = true;
             }
@@ -137,13 +143,13 @@ public class PlatfromCharacter : MonoBehaviour
         Debug.DrawRay(parent.transform.position + new Vector3(-0.25f, 0, 0), Vector2.down * longitudRaycast, Color.red);
 
         Debug.DrawRay(parent.transform.position + new Vector3(-0.5f, 0, 0), Vector2.left * longitudLateralesRaycast, Color.red);
-        Debug.DrawRay(parent.transform.position + new Vector3(-0.5f, -0.5f, 0), Vector2.left * longitudLateralesRaycast, Color.red);
+        Debug.DrawRay(parent.transform.position + new Vector3(-0.5f, -0.4f, 0), Vector2.left * longitudLateralesRaycast, Color.red);
         Debug.DrawRay(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.left * longitudLateralesRaycast, Color.red);
         Debug.DrawRay(parent.transform.position + new Vector3(-0.5f, 0.5f, 0), Vector2.down * longitudLateralDownRaycast, Color.red);
 
         Debug.DrawRay(parent.transform.position + new Vector3(0.5f, 0, 0), Vector2.right * longitudLateralesRaycast, Color.red);
         Debug.DrawRay(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.right * longitudLateralesRaycast, Color.red);
-        Debug.DrawRay(parent.transform.position + new Vector3(0.5f, -0.5f, 0), Vector2.right * longitudLateralesRaycast, Color.red);
+        Debug.DrawRay(parent.transform.position + new Vector3(0.5f, -0.4f, 0), Vector2.right * longitudLateralesRaycast, Color.red);
         Debug.DrawRay(parent.transform.position + new Vector3(0.5f, 0.5f, 0), Vector2.down * longitudLateralDownRaycast, Color.red);
 
 
