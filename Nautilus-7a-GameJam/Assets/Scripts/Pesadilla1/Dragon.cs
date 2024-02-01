@@ -10,8 +10,10 @@ public class Dragon : MonoBehaviour
     public bool hasMoneda = false;
 
     public AudioSource throwCoin;
+    public AudioSource pickCoin;
 
     Animator animator;
+    
     
 
     void Start()
@@ -80,6 +82,7 @@ public class Dragon : MonoBehaviour
         {
             hasMoneda = true;
             animator.SetBool("hasMoneda", true);
+            pickCoin.Play();
         }
         if (collision.gameObject.tag == "Caja")
         {

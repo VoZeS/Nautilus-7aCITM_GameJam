@@ -20,6 +20,8 @@ public class DragonHitHand : MonoBehaviour
 
     public Collider2D collider;
 
+    public AudioSource handHit;
+
     void Start()
     {
 
@@ -87,6 +89,7 @@ public class DragonHitHand : MonoBehaviour
             if (Vector3.Distance(transform.position, posicionJugadorOriginal) <= 0.5) 
             {
                 collider.enabled = true;
+                handHit.Play();
 
             }
             // Verificar si ha llegado al jugador.

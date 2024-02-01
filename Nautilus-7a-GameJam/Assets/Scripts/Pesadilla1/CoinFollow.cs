@@ -24,6 +24,10 @@ public class CoinFollow : MonoBehaviour
     public GameObject coinParent;
     private int orientation; //0 left, 1 right
 
+
+    public AudioSource coinGrab;
+
+
     private void Start()
     {
         collider = GetComponent<Collider2D>();
@@ -41,6 +45,7 @@ public class CoinFollow : MonoBehaviour
             if(other.gameObject.tag == "Player")
             {
                 playerScript = other.GetComponent<IsoCharacter>();
+                coinGrab.Play();
                 
 
             }else if (other.gameObject.tag == "Dragon")
