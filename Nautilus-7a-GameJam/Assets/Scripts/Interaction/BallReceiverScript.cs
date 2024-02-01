@@ -18,6 +18,8 @@ public class BallReceiverScript : MonoBehaviour
     private Animator girlAnimator;
     private Follow followScript;
 
+    public AudioSource audioFollow;
+
     void Start()
     {
         interactSprite.SetActive(false);
@@ -37,6 +39,7 @@ public class BallReceiverScript : MonoBehaviour
 
             if (Input.GetKey("e"))
             {
+                audioFollow.Play();
                 Interact();
             }
         }

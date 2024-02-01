@@ -18,6 +18,7 @@ public class QTE : MonoBehaviour
     public Follow followScript;
     public Animator brokenManAnimator;
 
+    public AudioSource followAudio;
     private bool inZone;
     private float timer;
     private int counter;
@@ -281,6 +282,7 @@ public class QTE : MonoBehaviour
         if (youWin)
         {
             brokenManAnimator.SetTrigger("PlayerWon");
+            followAudio.Play();
 
             completed = true;
             Followers.followers++;
