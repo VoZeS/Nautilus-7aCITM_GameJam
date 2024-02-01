@@ -54,7 +54,13 @@ public class PlatfromCharacter : MonoBehaviour
 
     void Update()
     {
-        if(!dying)
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+            Application.Quit();
+        }
+
+        if (!dying)
         {
             // Verificar si el jugador está en el suelo
             //enElSuelo = Physics2D.OverlapCircle(transform.position, 0.5f, sueloLayer);

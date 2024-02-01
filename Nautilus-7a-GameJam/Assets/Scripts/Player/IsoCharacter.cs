@@ -56,6 +56,12 @@ public class IsoCharacter : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+
+            Application.Quit();
+        }
+
         if (!dying)
         {
             Walk(out movimientoHorizontal, out velocidad);
