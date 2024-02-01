@@ -4187,11 +4187,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1893512787947635159, guid: 0784db5e00e11c64bab265cd468f0270, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4062472596513289711, guid: 0784db5e00e11c64bab265cd468f0270, type: 3}
       propertyPath: m_Layer
-      value: 0
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4622101242084862092, guid: 0784db5e00e11c64bab265cd468f0270, type: 3}
       propertyPath: m_LocalScale.x
@@ -4203,7 +4203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4622101242084862092, guid: 0784db5e00e11c64bab265cd468f0270, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.14
+      value: -0.95
       objectReference: {fileID: 0}
     - target: {fileID: 4622101242084862092, guid: 0784db5e00e11c64bab265cd468f0270, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4673,6 +4673,7 @@ MonoBehaviour:
   brokenHeartFollowScript: {fileID: 0}
   abusedFollowScript: {fileID: 0}
   doorOpenAudio: {fileID: 1171680873}
+  padlockAudio: {fileID: 0}
 --- !u!61 &1321639966
 BoxCollider2D:
   m_ObjectHideFlags: 0

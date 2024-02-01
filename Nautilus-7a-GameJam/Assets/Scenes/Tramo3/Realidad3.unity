@@ -3376,10 +3376,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Resbaladizo
       objectReference: {fileID: 0}
-    - target: {fileID: 1893512787947635159, guid: 0784db5e00e11c64bab265cd468f0270, type: 3}
-      propertyPath: m_Layer
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 4622101242084862092, guid: 0784db5e00e11c64bab265cd468f0270, type: 3}
       propertyPath: m_LocalPosition.x
       value: 2.63
@@ -5687,10 +5683,6 @@ PrefabInstance:
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8757012194589228740, guid: a95755e667099aa478d76af9bb756433, type: 3}
-      propertyPath: fangoLayer.m_Bits
-      value: 1024
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
