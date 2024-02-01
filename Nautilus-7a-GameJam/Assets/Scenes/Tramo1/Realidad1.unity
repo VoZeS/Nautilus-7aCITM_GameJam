@@ -5103,6 +5103,7 @@ Transform:
   - {fileID: 1299650522}
   - {fileID: 728190425}
   - {fileID: 226051343}
+  - {fileID: 601193727}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &28663602
@@ -6987,6 +6988,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1fec1a1ddfbfa54999b344a068cbca5, type: 3}
+--- !u!4 &601193727 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+  m_PrefabInstance: {fileID: 7882483778828926361}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &619754025
 GameObject:
   m_ObjectHideFlags: 0
@@ -8506,8 +8512,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.18855, y: -0.22929996, z: 0}
-    m_Extent: {x: 1.89575, y: 1.4551, z: 0}
+    m_Center: {x: 0.16009998, y: -0.25075, z: 0}
+    m_Extent: {x: 1.9312, y: 1.42085, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -8518,11 +8524,10 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0.5
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -1.1595464, y: -0.88944006, z: 0}
+  - {x: -1.1943092, y: -0.88944006, z: 0}
   - {x: -0.63715243, y: -1.1790204, z: -0.000000052154064}
   - {x: 1.5904315, y: -1.1564841, z: 0}
-  - {x: 0.121686935, y: 0.68915653, z: 0}
-  - {x: -1.2040534, y: 0.72939944, z: 0}
+  - {x: -1.2688227, y: 0.67756915, z: 0}
 --- !u!4 &1078564249 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8458434882495498199, guid: 8e78649cbd56280409b89c55623b69b8, type: 3}
@@ -9212,8 +9217,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -1.3257, y: 0.017450035, z: 0}
-    m_Extent: {x: 1.6998, y: 1.2067499, z: 0}
+    m_Center: {x: -1.32245, y: 0.02455002, z: 0}
+    m_Extent: {x: 1.70425, y: 1.20455, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -9901,8 +9906,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.23765004, y: 0.06155002, z: 0}
-    m_Extent: {x: 1.74535, y: 0.98385, z: 0}
+    m_Center: {x: 0.23804998, y: 0.05950001, z: 0}
+    m_Extent: {x: 1.75975, y: 0.98080003, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -11062,11 +11067,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1980742003472184729, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -60.833252
+      value: -60.833374
       objectReference: {fileID: 0}
     - target: {fileID: 1980742003472184729, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 61.888
+      objectReference: {fileID: 0}
+    - target: {fileID: 2010988204500525866, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4349916429003600934, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -11146,7 +11155,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4638327992587109515, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -103.43768
+      value: -103.43767
       objectReference: {fileID: 0}
     - target: {fileID: 4638327992587109515, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -12269,6 +12278,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b1fec1a1ddfbfa54999b344a068cbca5, type: 3}
+--- !u!1001 &7882483778828926361
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 18197630}
+    m_Modifications:
+    - target: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.39
+      objectReference: {fileID: 0}
+    - target: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.05
+      objectReference: {fileID: 0}
+    - target: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 873873059327452738, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2806001473859728936, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
+      propertyPath: m_Name
+      value: ORBE
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9169f522047dff2438ffc9dfaf6ce516, type: 3}
 --- !u!1001 &8005550233238298803
 PrefabInstance:
   m_ObjectHideFlags: 0
