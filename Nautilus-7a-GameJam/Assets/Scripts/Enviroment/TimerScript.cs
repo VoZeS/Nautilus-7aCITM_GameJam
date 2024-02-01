@@ -314,7 +314,12 @@ public class TimerScript : MonoBehaviour
         else if (SceneManager.GetActiveScene().name == "Pesadilla2")
             SceneManager.LoadScene("Realidad3");
         else if (SceneManager.GetActiveScene().name == "Pesadilla3")
-            SceneManager.LoadScene("FinalCutscene");
+        {
+            if(resultNightmare3 == 0)
+                SceneManager.LoadScene("GoodFinalCutscene");
+            else if (resultNightmare3 == 1)
+                SceneManager.LoadScene("BadFinalCutscene");
+        }
 
     }
 
