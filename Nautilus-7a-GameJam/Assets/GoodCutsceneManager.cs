@@ -37,11 +37,11 @@ public class GoodCutsceneManager : MonoBehaviour
         {
             thirdVAnimator.SetTrigger("ThirdV");
         }
-        else if (timer >= 6f && timer < 8f)
+        else if (timer >= 6f && timer < 9f)
         {
             fourthVAnimator.SetTrigger("FourthV");
         }
-        else if (timer >= 8f)
+        else if (timer >= 9f)
         {
             StartFadeOut();
         }

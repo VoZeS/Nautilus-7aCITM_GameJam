@@ -7,8 +7,7 @@ using UnityEngine.UI;
 public class WellInteraction : MonoBehaviour
 {
     [Header("UI")]
-    public Image interactSprite;
-    public Slider interactSlider;
+    public GameObject interactSprite;
 
     private bool readyToInteract = false;
     private bool interacting = false;
@@ -50,7 +49,7 @@ public class WellInteraction : MonoBehaviour
         scriptLista = player.GetComponent<IsoCharacter>();
 
         interactSprite.gameObject.SetActive(false);
-        interactSlider.gameObject.SetActive(false);
+        //interactSlider.gameObject.SetActive(false);
         interactTimer = 0;
 
         scriptLista.monedasRecogidas.Clear();
@@ -131,10 +130,10 @@ public class WellInteraction : MonoBehaviour
             }
         }
 
-        if (readyToInteract)
+        if (readyToInteract && scriptLista.monedasRecogidas.Count != 0)
         {
             
-            //interactSprite.gameObject.SetActive(true);
+            interactSprite.SetActive(true);
 
             if (Input.GetKeyDown(KeyCode.E))
             {
@@ -154,7 +153,7 @@ public class WellInteraction : MonoBehaviour
             else
             {
                 interacting = false;
-                interactSlider.gameObject.SetActive(false);
+                //interactSlider.gameObject.SetActive(false);
 
             }
 
@@ -172,7 +171,7 @@ public class WellInteraction : MonoBehaviour
 
         interactTimer = 0;
 
-        interactSlider.gameObject.SetActive(true);
+        //interactSlider.gameObject.SetActive(true);
 
     }
 
@@ -181,7 +180,7 @@ public class WellInteraction : MonoBehaviour
         
         interactTimer += Time.deltaTime;
 
-        interactSlider.value = interactTimer * 0.5f;
+        //interactSlider.value = interactTimer * 0.5f;
 
         // TODO: Only interact if the player has coins to deposit
         if (interactTimer >= 2f)
