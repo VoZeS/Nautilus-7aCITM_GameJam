@@ -980,6 +980,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2089765451}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &255197564 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 5513626182999986003, guid: a95755e667099aa478d76af9bb756433, type: 3}
+  m_PrefabInstance: {fileID: 1922792174667229654}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &332249863 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6863955013327312008, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
@@ -1204,10 +1209,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 878456372105064121, guid: ceb220719b8b2974896436d44895606d, type: 3}
-      propertyPath: m_SortingOrder
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4011916576300548758, guid: ceb220719b8b2974896436d44895606d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.2978797
@@ -4634,9 +4635,21 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: dyeSound
+      value: 
+      objectReference: {fileID: 255197564}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: tiempoLimite
+      value: 60
+      objectReference: {fileID: 0}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 433873354}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: clockTickingSound
+      value: 
+      objectReference: {fileID: 2133858788}
     - target: {fileID: 4349916429003600934, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.10848606
@@ -4680,6 +4693,14 @@ PrefabInstance:
     - target: {fileID: 4532292511070156739, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_Name
       value: TimerAndFades
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419262274997613906, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_Volume
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8419262274997613906, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -5387,6 +5408,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
+--- !u!82 &2133858788 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8419262274997613906, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+  m_PrefabInstance: {fileID: 1897233272}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2134478376 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6863955013327312008, guid: 8f2d44a2b323dd04080850a9f320230e, type: 3}
@@ -5444,14 +5470,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 4809572624481170044, guid: ec5cd90b8bcee844a98dc2a2419a9db5, type: 3}
-      propertyPath: m_Size.x
-      value: 1.1890478
-      objectReference: {fileID: 0}
-    - target: {fileID: 4809572624481170044, guid: ec5cd90b8bcee844a98dc2a2419a9db5, type: 3}
-      propertyPath: m_Offset.x
-      value: -0.09452392
-      objectReference: {fileID: 0}
     - target: {fileID: 9171534652126902971, guid: ec5cd90b8bcee844a98dc2a2419a9db5, type: 3}
       propertyPath: m_Name
       value: Ascensor
@@ -5475,11 +5493,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.75
+      value: 5.18
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3
+      value: -2.34
       objectReference: {fileID: 0}
     - target: {fileID: 5667268505586422006, guid: a95755e667099aa478d76af9bb756433, type: 3}
       propertyPath: m_LocalPosition.z

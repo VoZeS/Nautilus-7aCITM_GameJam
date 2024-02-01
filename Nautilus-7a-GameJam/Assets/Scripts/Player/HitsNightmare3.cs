@@ -12,6 +12,10 @@ public class HitsNightmare3 : MonoBehaviour
 
     public TimerScript changeSceneScript;
 
+    public AudioSource fireSound;
+    public AudioSource hurtSound;
+
+
     private int resultNightmare3; //0 win, 1 lose
 
     private void Start()
@@ -24,6 +28,8 @@ public class HitsNightmare3 : MonoBehaviour
         if (hitted)
         {
             Debug.Log("-1 vida");
+            fireSound.Play();
+            hurtSound.Play();
             lives--;
             hitted = false;
         }

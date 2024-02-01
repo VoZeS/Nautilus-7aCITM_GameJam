@@ -677,7 +677,7 @@ MonoBehaviour:
     m_Bits: 64
   fangoLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 1024
   characterScale: 5
   velocidadMovimiento: 5
   fuerzaSalto: 5

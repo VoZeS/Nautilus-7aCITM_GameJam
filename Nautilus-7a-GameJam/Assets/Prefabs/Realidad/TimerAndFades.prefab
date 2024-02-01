@@ -1,5 +1,133 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &616415227985347268
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5301140963256620171}
+  - component: {fileID: 8419262274997613906}
+  m_Layer: 0
+  m_Name: tickingAudio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5301140963256620171
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616415227985347268}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4349916429003600934}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &8419262274997613906
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 616415227985347268}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 5acac5a17681fe446874262e5e24d308, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 0.6
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1193895685804240370
 GameObject:
   m_ObjectHideFlags: 0
@@ -64,6 +192,8 @@ MonoBehaviour:
   - {fileID: -189356333, guid: ca92b64d97fb6c443ab559c1e0571e51, type: 3}
   - {fileID: -1981851262, guid: ca92b64d97fb6c443ab559c1e0571e51, type: 3}
   imagenReloj: {fileID: 1279309731325541602}
+  dyeSound: {fileID: 0}
+  clockTickingSound: {fileID: 0}
 --- !u!1 &2382060886474857588
 GameObject:
   m_ObjectHideFlags: 0
@@ -192,6 +322,18 @@ MonoBehaviour:
   atrapa3: {fileID: 2491797788895397461}
   atrapa3Off: {fileID: 21300000, guid: d18e5498ff07d6b4d875ffe583341f05, type: 3}
   atrapa3On: {fileID: 853053702, guid: 09d882d3845932f40af683fbca26237f, type: 3}
+  redOrbImage: {fileID: 0}
+  redOrbOff: {fileID: 0}
+  redOrbOn: {fileID: 0}
+  blueOrbImage: {fileID: 0}
+  blueOrbOff: {fileID: 0}
+  blueOrbOn: {fileID: 0}
+  greenOrbImage: {fileID: 0}
+  greenOrbOff: {fileID: 0}
+  greenOrbOn: {fileID: 0}
+  littleGirl: {fileID: 0}
+  brokenMan: {fileID: 0}
+  abusedMan: {fileID: 0}
 --- !u!1 &4532292511070156739
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,6 +365,7 @@ Transform:
   m_Children:
   - {fileID: 4010018919632516128}
   - {fileID: 2477241534087820210}
+  - {fileID: 5301140963256620171}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6244797288979013913

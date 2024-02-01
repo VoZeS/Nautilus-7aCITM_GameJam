@@ -5,7 +5,8 @@ using UnityEngine;
 public class EnredaderaScript : MonoBehaviour
 {
     // Start is called before the first frame update
-    
+
+    public AudioSource bushSound;
 
     private Animator animator;
 
@@ -26,5 +27,10 @@ public class EnredaderaScript : MonoBehaviour
         
             animator.SetBool("ActivarAnimacion", false);
         
+    }
+    public void SoundBush()
+    {
+        bushSound.Play();
+
     }
 }

@@ -31,7 +31,7 @@ public class OpenDoor : MonoBehaviour
 
     [Header("Sound")]
     public AudioSource doorOpenAudio;
-
+    public AudioSource padlockAudio;
 
 
 
@@ -66,7 +66,18 @@ public class OpenDoor : MonoBehaviour
 
                 doorAnimator.SetTrigger("OpenDoor");
 
-                doorOpenAudio.PlayDelayed(1);
+                if (SceneManager.GetActiveScene().name=="Pesadilla2")
+                {
+                    padlockAudio.Play();
+                    doorOpenAudio.Play();
+                }
+
+                if (SceneManager.GetActiveScene().name == "Realidad2")
+                {
+                    padlockAudio.Play();
+                    doorOpenAudio.PlayDelayed(1);
+                }
+
 
                 doorCol.enabled = false;
 

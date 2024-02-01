@@ -34,6 +34,7 @@ public class TimerScript : MonoBehaviour
     private bool ultimoSpriteAlcanzado = false;
 
     public AudioSource dyeSound;
+    public AudioSource clockTickingSound;
 
     // Start is called before the first frame update
     void Start()
@@ -163,6 +164,12 @@ public class TimerScript : MonoBehaviour
         if (imagenReloj != null)
         {
             imagenReloj.sprite = spritesReloj[indiceSprite];
+
+            if (indiceSprite==5)
+            {
+                clockTickingSound.Play();
+            }
+
 
             // Si se alcanza el último sprite, marcar la variable correspondiente
             if (indiceSprite == spritesReloj.Length - 1)
