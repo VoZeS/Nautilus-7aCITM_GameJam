@@ -6140,8 +6140,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.02940002, y: 0.15990001, z: 0}
-    m_Extent: {x: 0.9707, y: 1.0666001, z: 0}
+    m_Center: {x: -0.024400026, y: 0.16500002, z: 0}
+    m_Extent: {x: 0.96930003, y: 1.0685999, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -7702,6 +7702,10 @@ PrefabInstance:
     - target: {fileID: 7084050962727696708, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
       propertyPath: m_TagString
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 8955374427940829620, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9007193893159978848, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
       propertyPath: m_audioClip
@@ -10025,8 +10029,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: 0.008550003, y: -0.0017499998, z: 0}
-    m_Extent: {x: 0.13615, y: 0.13935, z: 0}
+    m_Center: {x: 0.0016499981, y: 0.0010500029, z: 0}
+    m_Extent: {x: 0.13765001, y: 0.13925001, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0

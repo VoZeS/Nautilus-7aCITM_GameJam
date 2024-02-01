@@ -12394,6 +12394,7 @@ MonoBehaviour:
   smooth: 2
   velocidadMovimiento: 3
   parent: {fileID: 438251467}
+  particles: {fileID: 2108576687}
 --- !u!4 &1589550859 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 135441421738286312, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
@@ -14753,6 +14754,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 8955374427940829620, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
+      propertyPath: m_SortingOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9007193893159978848, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
       propertyPath: m_audioClip
       value: 
@@ -15623,6 +15628,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7b14b939c0be4fa4c96064d3dcc7186e, type: 3}
+--- !u!1 &2108576687 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 869698024956166019, guid: 54efa9f0c2825994c9ad1dece6aabfbe, type: 3}
+  m_PrefabInstance: {fileID: 2019675082}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2113104622 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1508836065092883831, guid: 4e568bbb08042df4090f1496f6c4f3cb, type: 3}

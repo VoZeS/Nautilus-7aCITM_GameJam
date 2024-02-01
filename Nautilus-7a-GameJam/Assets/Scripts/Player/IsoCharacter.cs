@@ -16,6 +16,7 @@ public class IsoCharacter : MonoBehaviour
     public GameObject parent;
     private Rigidbody2D rb;
     public int orientation; // 0 left, 1 right
+    public GameObject particles;
 
     [Header("Audios")]
     public AudioSource stepOnConcrete1;
@@ -55,7 +56,7 @@ public class IsoCharacter : MonoBehaviour
 
     void Update()
     {
-        if(!dying)
+        if (!dying)
         {
             Walk(out movimientoHorizontal, out velocidad);
 
@@ -109,7 +110,7 @@ public class IsoCharacter : MonoBehaviour
             }
 
         }
-        
+
     }
 
     public void Death()
@@ -123,6 +124,8 @@ public class IsoCharacter : MonoBehaviour
 
     private void Walk(out float movimientoHorizontal, out Vector2 velocidad)
     {
+        particles.SetActive(true);
+
         // Verificar si la velocidad reducida está activa.
         if (velocidadReducidaActiva)
         {
@@ -145,11 +148,16 @@ public class IsoCharacter : MonoBehaviour
         // Aplicar la velocidad al Rigidbody
         velocidad = new Vector2(movimientoHorizontal * velocidadMovimiento, movimientoVertical * velocidadMovimiento);
         rb.velocity = new Vector2(velocidad.x, velocidad.y);
+
+        if(rb.velocity.magnitude == 0f)
+        {
+            particles.SetActive(false);
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag=="Hit")
+        if (collision.gameObject.tag == "Hit")
         {
             // Activar la velocidad reducida al entrar en el trigger.
             AplicarVelocidadReducida();
@@ -158,6 +166,7 @@ public class IsoCharacter : MonoBehaviour
 
     void UpdateOrientation(float movimientoHorizontal, Vector2 direccion)
     {
+
         // Actualizar la orientación solo si hay un movimiento
         if (direccion != Vector2.zero)
         {

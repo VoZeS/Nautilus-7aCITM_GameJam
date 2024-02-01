@@ -19,6 +19,7 @@ public class PlatfromCharacter : MonoBehaviour
     public bool enElSuelo;
     public bool canMove;
     public bool jumping;
+    public GameObject particles;
 
     [Header("Movement Audios")]
     public AudioSource stepOnGrass1;
@@ -110,6 +111,12 @@ public class PlatfromCharacter : MonoBehaviour
                 Vector2 velocidad = new Vector2(movimientoHorizontal * velocidadMovimiento, rb.velocity.y);
                 rb.velocity = velocidad;
 
+                if(rb.velocity.magnitude == 0f)
+                {
+                    particles.SetActive(false);
+
+                }
+
                 UpdateOrientation(movimientoHorizontal, velocidad);
 
             }
@@ -119,7 +126,10 @@ public class PlatfromCharacter : MonoBehaviour
             {
                 jump.Play();
 
-                if((raycastLeft1 || raycastLeft2 || raycastLeft3 || raycastLeft4)
+                particles.SetActive(false);
+
+
+                if ((raycastLeft1 || raycastLeft2 || raycastLeft3 || raycastLeft4)
                 || (raycastRight1 || raycastRight2 || raycastRight3 || raycastRight4))                
                     rb.velocity = new Vector2(rb.velocity.x, fuerzaSalto*1.3f);
                 else
@@ -260,7 +270,10 @@ public class PlatfromCharacter : MonoBehaviour
         if (velocidad != Vector2.zero)
         {
             if(enElSuelo)
+            {
+                particles.SetActive(true);
                 playerAnimator.SetBool("Walking", true);
+            }
 
             //Girar el sprite
             if (movimientoHorizontal >= 0f)
