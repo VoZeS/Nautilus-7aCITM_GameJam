@@ -12,7 +12,7 @@ public class OpenDoor : MonoBehaviour
     private bool hasOpenedDoor;
 
     [Header("UI")]
-    public Image interactImage;
+    public GameObject interactImage;
 
     [Header("Door")]
     public BoxCollider2D doorCol;
@@ -45,7 +45,7 @@ public class OpenDoor : MonoBehaviour
         canGetKey = false;
         hasKey = false;
         hasOpenedDoor = false;
-        interactImage.gameObject.SetActive(false);
+        interactImage.SetActive(false);
 
         if(doorTrigger != null)
             doorTrigger.enabled = true;
@@ -123,7 +123,7 @@ public class OpenDoor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             inZone = true;
-            interactImage.gameObject.SetActive(true);
+            interactImage.SetActive(true);
 
         }
     }
@@ -133,7 +133,7 @@ public class OpenDoor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             inZone = false;
-            interactImage.gameObject.SetActive(false);
+            interactImage.SetActive(false);
 
         }
     }
