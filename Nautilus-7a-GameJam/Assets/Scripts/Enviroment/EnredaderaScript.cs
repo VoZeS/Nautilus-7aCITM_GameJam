@@ -7,6 +7,8 @@ public class EnredaderaScript : MonoBehaviour
     // Start is called before the first frame update
 
     public AudioSource bushSound;
+    public AudioSource bushSound2;
+
 
     private Animator animator;
 
@@ -30,7 +32,21 @@ public class EnredaderaScript : MonoBehaviour
     }
     public void SoundBush()
     {
-        bushSound.Play();
 
+        int indiceAleatorio = Random.Range(0, 1);
+
+        switch (indiceAleatorio)
+        {
+            case 0:
+                bushSound.Play();
+                break;
+
+            case 1:
+                bushSound2.Play();
+                break;
+            default:
+                break;
+
+        }
     }
 }

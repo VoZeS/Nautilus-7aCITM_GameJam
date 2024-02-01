@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -11,7 +12,7 @@ public class GetKey : MonoBehaviour
     static public bool hasKey;
 
     [Header("UI")]
-    public Image interactImage;
+    public GameObject interactImage;
 
     [Header("Animators")]
     public Animator playerAnimator;
@@ -19,14 +20,19 @@ public class GetKey : MonoBehaviour
 
     [Header("Key")]
     public GameObject key;
+    public GameObject lightPlayer;
 
     private void Start()
     {
         inZone = false;
         canGetKey = false;
         hasKey = false;
-        interactImage.gameObject.SetActive(false);
 
+        if(interactImage != null)
+            interactImage.SetActive(false);
+
+        if(lightPlayer != null )
+            lightPlayer.SetActive(false); 
 
         if (SceneManager.GetActiveScene().name == "Realidad2")
         {
@@ -48,15 +54,16 @@ public class GetKey : MonoBehaviour
     {
         if(canGetKey && inZone)
         {
-            interactImage.gameObject.SetActive(true);
+            interactImage.SetActive(true);
 
             if (Input.GetKeyDown("e"))
             {
                 Debug.Log("HAS COGIDO LA LLAVE");
 
                 hasKey = true;
+                lightPlayer.SetActive(true);
 
-                if(playerAnimator != null)
+                if (playerAnimator != null)
                     playerAnimator.SetBool("HasKey", true);
 
                 if(oldManAnimator != null)
@@ -67,12 +74,12 @@ public class GetKey : MonoBehaviour
                     key.SetActive(false);
                 }
 
-                interactImage.gameObject.SetActive(false);
+                interactImage.SetActive(false);
             }
         }
         else
         {
-            interactImage.gameObject.SetActive(false);
+            interactImage.SetActive(false);
 
         }
     }

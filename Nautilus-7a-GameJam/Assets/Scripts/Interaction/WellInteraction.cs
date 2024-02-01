@@ -37,6 +37,8 @@ public class WellInteraction : MonoBehaviour
     Dragon coinHandScript;
     DragonHitHand hitHandScript;
 
+    public AudioSource coinThrow;
+
     
 
     public List<Transform> monedasPlayerTotales = new List<Transform>();
@@ -191,12 +193,13 @@ public class WellInteraction : MonoBehaviour
     }
     void DropCoins()
     {
+
         scriptLista.velocidadMovimiento = 3;
         for (int i = 0; i < scriptLista.monedasRecogidas.Count; i++)
         {
             monedasPlayerTotales.Add(scriptLista.monedasRecogidas[i]);
             scriptLista.monedasRecogidas[i].gameObject.SetActive(false);
-
+            coinThrow.Play();
             coinsDroped++;
             
             
