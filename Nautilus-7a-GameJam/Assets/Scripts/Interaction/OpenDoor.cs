@@ -23,6 +23,7 @@ public class OpenDoor : MonoBehaviour
     [Header("Player")]
     public Animator playerAnimator;
     public Camera cameraComp;
+    public GameObject lightPlayer;
 
     [Header("Followers")]
     public Follow girlFollowScript;
@@ -46,7 +47,8 @@ public class OpenDoor : MonoBehaviour
         hasOpenedDoor = false;
         interactImage.gameObject.SetActive(false);
 
-        doorTrigger.enabled = true;
+        if(doorTrigger != null)
+            doorTrigger.enabled = true;
 
 
         if(openedColRight != null)
@@ -60,7 +62,6 @@ public class OpenDoor : MonoBehaviour
     {
         if (inZone && GetKey.hasKey)
         {
-            interactImage.gameObject.SetActive(true);
 
             if (Input.GetKeyDown("e"))
             {
@@ -69,6 +70,7 @@ public class OpenDoor : MonoBehaviour
                 doorAnimator.SetTrigger("OpenDoor");
 
                 doorTrigger.enabled = false;
+                lightPlayer.SetActive(false);
 
                 if (SceneManager.GetActiveScene().name=="Pesadilla2")
                 {
@@ -98,15 +100,15 @@ public class OpenDoor : MonoBehaviour
                 if (openedColLeft != null)
                     openedColLeft.gameObject.SetActive(true);
 
-                girlFollowScript.enabled = false;
-                brokenHeartFollowScript.enabled = false;
-                abusedFollowScript.enabled = false;
-            }
-        }
-        else
-        {
-            interactImage.gameObject.SetActive(false);
+                if(girlFollowScript != null)
+                    girlFollowScript.enabled = false;
 
+                if (brokenHeartFollowScript != null)
+                    brokenHeartFollowScript.enabled = false;
+
+                if (abusedFollowScript != null)
+                    abusedFollowScript.enabled = false;
+            }
         }
 
         if (hasOpenedDoor && SceneManager.GetActiveScene().name == "Pesadilla2")
@@ -121,6 +123,8 @@ public class OpenDoor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             inZone = true;
+            interactImage.gameObject.SetActive(true);
+
         }
     }
 
@@ -129,6 +133,8 @@ public class OpenDoor : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             inZone = false;
+            interactImage.gameObject.SetActive(false);
+
         }
     }
 }
