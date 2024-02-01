@@ -12,7 +12,7 @@ public class GetKey : MonoBehaviour
     static public bool hasKey;
 
     [Header("UI")]
-    public Image interactImage;
+    public GameObject interactImage;
 
     [Header("Animators")]
     public Animator playerAnimator;
@@ -29,7 +29,7 @@ public class GetKey : MonoBehaviour
         hasKey = false;
 
         if(interactImage != null)
-            interactImage.gameObject.SetActive(false);
+            interactImage.SetActive(false);
 
         if(lightPlayer != null )
             lightPlayer.SetActive(false); 
@@ -54,7 +54,7 @@ public class GetKey : MonoBehaviour
     {
         if(canGetKey && inZone)
         {
-            interactImage.gameObject.SetActive(true);
+            interactImage.SetActive(true);
 
             if (Input.GetKeyDown("e"))
             {
@@ -74,12 +74,12 @@ public class GetKey : MonoBehaviour
                     key.SetActive(false);
                 }
 
-                interactImage.gameObject.SetActive(false);
+                interactImage.SetActive(false);
             }
         }
         else
         {
-            interactImage.gameObject.SetActive(false);
+            interactImage.SetActive(false);
 
         }
     }
