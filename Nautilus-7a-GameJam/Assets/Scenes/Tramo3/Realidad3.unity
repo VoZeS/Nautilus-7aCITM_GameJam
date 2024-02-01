@@ -10825,6 +10825,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dba6222cf859ec14e992c55119cb8010, type: 3}
+--- !u!114 &1563530577 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4567967836735612109, guid: dba6222cf859ec14e992c55119cb8010, type: 3}
+  m_PrefabInstance: {fileID: 1563530576}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04b2d106cb21aa45acf8e0e9096160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1573311014
 GameObject:
   m_ObjectHideFlags: 0
@@ -12554,6 +12565,14 @@ PrefabInstance:
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 1877202981}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: clockTickingSound
+      value: 
+      objectReference: {fileID: 2044057918}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: finalTriggerScript
+      value: 
+      objectReference: {fileID: 1563530577}
     - target: {fileID: 1980742003472184729, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: -0.6999512
@@ -12658,6 +12677,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!82 &2044057918 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8419262274997613906, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+  m_PrefabInstance: {fileID: 2044057916}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2049079050
 GameObject:
   m_ObjectHideFlags: 0

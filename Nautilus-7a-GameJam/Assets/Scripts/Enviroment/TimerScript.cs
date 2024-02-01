@@ -35,6 +35,9 @@ public class TimerScript : MonoBehaviour
 
     public AudioSource dyeSound;
     public AudioSource clockTickingSound;
+    public AudioSource winPesadilla;
+
+    public ChangeSceneTrigger finalTriggerScript;
 
     // Start is called before the first frame update
     void Start()
@@ -87,7 +90,7 @@ public class TimerScript : MonoBehaviour
 
         ActualizarSpriteReloj();
 
-        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado)
+        if (/*tiempoRestante <= 0 &&*/ alive && ultimoSpriteAlcanzado && !finalTriggerScript.isSleeping)
         {
             if (scriptTotalDragon == null)
             {
@@ -225,6 +228,7 @@ public class TimerScript : MonoBehaviour
     public void GanarJuego()
     {
         Debug.Log("Has ganado!!!");
+        winPesadilla.Play();
 
         // ------------------------------------------------------- NIGHTMARES RESULTS
         if (SceneManager.GetActiveScene().name == "Pesadilla1")

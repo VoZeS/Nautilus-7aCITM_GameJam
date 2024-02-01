@@ -12225,6 +12225,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 587481691}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &959434866 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2010988204500525866, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+  m_PrefabInstance: {fileID: 2013844489}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &965049232
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -26376,6 +26381,10 @@ PrefabInstance:
       propertyPath: tiempoLimite
       value: 50
       objectReference: {fileID: 0}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: winPesadilla
+      value: 
+      objectReference: {fileID: 959434866}
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: playerAnimator
       value: 

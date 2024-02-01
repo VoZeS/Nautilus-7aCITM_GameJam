@@ -7068,6 +7068,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!82 &760878194 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8419262274997613906, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+  m_PrefabInstance: {fileID: 1263547938}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &779649249
 GameObject:
   m_ObjectHideFlags: 0
@@ -10440,9 +10445,17 @@ PrefabInstance:
       value: 120
       objectReference: {fileID: 0}
     - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: winPesadilla
+      value: 
+      objectReference: {fileID: 1448243180}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: playerAnimator
       value: 
       objectReference: {fileID: 2019675083}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: clockTickingSound
+      value: 
+      objectReference: {fileID: 760878194}
     - target: {fileID: 1980742003472184729, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.13878763
@@ -10582,6 +10595,38 @@ PrefabInstance:
     - target: {fileID: 4638327992587109515, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -0.099998474
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761620777869899337, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761620777869899337, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761620777869899337, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761620777869899337, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761620777869899337, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761620777869899337, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761620777869899337, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4761620777869899337, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8128400732631664107, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_Pivot.x
@@ -11766,6 +11811,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4e568bbb08042df4090f1496f6c4f3cb, type: 3}
+--- !u!82 &1448243180 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2010988204500525866, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+  m_PrefabInstance: {fileID: 1263547938}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1450425468
 PrefabInstance:
   m_ObjectHideFlags: 0

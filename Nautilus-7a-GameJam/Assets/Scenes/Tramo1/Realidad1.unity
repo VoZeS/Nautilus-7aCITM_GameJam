@@ -11119,6 +11119,10 @@ PrefabInstance:
       propertyPath: clockTickingSound
       value: 
       objectReference: {fileID: 2133858788}
+    - target: {fileID: 236819360545189970, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
+      propertyPath: finalTriggerScript
+      value: 
+      objectReference: {fileID: 8090558054996741186}
     - target: {fileID: 1980742003472184729, guid: 9d8cc79fc3a20c84b996fca1a2c1b9a1, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3400836
@@ -12485,6 +12489,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dba6222cf859ec14e992c55119cb8010, type: 3}
+--- !u!114 &8090558054996741186 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4567967836735612109, guid: dba6222cf859ec14e992c55119cb8010, type: 3}
+  m_PrefabInstance: {fileID: 8090558054996741185}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c04b2d106cb21aa45acf8e0e9096160a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
